@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lKa-WF-UGQ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Query View Controller-->
+        <scene sceneID="mBl-II-Duh">
+            <objects>
+                <viewController storyboardIdentifier="UIViewController-ElZ-S3-87d" id="lKa-WF-UGQ" customClass="QueryViewController" customModule="Science_Plus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HV3-EH-34e"/>
+                        <viewControllerLayoutGuide type="bottom" id="M28-3j-wn4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1qd-sB-pLk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wca-uL-kZt">
+                                <rect key="frame" x="0.0" y="-40" width="600" height="646"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhX-tl-Oad">
+                                <rect key="frame" x="534" y="26" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wca-uL-kZt" firstAttribute="top" secondItem="HV3-EH-34e" secondAttribute="bottom" constant="-60" id="dDb-XE-nxE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wca-uL-kZt" secondAttribute="trailing" constant="-20" id="oAf-su-wqg"/>
+                            <constraint firstItem="wca-uL-kZt" firstAttribute="leading" secondItem="1qd-sB-pLk" secondAttribute="leadingMargin" constant="-20" id="rgy-QI-ynS"/>
+                            <constraint firstItem="M28-3j-wn4" firstAttribute="top" secondItem="wca-uL-kZt" secondAttribute="bottom" constant="-50" id="wpl-Zw-ReX"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="sfu-gp-tTc">
+                        <barButtonItem key="backBarButtonItem" title=" " id="4uO-KR-ePd"/>
+                        <barButtonItem key="rightBarButtonItem" title="下一步" id="ixz-jP-5tR">
+                            <connections>
+                                <segue destination="JSr-eb-Sgh" kind="show" identifier="showQueryDetail" id="WN2-fs-6aj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="titleText" destination="wca-uL-kZt" id="Y69-c0-Xun"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b04-vL-6h9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2990" y="-2076"/>
+        </scene>
+        <!--问题描述-->
+        <scene sceneID="hSP-dH-lTg">
+            <objects>
+                <viewController id="JSr-eb-Sgh" customClass="QueryDetialViewController" customModule="Science_Plus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d4E-1x-Mj0"/>
+                        <viewControllerLayoutGuide type="bottom" id="BAg-xN-glG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="167-hh-rjI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CuY-qi-WSG">
+                                <rect key="frame" x="5" y="4" width="595" height="596"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJc-RG-5Ga">
+                                <rect key="frame" x="0.0" y="556" width="595" height="44"/>
+                                <items>
+                                    <barButtonItem image="fa-right" id="wWD-0M-4ct">
+                                        <connections>
+                                            <action selector="toright:" destination="JSr-eb-Sgh" id="TXK-bR-XeG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Bzs-lc-Ubh"/>
+                                    <barButtonItem image="fa-down" id="OeI-t4-aQ8">
+                                        <connections>
+                                            <action selector="keybordDown:" destination="JSr-eb-Sgh" id="1UI-ry-Zoo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nxa-1h-QbO"/>
+                                    <barButtonItem title="A-" id="IjN-jw-GV3">
+                                        <connections>
+                                            <action selector="down:" destination="JSr-eb-Sgh" id="3Mz-Bi-kCz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KEq-jH-Pbh"/>
+                                    <barButtonItem title="A+" id="T8y-yu-gUW">
+                                        <connections>
+                                            <action selector="up:" destination="JSr-eb-Sgh" id="79A-qN-phM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5ap-Ok-Mvy"/>
+                                    <barButtonItem image="fa-bold" id="p6D-OE-ReE">
+                                        <connections>
+                                            <action selector="bold:" destination="JSr-eb-Sgh" id="ME7-lx-ppB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lfk-KF-061"/>
+                                    <barButtonItem image="fa-italic" id="nvK-LO-A1S">
+                                        <connections>
+                                            <action selector="Obliqueness:" destination="JSr-eb-Sgh" id="PcO-cC-CiQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aiY-Tw-up0"/>
+                                    <barButtonItem image="fa-underline" id="5Ko-nA-AhB">
+                                        <connections>
+                                            <action selector="underLine:" destination="JSr-eb-Sgh" id="x7F-is-PwA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Kwg-dn-wqL"/>
+                                    <barButtonItem image="fa-tu" id="1Oq-aI-BkR">
+                                        <connections>
+                                            <action selector="photoSelect:" destination="JSr-eb-Sgh" id="brL-si-U0G"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rLq-KF-GFl"/>
+                                    <barButtonItem image="share2" id="Jml-xY-fTd"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="JSr-eb-Sgh" id="k0L-8X-6Ex"/>
+                                </connections>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CuY-qi-WSG" firstAttribute="top" secondItem="d4E-1x-Mj0" secondAttribute="bottom" constant="-60" id="54D-X6-yWB"/>
+                            <constraint firstItem="wJc-RG-5Ga" firstAttribute="width" secondItem="CuY-qi-WSG" secondAttribute="width" id="OMJ-qt-BoD"/>
+                            <constraint firstItem="CuY-qi-WSG" firstAttribute="leading" secondItem="167-hh-rjI" secondAttribute="leadingMargin" constant="-15" id="VUN-f2-1e9"/>
+                            <constraint firstItem="wJc-RG-5Ga" firstAttribute="leading" secondItem="167-hh-rjI" secondAttribute="leadingMargin" constant="-20" id="Vld-X7-WNf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CuY-qi-WSG" secondAttribute="trailing" constant="-20" id="fQJ-2t-dgC"/>
+                            <constraint firstItem="BAg-xN-glG" firstAttribute="top" secondItem="wJc-RG-5Ga" secondAttribute="bottom" id="k7y-oa-GOi"/>
+                            <constraint firstItem="BAg-xN-glG" firstAttribute="top" secondItem="CuY-qi-WSG" secondAttribute="bottom" id="prd-7g-Lff"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="问题描述" id="lC8-mH-Ige">
+                        <barButtonItem key="rightBarButtonItem" title="下一步" id="J1H-4F-Zzu">
+                            <connections>
+                                <segue destination="9YA-rv-zxo" kind="show" identifier="showQueryTag" id="nxT-DB-EfV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="Toolbar" destination="wJc-RG-5Ga" id="fLE-MO-duG"/>
+                        <outlet property="text" destination="CuY-qi-WSG" id="Djj-fU-nnA"/>
+                        <outlet property="textViewBottomLayoutGuideConstraint" destination="prd-7g-Lff" id="ORQ-re-nsY"/>
+                        <outlet property="toRight" destination="Vld-X7-WNf" id="YK6-bi-jAe"/>
+                        <outlet property="toolBarLayOut" destination="k7y-oa-GOi" id="LDE-oV-cjq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJV-F1-7lY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3857" y="-2083"/>
+        </scene>
+        <!--选择问题所属标签-->
+        <scene sceneID="gG3-vE-oV5">
+            <objects>
+                <viewController id="9YA-rv-zxo" customClass="QueryTagViewController" customModule="Science_Plus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kI1-1X-CWe"/>
+                        <viewControllerLayoutGuide type="bottom" id="aUU-cl-goj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vc2-wL-NUc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="res-nk-BlU">
+                                <rect key="frame" x="0.0" y="4" width="600" height="596"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="res-nk-BlU" firstAttribute="leading" secondItem="vc2-wL-NUc" secondAttribute="leadingMargin" constant="-20" id="AvM-Vx-ijB"/>
+                            <constraint firstItem="aUU-cl-goj" firstAttribute="top" secondItem="res-nk-BlU" secondAttribute="bottom" id="HZp-PR-DXU"/>
+                            <constraint firstItem="res-nk-BlU" firstAttribute="top" secondItem="kI1-1X-CWe" secondAttribute="bottom" constant="-60" id="SG9-Kh-Gnc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="res-nk-BlU" secondAttribute="trailing" constant="-20" id="xtb-Sq-ysg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="选择问题所属标签" id="rv8-KO-uyF">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="4fi-hE-3Et">
+                            <connections>
+                                <action selector="saveQuestion" destination="9YA-rv-zxo" id="Raj-Oz-hRq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tagText" destination="res-nk-BlU" id="hWh-4Q-qI8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VPF-pL-XXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4690" y="-2032"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fa-bold" width="21" height="22"/>
+        <image name="fa-down" width="26" height="15"/>
+        <image name="fa-italic" width="15" height="22"/>
+        <image name="fa-right" width="13" height="22"/>
+        <image name="fa-tu" width="29" height="23"/>
+        <image name="fa-underline" width="22" height="22"/>
+        <image name="share2" width="20" height="20"/>
+    </resources>
+</document>

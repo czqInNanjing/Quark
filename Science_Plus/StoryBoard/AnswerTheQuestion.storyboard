@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q6w-Uh-nkU">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Answer The Question View Controller-->
+        <scene sceneID="rdm-Jv-byO">
+            <objects>
+                <viewController storyboardIdentifier="UIViewController-muC-HL-42s" id="Q6w-Uh-nkU" customClass="AnswerTheQuestionViewController" customModule="Science_Plus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u3q-dv-p5p"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mio-Ms-ndi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WiY-p0-dsm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4ZH-Xk-fs4">
+                                <rect key="frame" x="0.0" y="-1" width="600" height="602"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yvx-ff-bNi">
+                        <barButtonItem key="backBarButtonItem" title=" " id="wPX-fs-Nra"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="L0l-HA-GzY">
+                            <connections>
+                                <action selector="saveAnswer" destination="Q6w-Uh-nkU" id="cOW-xa-eTI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="4ZH-Xk-fs4" id="pQ2-hn-Ubd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6p-ay-kFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4176" y="-1944"/>
+        </scene>
+    </scenes>
+</document>
