@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         if let mail = self.mainField.text {
             if let password = self.passwordField.text{
                 
-                HttpHandler.httpGET(HttpAPI.api_login, parameters: ["mail":mail , "password":password]) { [weak self] json in
+                HttpHandler.httpPost(HttpAPI.api_login, parameters: ["mail":mail , "password":password]) { [weak self] json in
                     let token = json["message"]["token"].stringValue
                     print(json)
                     print(token)
