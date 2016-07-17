@@ -509,6 +509,7 @@
                         <outlet property="questionContentLabel" destination="Zgq-mm-1Hl" id="yyr-hn-Mp6"/>
                         <outlet property="questionTitleLabel" destination="XmW-8w-h2g" id="0fd-xl-KNb"/>
                         <outlet property="table" destination="FSV-41-DXA" id="RVf-zS-Sgv"/>
+                        <outlet property="tableViewToButtonConstraint" destination="wF9-qK-7m2" id="9BJ-tX-ZBu"/>
                         <outlet property="titleBar" destination="1pp-Wz-PRY" id="Pse-b2-B1X"/>
                     </connections>
                 </viewController>
@@ -859,8 +860,8 @@
                                                         <segue destination="6FJ-zD-uCB" kind="show" identifier="addAnswer" id="60g-rB-BFr"/>
                                                     </connections>
                                                 </button>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1a-7r-Id9">
-                                                    <rect key="frame" x="8" y="7" width="584" height="27"/>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1a-7r-Id9">
+                                                    <rect key="frame" x="8" y="5" width="584" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="mij-kD-pCY"/>
                                                     </constraints>

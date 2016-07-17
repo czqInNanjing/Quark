@@ -37,7 +37,7 @@ class AddCommentViewController: UIViewController {
     @IBAction func addComment(){
         comment_content=textView.text
         commentAddedModel.addComment(answer_id, content: comment_content)
-        self.navigationController?.popViewControllerAnimated(false)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     /*
