@@ -15,6 +15,11 @@ class AddCommentViewController: UIViewController {
     private var commentAddedModel=CommentAddedModel()
     
     @IBOutlet var textView:UITextView!
+    
+    private struct showMessage{
+        static let addSuccess="添加评论成功！"
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +42,18 @@ class AddCommentViewController: UIViewController {
     @IBAction func addComment(){
         comment_content=textView.text
         commentAddedModel.addComment(answer_id, content: comment_content)
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewControllerAnimated(false)
+        let alertController = UIAlertController(title: showMessage.addSuccess, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let delay = 2.0 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue(), {
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        })
+        self.presentViewController(alertController, animated: true, completion:nil)
+        
+        
     }
+    
 
     /*
     // MARK: - Navigation
