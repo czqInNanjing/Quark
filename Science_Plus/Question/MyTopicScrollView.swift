@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/**Reused Compoment of the topic Scroll View*/
 class MyTopicScrollView {
     
     private struct myStoryBoard {
@@ -16,6 +16,7 @@ class MyTopicScrollView {
         static let labelHeight = 23
         static let widthForAWord = 15
         static let intervalInLabel = 10
+        /**to indicate the start postion of the next label*/
         static let labelStart = 10
     }
     
@@ -24,7 +25,7 @@ class MyTopicScrollView {
 
     
     static func config(scrollView:UIScrollView, topics:[String]){
-        /**to indicate the start postion of the next label*/
+        
         var nextStart = myStoryBoard.labelStart
         for view in scrollView.subviews{
             view.removeFromSuperview()
