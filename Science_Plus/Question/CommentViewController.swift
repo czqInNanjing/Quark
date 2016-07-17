@@ -27,12 +27,17 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
         static let commentCell = "CommentCell"
     }
     
-    
+    override func viewWillAppear(animated: Bool){
+        model.loadComment(self)
+        self.table.reloadData()
+        print("comment add ............")
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         model.loadComment(self)
-        
+        self.table.reloadData()
         // Do any additional setup after loading the view.
     }
     

@@ -20,6 +20,10 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
     @IBOutlet weak var focusButton:UIButton!
     @IBOutlet weak var answerButton:UIButton!
     @IBOutlet weak var table:UITableView!
+//    @IBOutlet weak var tableViewToTitleConstraint:NSLayoutConstraint!
+    @IBOutlet weak var tableViewToButtonConstraint:NSLayoutConstraint!
+    
+    private var totalDistance=15.0+74.0
     
     private struct storyBoard{
         static let qAnswerCell = "QAnswerCell"
@@ -44,12 +48,13 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let upSwipe = UISwipeGestureRecognizer(target: self, action:#selector(QAnswerViewController.handleSwipes(_:)))
         let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(QAnswerViewController.handleSwipes(_:)))
         
         upSwipe.direction = .Up
         downSwipe.direction = .Down
+        
         
         view.addGestureRecognizer(upSwipe)
         view.addGestureRecognizer(downSwipe)
@@ -57,6 +62,7 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
     
     override func viewWillAppear(animated: Bool) {
         questionDetailModel.regetQuestionDetail(questionDetailController: self)
+//        self.tableViewToTitleConstraint.active=false
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
@@ -70,11 +76,11 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
     
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Up) {
-            questionContentLabel.numberOfLines = 1
+            tableViewToButtonConstraint.constant-=(CGFloat(totalDistance)+questionContentLabel.frame.height+focusNumber.frame.height+answerButton.frame.height)
         }
         
         if (sender.direction == .Down) {
-            questionContentLabel.numberOfLines = 0
+           tableViewToButtonConstraint.constant+=(CGFloat(totalDistance)+questionContentLabel.frame.height+focusNumber.frame.height+answerButton.frame.height)
         }
     }
     

@@ -55,7 +55,7 @@
                     <navigationItem key="navigationItem" id="NLn-IV-PLb">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="S4I-AJ-zX2">
-                            <rect key="frame" x="180" y="5.5" width="240" height="33"/>
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-UT-dgW">
@@ -170,11 +170,11 @@
                                         <rect key="frame" x="0.0" y="72" width="600" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nz5-rn-RGx" id="Mvb-61-VNQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="152.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="152"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0D-lC-vj9">
-                                                    <rect key="frame" x="25" y="43" width="64" height="20"/>
+                                                    <rect key="frame" x="25" y="43" width="550" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.090196078431372548" green="0.22745098039215686" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -208,30 +208,32 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="问题内容" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4V-J9-3fC" userLabel="content">
-                                                    <rect key="frame" x="66" y="79" width="60" height="18"/>
+                                                    <rect key="frame" x="66" y="79" width="509" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQ8-uR-92o">
-                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                    <rect key="frame" x="8" y="8" width="567" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="Dks-eS-J1Z"/>
                                                     </constraints>
                                                 </scrollView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YQ8-uR-92o" secondAttribute="trailing" constant="17" id="9So-Bw-FEg"/>
                                                 <constraint firstItem="CZX-tX-2Cg" firstAttribute="leading" secondItem="Mvb-61-VNQ" secondAttribute="leadingMargin" constant="17" id="BCA-4Q-kIY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YQ8-uR-92o" secondAttribute="trailing" id="DEz-0b-laa"/>
                                                 <constraint firstItem="hCN-MG-Zh7" firstAttribute="top" secondItem="CZX-tX-2Cg" secondAttribute="bottom" constant="8" id="EmU-kO-fxz"/>
                                                 <constraint firstItem="r0D-lC-vj9" firstAttribute="leading" secondItem="Mvb-61-VNQ" secondAttribute="leadingMargin" constant="17" id="Io6-Cg-JVL"/>
                                                 <constraint firstItem="CZX-tX-2Cg" firstAttribute="top" secondItem="Mvb-61-VNQ" secondAttribute="topMargin" constant="72" id="Ivy-Ll-dGZ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="r0D-lC-vj9" secondAttribute="trailing" constant="17" id="K8h-Hr-fTa"/>
                                                 <constraint firstItem="j4V-J9-3fC" firstAttribute="leading" secondItem="CZX-tX-2Cg" secondAttribute="trailing" constant="13" id="Q0s-H5-mbB"/>
                                                 <constraint firstItem="r0D-lC-vj9" firstAttribute="top" secondItem="YQ8-uR-92o" secondAttribute="bottom" constant="8" id="V0g-wb-Zgv"/>
                                                 <constraint firstItem="CZX-tX-2Cg" firstAttribute="top" secondItem="r0D-lC-vj9" secondAttribute="bottom" constant="17" id="V39-hj-HXQ"/>
                                                 <constraint firstItem="hCN-MG-Zh7" firstAttribute="top" secondItem="Mvb-61-VNQ" secondAttribute="topMargin" constant="108" id="cSB-Kz-XVP"/>
                                                 <constraint firstItem="r0D-lC-vj9" firstAttribute="top" secondItem="Mvb-61-VNQ" secondAttribute="topMargin" constant="35" id="d4M-lC-pkj"/>
                                                 <constraint firstItem="j4V-J9-3fC" firstAttribute="top" secondItem="r0D-lC-vj9" secondAttribute="bottom" constant="16" id="fRD-dz-jLb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="j4V-J9-3fC" secondAttribute="trailing" constant="17" id="p7J-Zd-0T4"/>
                                                 <constraint firstAttribute="topMargin" secondItem="YQ8-uR-92o" secondAttribute="top" id="pkD-eZ-3ea"/>
                                                 <constraint firstItem="hCN-MG-Zh7" firstAttribute="leading" secondItem="Mvb-61-VNQ" secondAttribute="leadingMargin" constant="17" id="uNi-19-OE3"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="YQ8-uR-92o" secondAttribute="leading" id="xK2-uZ-X7Q"/>
@@ -268,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGd-6v-oSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2714" y="-2055"/>
+            <point key="canvasLocation" x="2687" y="-2025"/>
         </scene>
         <!--6月5日创建-->
         <scene sceneID="YXN-IF-aod">
@@ -372,7 +374,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="isp-c1-VB3" id="tsX-ob-i34">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="112.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-JQ-vB4">
@@ -507,6 +509,7 @@
                         <outlet property="questionContentLabel" destination="Zgq-mm-1Hl" id="yyr-hn-Mp6"/>
                         <outlet property="questionTitleLabel" destination="XmW-8w-h2g" id="0fd-xl-KNb"/>
                         <outlet property="table" destination="FSV-41-DXA" id="RVf-zS-Sgv"/>
+                        <outlet property="tableViewToButtonConstraint" destination="wF9-qK-7m2" id="9BJ-tX-ZBu"/>
                         <outlet property="titleBar" destination="1pp-Wz-PRY" id="Pse-b2-B1X"/>
                     </connections>
                 </viewController>
@@ -798,7 +801,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DIA-qG-4Y1" id="MDZ-7f-MSD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="111.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你见过哪些神一样的操作？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkC-2J-2mo">
@@ -857,8 +860,8 @@
                                                         <segue destination="6FJ-zD-uCB" kind="show" identifier="addAnswer" id="60g-rB-BFr"/>
                                                     </connections>
                                                 </button>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1a-7r-Id9">
-                                                    <rect key="frame" x="8" y="7" width="584" height="27"/>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1a-7r-Id9">
+                                                    <rect key="frame" x="8" y="5" width="584" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="mij-kD-pCY"/>
                                                     </constraints>
