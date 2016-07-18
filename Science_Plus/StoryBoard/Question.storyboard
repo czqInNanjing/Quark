@@ -356,7 +356,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="我来回答"/>
                                         <connections>
-                                            <segue destination="6FJ-zD-uCB" kind="show" identifier="addQuestion" id="VlA-pI-oMS"/>
+                                            <segue destination="6FJ-zD-uCB" kind="show" identifier="addAnswer" id="VlA-pI-oMS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -968,6 +968,6 @@
         <image name="write" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VlA-pI-oMS"/>
+        <segue reference="60g-rB-BFr"/>
     </inferredMetricsTieBreakers>
 </document>

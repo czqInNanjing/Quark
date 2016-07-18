@@ -31,7 +31,7 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
         static let focusNum = "人关注"
         static let answerNum = "人回答"
         static let bulidTime = "创建"
-        static let answerTheQuestion="addQuestion"
+        static let answerTheQuestion="addAnswer"
     }
     
     private var questionDetailModel = QuestionDetailModel()
