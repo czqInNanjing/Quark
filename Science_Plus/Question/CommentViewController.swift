@@ -28,6 +28,8 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
     override func viewWillAppear(animated: Bool){
+        super.viewWillAppear(true)
+//        self.table
         model.loadComment(self)
         self.table.reloadData()
         print("comment add ............")
@@ -53,7 +55,7 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(storyBoard.commentCell, forIndexPath: indexPath) as! CommentTableViewCell
         
-        print("refreshing . . . ")
+
         cell.comment = model.getComment()[indexPath.section][indexPath.row]
         return cell
     }

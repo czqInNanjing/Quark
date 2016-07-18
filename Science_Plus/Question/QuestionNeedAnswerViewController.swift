@@ -62,9 +62,12 @@ class QuestionNeedAnswerViewController: UIViewController ,UITableViewDataSource,
         if segue.identifier == storyboard.addAnswer{
             print("addAnswerFromQuestionNeedAnswer")
             if let temp = self.parentViewController as? TotalViewController{
+                print("yes total")
                 if let parent = temp.parentViewController as? UINavigationController{
+                    print("yes navi")
                     if let main = parent.parentViewController as? UITabBarController{
                         main.tabBar.hidden = true
+                        print("yes hidden")
                     }
                 }
                 
