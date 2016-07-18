@@ -34,12 +34,12 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
 
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        model.loadComment(self)
-        self.table.reloadData()
-        // Do any additional setup after loading the view.
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        model.loadComment(self)
+//        self.table.reloadData()
+//        // Do any additional setup after loading the view.
+//    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
         return model.getComment().count
