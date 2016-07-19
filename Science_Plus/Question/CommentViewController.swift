@@ -25,6 +25,7 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     private struct storyBoard{
         static let commentCell = "CommentCell"
+        static let addComment="addComment"
     }
     
     override func viewWillAppear(animated: Bool){
@@ -63,7 +64,7 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             switch identifier {
-            case "addComment":
+            case storyBoard.addComment:
                 if let addCommentViewController=segue.destinationViewController as? AddCommentViewController{
                     if let id = answerID{
                         addCommentViewController.setAnswerId(id)

@@ -26,6 +26,7 @@ struct HttpAPI{
     static let tokenHeader = "x-access-token"
     static let api_login = prefix + "/api/account/login?"
     static let api_regist = prefix + "/api/account/register?"
+    static let api_regist_invite = prefix + "/api/account/register/invite"
     static let api_getQuestionList =  prefix + "/api/question/list/ask?"
     static let api_getQuestionDetail = prefix + "/api/question/detail"
     static let api_getAnswerList = prefix + "/api/question/list/answer"

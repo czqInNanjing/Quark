@@ -153,6 +153,34 @@ public class HttpHandler {
         return user_id
     }
     
+    static func regist_invite(mail:String , passwd:String,inviteCode:String) -> Int{
+        let urlPath = HttpAPI.api_regist_invite
+        var user_id:Int = -1//==-2000,not email;==-2001,mail exist;==-2005,not correct inviteCode
+        Alamofire.request(.POST, urlPath, parameters: ["mail" : mail , "password" : passwd]).validate().responseJSON{ response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    if json["status"].intValue == 1 {
+                        user_id = json["user_id"].intValue
+                    }
+                    else{
+                        user_id = 0 - json["error_code"].intValue
+                        print("status 0 user_id  \(user_id)")
+                    }
+                    print("JSON: \(json)")
+                    print("error_code: \(json["error_code"].intValue)")
+                }
+            case .Failure(let error):
+                print(error)
+            }
+            
+        }
+        
+        print("user_id: \(user_id)")
+        return user_id
+    }
+
     
     
 }
