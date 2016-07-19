@@ -327,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				AC236CB238EE072DEBFA54DF9C56A1BE /* Pods */,
 				8634440D8EC9697C63251228ECCD64FA /* Products */,
 				D801916B89394AA294BCC0500F7CFA3F /* Targets Support Files */,
@@ -425,6 +424,7 @@
 		D801916B89394AA294BCC0500F7CFA3F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				2B078BA15084850C309CB6B26693184B /* Pods-Science_Plus */,
 			);
 			name = "Targets Support Files";

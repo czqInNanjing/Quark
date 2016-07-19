@@ -22,20 +22,16 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     @IBOutlet var table:UITableView!
     
     
+    
     /**当前显示的Section Row*/
     private var currentIndex:NSIndexPath?
     
     private var questionModel = QuestionListModel()
     
-//    override func viewWillAppear(animated: Bool) {
-//        print("view will appear")
-//    }
-//    override func viewWillDisappear(animated: Bool) {
-//        print("view will disappear")
-//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view did load")
+        
         
         questionModel.getQuestionsByPage(questionTable:self)
         
@@ -44,19 +40,17 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
             self?.questionModel.getQuestionsByPage(questionTable:self)
         }
         
-        
-//         Initialize tableView
-//        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
-//        loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
-//        table.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-//            self?.loadNewData()
-//            self?.table.dg_stopLoading()
-//            }, loadingView: loadingView)
-//        table.dg_setPullToRefreshFillColor(UIColor(red: 57/255.0, green: 67/255.0, blue: 89/255.0, alpha: 1.0))
-//        table.dg_setPullToRefreshBackgroundColor(table.backgroundColor!)
+        table.addPullToRefresh
+            { [weak self] () -> Void in
+                //TODO add logic
+                self?.table.dg_stopLoading()
+        }
         
         
     }
+    
+
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return questionModel.getQuestions().count
     }
@@ -83,26 +77,26 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     
     
     
-//    func loadNewData(){
-//        print("Loading new data  . . . ")
-//
-//        questionModel.getQuestionsByPage(questionTable:self)
-//    }
+    //    func loadNewData(){
+    //        print("Loading new data  . . . ")
+    //
+    //        questionModel.getQuestionsByPage(questionTable:self)
+    //    }
     
-
     
-//    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == storyboard.questionDetail {
-//            if let indexPath = table.indexPathForSelectedRow {
-//                let naController = segue.destinationViewController as!
-//                UINavigationController
-//                if let questionDetailController = naController.visibleViewController as? QAnswerViewController {
-//                    questionDetailController.title="6月6日创建"//未实现
-//                    questionDetailController.question = questionModel.getQuestions()[indexPath.section][indexPath.row]
-//                    }
-//            }
-//        }
-//    }
+    
+    //
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //        if segue.identifier == storyboard.questionDetail {
+    //            if let indexPath = table.indexPathForSelectedRow {
+    //                let naController = segue.destinationViewController as!
+    //                UINavigationController
+    //                if let questionDetailController = naController.visibleViewController as? QAnswerViewController {
+    //                    questionDetailController.title="6月6日创建"//未实现
+    //                    questionDetailController.question = questionModel.getQuestions()[indexPath.section][indexPath.row]
+    //                    }
+    //            }
+    //        }
+    //    }
     
 }

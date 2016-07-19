@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 /**“这些问题需要你的回答“界面Controller*/
 class QuestionNeedAnswerViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
     @IBOutlet var table:UITableView!
@@ -28,6 +29,11 @@ class QuestionNeedAnswerViewController: UIViewController ,UITableViewDataSource,
         table.infiniteScrollIndicatorView = CustomTableIndicator(frame: CGRectMake(0, 0, 24, 24))
         table.addInfiniteScrollWithHandler { [weak self] (scrollView) -> Void in
             self?.questionModel.getQuestionsByPage(questionTable:self)
+        }
+        table.addPullToRefresh
+            { [weak self] () -> Void in
+                //TODO add logic
+                self?.table.dg_stopLoading()
         }
     }
 

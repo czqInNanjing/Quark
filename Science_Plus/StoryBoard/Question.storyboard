@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKs-Jf-6eL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1266" y="-2555"/>
+            <point key="canvasLocation" x="1266" y="-2554.9999999999995"/>
         </scene>
         <!--Total View Controller-->
         <scene sceneID="iW7-CS-Eay">
@@ -55,7 +55,7 @@
                     <navigationItem key="navigationItem" id="NLn-IV-PLb">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="S4I-AJ-zX2">
-                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <rect key="frame" x="39" y="5.5" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-UT-dgW">
@@ -114,7 +114,7 @@
                         </view>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="BND-Ci-9pM">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T7M-xf-6hq">
-                                <rect key="frame" x="561" y="13" width="19" height="18"/>
+                                <rect key="frame" x="285" y="13" width="19" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add-button"/>
                                 <connections>
@@ -149,7 +149,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" id="COH-Zm-dtu">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="barTintColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
@@ -158,19 +158,13 @@
                                         <string>Title</string>
                                         <string>Title</string>
                                     </scopeButtonTitles>
-                                    <variation key="heightClass=regular" misplaced="YES">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="55"/>
-                                    </variation>
-                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                        <rect key="frame" x="-4" y="0.0" width="368" height="55"/>
-                                    </variation>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" id="Nz5-rn-RGx" customClass="QuestionTableViewCell" customModule="Science_Plus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="600" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nz5-rn-RGx" id="Mvb-61-VNQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="152.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0D-lC-vj9">
@@ -270,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGd-6v-oSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2687" y="-2025"/>
+            <point key="canvasLocation" x="2687" y="-2024.9999999999998"/>
         </scene>
         <!--6月5日创建-->
         <scene sceneID="YXN-IF-aod">
@@ -366,15 +360,15 @@
                                     <constraint firstAttribute="height" constant="14" id="xvS-cq-l5s"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FSV-41-DXA">
-                                <rect key="frame" x="0.0" y="334" width="600" height="217"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FSV-41-DXA">
+                                <rect key="frame" x="0.0" y="334" width="600" height="185"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QAnswerCell" rowHeight="113" id="isp-c1-VB3" customClass="QAnswerTableViewCell" customModule="Science_Plus" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QAnswerCell" rowHeight="113" id="isp-c1-VB3" customClass="QAnswerTableViewCell" customModule="Science_Plus" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="isp-c1-VB3" id="tsX-ob-i34">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="112.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-JQ-vB4">
@@ -399,7 +393,7 @@
                                                     <color key="textColor" red="0.090196078431372548" green="0.26666666666666666" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="一个奋斗在一线的理论化学家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcI-U9-7sW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="一个奋斗在一线的理论化学家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcI-U9-7sW">
                                                     <rect key="frame" x="123" y="16" width="442" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
@@ -422,7 +416,7 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金属和配体的摩尔比，温度，升降温速率、反应时间，反应液的PH，其实反应液的PH才是晶体最敏感的，不断的尝试，看一些好一点儿外文文献，仿照着做，坚持不懈肯定会有好结果滴~" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeU-Ft-Zl5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="金属和配体的摩尔比，温度，升降温速率、反应时间，反应液的PH，其实反应液的PH才是晶体最敏感的，不断的尝试，看一些好一点儿外文文献，仿照着做，坚持不懈肯定会有好结果滴~" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeU-Ft-Zl5">
                                                     <rect key="frame" x="65" y="42" width="500" height="52"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="52" id="gPs-OO-zPk"/>
@@ -579,7 +573,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3e-cR-iuG" customClass="StateButton" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33.5"/>
                                                 <state key="normal" image="up"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="imageNotClicked" value="up"/>
@@ -591,7 +585,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赞同" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXM-ee-tNU" customClass="StateLabel" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="33" width="150" height="17"/>
+                                                <rect key="frame" x="0.0" y="33" width="150" height="16.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.71372549019607845" green="0.80000000000000004" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -609,7 +603,7 @@
                                         <rect key="frame" x="150" y="0.0" width="150" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDQ-rW-niR" customClass="StateButton" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33.5"/>
                                                 <state key="normal" image="down"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="imageNotClicked" value="down"/>
@@ -621,7 +615,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="没有帮助" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-Qe-gho" customClass="StateLabel" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="33" width="150" height="17"/>
+                                                <rect key="frame" x="0.0" y="33" width="150" height="16.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.71372549019607845" green="0.80000000000000004" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -639,7 +633,7 @@
                                         <rect key="frame" x="300" y="0.0" width="150" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvS-tp-Dgd" customClass="StateButton" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33.5"/>
                                                 <state key="normal" image="mark"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="imageNotClicked" value="mark"/>
@@ -651,7 +645,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNx-Ju-xxQ" customClass="StateLabel" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="33" width="150" height="17"/>
+                                                <rect key="frame" x="0.0" y="33" width="150" height="16.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" red="0.71372549019607845" green="0.80000000000000004" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -669,14 +663,14 @@
                                         <rect key="frame" x="450" y="0.0" width="150" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qd-i5-vI9">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33.5"/>
                                                 <state key="normal" image="comment"/>
                                                 <connections>
                                                     <segue destination="lZm-Ov-zsm" kind="show" identifier="showAnswerComment" id="kgs-5m-4WY"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoT-qX-lOf">
-                                                <rect key="frame" x="0.0" y="33" width="150" height="17"/>
+                                                <rect key="frame" x="0.0" y="33" width="150" height="16.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" red="0.71372549019607845" green="0.80000000000000004" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -743,6 +737,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="MWP-4z-okj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="commentButton" destination="3Qd-i5-vI9" id="Wj5-uR-L5n"/>
@@ -763,7 +758,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4W-Tf-3t5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1266" y="-54"/>
+            <point key="canvasLocation" x="1266" y="-53.999999999999993"/>
         </scene>
         <!--Question Need Answer View Controller-->
         <scene sceneID="LxQ-7F-7UC">
@@ -801,7 +796,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DIA-qG-4Y1" id="MDZ-7f-MSD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="111.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你见过哪些神一样的操作？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkC-2J-2mo">
@@ -857,7 +852,7 @@
                                                     <color key="tintColor" red="0.0" green="0.37647058823529411" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="我来回答"/>
                                                     <connections>
-                                                        <segue destination="6FJ-zD-uCB" kind="show" identifier="addAnswer" id="60g-rB-BFr"/>
+                                                        <segue destination="6FJ-zD-uCB" kind="presentation" identifier="addAnswer" id="60g-rB-BFr"/>
                                                     </connections>
                                                 </button>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1a-7r-Id9">
@@ -928,31 +923,37 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="HKe-BN-rh7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLz-fP-uKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="-1732.5"/>
+            <point key="canvasLocation" x="518" y="-1732.4999999999998"/>
         </scene>
         <!--Query-->
         <scene sceneID="HT8-SU-nhW">
             <objects>
-                <viewControllerPlaceholder storyboardName="Query" id="4R0-os-WH4" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Query" id="4R0-os-WH4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lQ2-ci-2ga"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOK-JI-fkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531.5" y="-1302"/>
+            <point key="canvasLocation" x="531.5" y="-1301.9999999999998"/>
         </scene>
         <!--AnswerTheQuestion-->
         <scene sceneID="ETb-gL-ZNw">
             <objects>
-                <viewControllerPlaceholder storyboardName="AnswerTheQuestion" id="6FJ-zD-uCB" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AnswerTheQuestion" id="6FJ-zD-uCB" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vKu-su-CIY"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qkx-zn-48V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2440" y="-240"/>
+            <point key="canvasLocation" x="2440" y="-239.99999999999997"/>
         </scene>
         <!--Comment-->
         <scene sceneID="BfL-VP-o1o">
             <objects>
-                <viewControllerPlaceholder storyboardName="Comment" id="lZm-Ov-zsm" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Comment" id="lZm-Ov-zsm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ju3-Xc-rMN"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuO-Gp-hK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420.5" y="679"/>
+            <point key="canvasLocation" x="420.5" y="678.99999999999989"/>
         </scene>
     </scenes>
     <resources>
@@ -968,6 +969,6 @@
         <image name="write" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="60g-rB-BFr"/>
+        <segue reference="VlA-pI-oMS"/>
     </inferredMetricsTieBreakers>
 </document>
