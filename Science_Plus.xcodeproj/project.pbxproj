@@ -35,6 +35,7 @@
 		04C180E11CF6DB92005FDBB2 /* Query.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C180E01CF6DB92005FDBB2 /* Query.storyboard */; };
 		04C180E31CF6DEE3005FDBB2 /* AnswerTheQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C180E21CF6DEE3005FDBB2 /* AnswerTheQuestion.storyboard */; };
 		04C180E51CF6E0C0005FDBB2 /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C180E41CF6E0C0005FDBB2 /* Comment.storyboard */; };
+		04D637D91D3F905D005BAECE /* PersonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D637D81D3F905D005BAECE /* PersonDetailTableViewController.swift */; };
 		04DD670D1CF82273000B651F /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD670C1CF82273000B651F /* AddCommentViewController.swift */; };
 		04DD670F1CF823D9000B651F /* CommentAddedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD670E1CF823D9000B651F /* CommentAddedModel.swift */; };
 		04E0021A1CF400C7007D57B0 /* QuestionAddedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E002191CF400C7007D57B0 /* QuestionAddedModel.swift */; };
@@ -107,6 +108,7 @@
 		04C180E01CF6DB92005FDBB2 /* Query.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Query.storyboard; path = StoryBoard/Query.storyboard; sourceTree = "<group>"; };
 		04C180E21CF6DEE3005FDBB2 /* AnswerTheQuestion.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AnswerTheQuestion.storyboard; path = StoryBoard/AnswerTheQuestion.storyboard; sourceTree = "<group>"; };
 		04C180E41CF6E0C0005FDBB2 /* Comment.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Comment.storyboard; path = StoryBoard/Comment.storyboard; sourceTree = "<group>"; };
+		04D637D81D3F905D005BAECE /* PersonDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailTableViewController.swift; sourceTree = "<group>"; };
 		04DD670C1CF82273000B651F /* AddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCommentViewController.swift; path = Comment/AddCommentViewController.swift; sourceTree = "<group>"; };
 		04DD670E1CF823D9000B651F /* CommentAddedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAddedModel.swift; sourceTree = "<group>"; };
 		04E002191CF400C7007D57B0 /* QuestionAddedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAddedModel.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				044700711D32333F002FC36D /* FocusTableViewController.swift */,
 				04A3CCD61D32826F005EC887 /* FocusQuestionTableViewController.swift */,
 				04A3CCDA1D329023005EC887 /* MyAnswerTableViewController.swift */,
+				04D637D81D3F905D005BAECE /* PersonDetailTableViewController.swift */,
 			);
 			name = Personal;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				F7BB66641D02B49F008150CE /* Constants.swift in Sources */,
 				F70D10761CE5F829001E2791 /* NotificationTableViewController.swift in Sources */,
 				F70D10741CE5F829001E2791 /* letterTableViewController.swift in Sources */,
+				04D637D91D3F905D005BAECE /* PersonDetailTableViewController.swift in Sources */,
 				F70B27CC1CF44B8500F56519 /* AnswerDetailModel.swift in Sources */,
 				04846B5B1CE4D3D300E9A228 /* QuestionNeedAnswerTableViewCell.swift in Sources */,
 				F7EB5BD61CDD80DA007B5D64 /* AppDelegate.swift in Sources */,
