@@ -12,7 +12,7 @@ class QuestionListModel {
     
     private var currentPage = 1
     private var questions = [Array<Question>]()
-    func getQuestionsByPage(questionTable qtable:QuestionViewController? )  {
+    func getQuestionsByPage(isRefresh:Bool = false , questionTable qtable:QuestionViewController? )  {
         
         
         
@@ -28,14 +28,32 @@ class QuestionListModel {
                     self?.questions.append(newQuestions)
                     qtable?.table.reloadData()
                     self?.currentPage += 1
+                    if isRefresh{
+                        qtable?.noticeSuccess("刷新成功")
+                    }else{
+//                        qtable?.noticeSuccess("加载成功")
+                    }
+                    
+                }else{
+                    if isRefresh{
+                        
+                    } else{
+                        qtable?.noticeInfo("没有更多了")
+                    }
                 }
             }else{
                 print("Question ErrorReason: \(json)")
                 //handler(json)
-                
+                qtable?.noticeError("网络好像出了点问题")
+            }
+            // stop the indicator animation
+            if isRefresh{
+                qtable?.table.dg_stopLoading()
+            }else{
+                qtable?.table.finishInfiniteScroll()
+
             }
             
-            qtable?.table.finishInfiniteScroll()
             
         }
         print("current question page:\(currentPage)")
@@ -43,8 +61,12 @@ class QuestionListModel {
         
         
     }
-    
-    func refreshData(questionTable qtable:QuestionViewController) {
+    /**Refresh data, execute when pull to refresh*/
+    func refreshData(questionTable qtable:QuestionViewController?) {
+        questions.removeAll()
+        currentPage = 1
+        getQuestionsByPage(true, questionTable: qtable)
+        
         
     }
     

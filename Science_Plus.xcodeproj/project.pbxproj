@@ -70,6 +70,7 @@
 		F7B49C711CE230ED00A1E0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B49C6E1CE230ED00A1E0A5 /* Main.storyboard */; };
 		F7BB66641D02B49F008150CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB66631D02B49F008150CE /* Constants.swift */; };
 		F7BB66681D02C921008150CE /* LanuchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BB66671D02C921008150CE /* LanuchScreen.storyboard */; };
+		F7C214111D3FB015004D8C6F /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C214101D3FB015004D8C6F /* SwiftNotice.swift */; };
 		F7C6AB611CDDE3E9009A92D0 /* PersonalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C6AB601CDDE3E9009A92D0 /* PersonalTableViewController.swift */; };
 		F7E5507C1CDD8BF0009EBD1C /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E5507B1CDD8BF0009EBD1C /* Messages.storyboard */; };
 		F7E550811CDD8C72009EBD1C /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E550801CDD8C72009EBD1C /* Personal.storyboard */; };
@@ -147,6 +148,7 @@
 		F7B49C6E1CE230ED00A1E0A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = StoryBoard/Main.storyboard; sourceTree = "<group>"; };
 		F7BB66631D02B49F008150CE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F7BB66671D02C921008150CE /* LanuchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LanuchScreen.storyboard; sourceTree = "<group>"; };
+		F7C214101D3FB015004D8C6F /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		F7C6AB601CDDE3E9009A92D0 /* PersonalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalTableViewController.swift; path = Personal/PersonalTableViewController.swift; sourceTree = "<group>"; };
 		F7E5507B1CDD8BF0009EBD1C /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Messages.storyboard; path = StoryBoard/Messages.storyboard; sourceTree = "<group>"; };
 		F7E550801CDD8C72009EBD1C /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Personal.storyboard; path = StoryBoard/Personal.storyboard; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 		F726DF891CF6052700256C2F /* SupportedFile */ = {
 			isa = PBXGroup;
 			children = (
+				F7C214101D3FB015004D8C6F /* SwiftNotice.swift */,
 				F7EB5BD51CDD80DA007B5D64 /* AppDelegate.swift */,
 				F7EB5BDE1CDD80DA007B5D64 /* Assets.xcassets */,
 				F7EB5BE31CDD80DA007B5D64 /* Info.plist */,
@@ -616,6 +619,7 @@
 				F70D10701CE5F829001E2791 /* agreeTableViewController.swift in Sources */,
 				04A47A791D02A215008CA3C8 /* FocusStateChangeModel.swift in Sources */,
 				F78C487B1CF82798001A0FDC /* CommentViewModel.swift in Sources */,
+				F7C214111D3FB015004D8C6F /* SwiftNotice.swift in Sources */,
 				F70D10731CE5F829001E2791 /* NoticOtherTableViewCell.swift in Sources */,
 				04DD670F1CF823D9000B651F /* CommentAddedModel.swift in Sources */,
 				04955B651CE785F3002FF3B8 /* CommentViewController.swift in Sources */,

@@ -27,6 +27,8 @@ class QuestionNeedAnswerModel {
                 if newQuestions.count > 1{
                     self?.questions.append(newQuestions)
                     qtable?.table.reloadData()
+                    self?.currentPage += 1
+                    
                     
                 }
             }else{
@@ -36,15 +38,19 @@ class QuestionNeedAnswerModel {
             }
             
             qtable?.table.finishInfiniteScroll()
-            
+            qtable?.table.dg_stopLoading()
         }
-        print("current question page:\(currentPage)")
-        currentPage += 1
+        
+        
         
         
     }
     
-    func refreshData(questionTable qtable:QuestionViewController) {
+    /**Refresh data, execute when pull to refresh*/
+    func refreshData(questionTable qtable:QuestionNeedAnswerViewController?) {
+        questions.removeAll()
+        currentPage = 1
+        getQuestionsByPage(questionTable: qtable)
         
     }
     

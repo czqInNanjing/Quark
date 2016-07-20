@@ -17,6 +17,21 @@ class TotalViewController: UIViewController {
     var answerController: QuestionNeedAnswerViewController!
     var controllers = [UIViewController]()
     
+    @IBOutlet var indicator: UIView!
+ 
+    @objc func pan(sender: UIPanGestureRecognizer) {
+        print("get . .. ")
+        switch sender.state {
+        case .Began:
+            print("Start . . .")
+        case .Cancelled:
+            print("cancel. . .")
+        case .Ended:
+            print("ended")
+        default:
+            print("   not")
+        }
+    }
     
     private struct myStoryboard {
         
@@ -32,7 +47,7 @@ class TotalViewController: UIViewController {
         
     }
     
-    var sliderImageView: UIImageView!
+//    var sliderImageView: UIView!
     
     var lastPage = 0
     var currentPage: Int = 0 {
@@ -40,9 +55,9 @@ class TotalViewController: UIViewController {
             print("current page \(currentPage)")
             //根据当前页面计算得到偏移量
             //一个微小的动画移动提示条
-            let offset = self.view.frame.width / 3.0 * CGFloat(currentPage)
+            let offset = self.sliderView.frame.width / 2.0 * CGFloat(currentPage)
             UIView.animateWithDuration(0.3) { () -> Void in
-                self.sliderImageView.frame.origin = CGPoint(x: offset, y: -1)
+                self.indicator.frame.origin = CGPoint(x: offset, y: -1)
             }
             
             //根据currentPage 和 lastPage的大小关系，控制页面的切换方向
@@ -62,6 +77,12 @@ class TotalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeController()
+        
+//        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(TotalViewController.pan(_:)))
+//        panGestureRecognizer.delegate = self
+//        view.userInteractionEnabled = true
+//        view.addGestureRecognizer(panGestureRecognizer)
+        
     }
     
     
@@ -79,11 +100,6 @@ class TotalViewController: UIViewController {
         
         //手动为pageViewController提供提一个页面
         pageViewController.setViewControllers([questionController], direction: .Forward, animated: true, completion: nil)
-        
-        //添加提示条到页面中
-        sliderImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width / 3.0, height: 5.0))
-        sliderImageView.image = UIImage(named: myStoryboard.sliderImageName)
-        sliderView.addSubview(sliderImageView)
         
         //把页面添加到数组中
         controllers.append(questionController)
@@ -141,6 +157,24 @@ class TotalViewController: UIViewController {
         }
     }
     
+//    @objc private func pan(gestureRecognizer: UIPanGestureRecognizer!) {
+////        guard !panningDisabled else {
+////            return
+////        }
+////        
+////        switch gestureRecognizer.state {
+////        case .Began:
+////            initialIndicatorViewFrame = indicatorView.frame
+////        case .Changed:
+////            var frame = initialIndicatorViewFrame!
+////            frame.origin.x += gestureRecognizer.translationInView(self).x
+////            frame.origin.x = max(min(frame.origin.x, bounds.width - indicatorViewInset - frame.width), indicatorViewInset)
+////            indicatorView.frame = frame
+////        case .Ended, .Failed, .Cancelled:
+////            try! setIndex(nearestIndexToPoint(indicatorView.center))
+////        default: break
+////        }
+//    }
 }
 
 extension TotalViewController : UIPageViewControllerDataSource, UIPageViewControllerDelegate{
@@ -173,7 +207,12 @@ extension TotalViewController : UIPageViewControllerDataSource, UIPageViewContro
         }
     }
     
-//    func pageViewController(pageViewController: UIPageViewController, spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation {
-//        //TODO
-//    }
 }
+//extension TotalViewController: UIGestureRecognizerDelegate{
+//    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+//        if touch.view!.isDescendantOfView(view){
+//            return true
+//        }
+//        return false
+//    }
+//}
