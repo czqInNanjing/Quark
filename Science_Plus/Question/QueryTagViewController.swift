@@ -39,13 +39,7 @@ class QueryTagViewController: UIViewController {
         question_tag=tagText.text.componentsSeparatedByString("，")
         questionAddedModel.addQuestion(question_title, content: question_content, tag: question_tag)
         self.navigationController?.popToRootViewControllerAnimated(false)
-        let alertController = UIAlertController(title: showMessage.addSuccess, message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        let delay = 2.0 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue(), {
-            alertController.dismissViewControllerAnimated(true, completion: nil)
-        })
-        self.presentViewController(alertController, animated: true, completion:nil)
+        self.noticeSuccess("提问成功！")
     }
     
 

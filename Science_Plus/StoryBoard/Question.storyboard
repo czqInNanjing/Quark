@@ -577,7 +577,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3e-cR-iuG" customClass="StateButton" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
                                                 <state key="normal" image="up"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="imageNotClicked" value="up"/>
@@ -588,8 +588,8 @@
                                                     <action selector="agreeOrNot" destination="BxL-gD-FtH" eventType="touchDown" id="9cd-c9-sVv"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="赞同" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXM-ee-tNU" customClass="StateLabel" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="34" width="150" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赞同" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXM-ee-tNU" customClass="StateLabel" customModule="Science_Plus" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="33" width="150" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.71372549019607845" green="0.80000000000000004" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -607,7 +607,7 @@
                                         <rect key="frame" x="150" y="0.0" width="150" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDQ-rW-niR" customClass="StateButton" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
                                                 <state key="normal" image="down"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="imageNotClicked" value="down"/>
@@ -618,8 +618,8 @@
                                                     <action selector="helpOrNot" destination="BxL-gD-FtH" eventType="touchDown" id="mRR-fo-rx9"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" misplaced="YES" text="没有帮助" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-Qe-gho" customClass="StateLabel" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="34" width="150" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="没有帮助" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-Qe-gho" customClass="StateLabel" customModule="Science_Plus" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="33" width="150" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.71372549019607845" green="0.80000000000000004" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -637,7 +637,7 @@
                                         <rect key="frame" x="300" y="0.0" width="150" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvS-tp-Dgd" customClass="StateButton" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
                                                 <state key="normal" image="mark"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="imageNotClicked" value="mark"/>
@@ -648,8 +648,8 @@
                                                     <action selector="markOrNot" destination="BxL-gD-FtH" eventType="touchDown" id="1vl-0P-n5H"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNx-Ju-xxQ" customClass="StateLabel" customModule="Science_Plus" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="34" width="150" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNx-Ju-xxQ" customClass="StateLabel" customModule="Science_Plus" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="33" width="150" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" red="0.71372549019607845" green="0.80000000000000004" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -667,14 +667,14 @@
                                         <rect key="frame" x="450" y="0.0" width="150" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qd-i5-vI9">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
                                                 <state key="normal" image="comment"/>
                                                 <connections>
                                                     <segue destination="lZm-Ov-zsm" kind="show" identifier="showAnswerComment" id="kgs-5m-4WY"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="评论" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoT-qX-lOf">
-                                                <rect key="frame" x="0.0" y="34" width="150" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoT-qX-lOf">
+                                                <rect key="frame" x="0.0" y="33" width="150" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" red="0.71372549019607845" green="0.80000000000000004" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
