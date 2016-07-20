@@ -9,14 +9,10 @@
 import UIKit
 
 class PersonDetailTableViewController: UITableViewController {
-    
-    private struct identifier{
-        static let showPersonDetail="showPersonDetail"
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("PersonDetailTableViewController")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,19 +25,6 @@ class PersonDetailTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("self.parentViewController)")
-        if segue.identifier == identifier.showPersonDetail {
-            print(self.parentViewController)
-            if let parent = self.parentViewController as? UINavigationController{
-                
-                if let main = parent.parentViewController as? UITabBarController{
-                    main.tabBar.hidden = true
-                }
-            }
-        }
-    }
 
 
     // MARK: - Table view data source

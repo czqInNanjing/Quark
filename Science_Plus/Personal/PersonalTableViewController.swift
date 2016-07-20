@@ -25,6 +25,7 @@ class PersonalTableViewController: UITableViewController {
         static let showFocusQuestion="showFocusQuestion"
         static let showQuery="showQuery"
         static let showAnswerQuestion="showAnswerQuestion"
+        static let showPersonDetail="showPersonDetail"
     }
     
     override func viewDidLoad() {
@@ -100,6 +101,12 @@ class PersonalTableViewController: UITableViewController {
             case storyboard.showAnswerQuestion:
                 if let showFocusViewController = segue.destinationViewController as? MyAnswerTableViewController{
                     showFocusViewController.title="我回答的问题"
+                }
+            case storyboard.showPersonDetail:
+                if let parent = self.parentViewController as? UINavigationController{
+                    if let main = parent.parentViewController as? UITabBarController{
+                        main.tabBar.hidden = true
+                    }
                 }
             default:
                 break

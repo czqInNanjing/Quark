@@ -876,10 +876,11 @@
         <scene sceneID="zhb-5m-dNV">
             <objects>
                 <tableViewController id="H4w-xK-PCX" customClass="PersonDetailTableViewController" customModule="Science_Plus" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ol9-yG-cmQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ol9-yG-cmQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.81568627449999997" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="Ded-tI-y7k">
                                 <cells>
@@ -890,7 +891,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Ff-Nc-Qyg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="1Ff-Nc-Qyg">
                                                     <rect key="frame" x="16" y="10" width="53" height="53"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="53" id="M7Q-6l-eic"/>
@@ -1298,8 +1299,8 @@
                                                         <constraint firstAttribute="height" constant="18" id="kZP-ai-X0j"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="他的提问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qL-z0-sb8">
-                                                    <rect key="frame" x="53" y="11" width="60" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="他的提问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qL-z0-sb8">
+                                                    <rect key="frame" x="53" y="11" width="60" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="cPf-f5-zmK"/>
                                                     </constraints>
@@ -2518,7 +2519,7 @@
         <image name="restaurant" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8O5-Us-cw3"/>
+        <segue reference="1si-4m-Qqd"/>
         <segue reference="vzj-eP-lsn"/>
     </inferredMetricsTieBreakers>
 </document>
