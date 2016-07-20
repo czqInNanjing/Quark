@@ -37,7 +37,7 @@ class QuestionTableViewCell: UITableViewCell {
             title.text=nowQuestion.title
             upNumber.text = nowQuestion.bestAnswer!.praiseNum.str
             
-            nowQuestion.topics = ["汉字测试" , "汉字测试汉字测试" , "汉字测试汉字测试汉字测试汉字测试" , "汉字测试汉字测试汉字测试汉字测试" , "汉字测试" ,"汉字测试汉字测试"]
+//            nowQuestion.topics = ["汉字测试" , "汉字测试汉字测试" , "汉字测试汉字测试汉字测试汉字测试" , "汉字测试汉字测试汉字测试汉字测试" , "汉字测试" ,"汉字测试汉字测试"]
             
             
             MyTopicScrollView.config(topicScrollView, topics: nowQuestion.topics)

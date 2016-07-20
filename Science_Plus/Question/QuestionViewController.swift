@@ -22,10 +22,6 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     @IBOutlet var table:UITableView!
     
     
-    
-    /**当前显示的Section Row*/
-    private var currentIndex:NSIndexPath?
-    
     private var questionModel = QuestionListModel()
     
     
@@ -35,21 +31,19 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
         
         questionModel.getQuestionsByPage(questionTable:self)
         
-        table.infiniteScrollIndicatorView = CustomTableIndicator(frame: CGRectMake(0, 0, 24, 24))
-        table.addInfiniteScrollWithHandler { [weak self] (scrollView) -> Void in
+
+        table.addInfititeScroll {[weak self] (scrollView) -> Void in
             self?.questionModel.getQuestionsByPage(questionTable:self)
         }
-        
         table.addPullToRefresh
             { [weak self] () -> Void in
-                //TODO add logic
-                self?.table.dg_stopLoading()
+                self?.questionModel.refreshData(questionTable: self)
         }
         
         
     }
     
-
+    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return questionModel.getQuestions().count

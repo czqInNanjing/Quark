@@ -34,8 +34,9 @@ class QuestionListModel {
                 //handler(json)
                 
             }
-            
+            // stop the indicator animation
             qtable?.table.finishInfiniteScroll()
+            qtable?.table.dg_stopLoading()
             
         }
         print("current question page:\(currentPage)")
@@ -43,8 +44,12 @@ class QuestionListModel {
         
         
     }
-    
-    func refreshData(questionTable qtable:QuestionViewController) {
+    /**Refresh data, execute when pull to refresh*/
+    func refreshData(questionTable qtable:QuestionViewController?) {
+        questions.removeAll()
+        currentPage = 1
+        getQuestionsByPage(questionTable: qtable)
+        
         
     }
     

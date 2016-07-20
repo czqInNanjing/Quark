@@ -55,56 +55,59 @@
                     <navigationItem key="navigationItem" id="NLn-IV-PLb">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="S4I-AJ-zX2">
-                            <rect key="frame" x="39" y="5.5" width="240" height="33"/>
+                            <rect key="frame" x="180" y="5.5" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-UT-dgW">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="sJI-X5-B5i">
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJI-X5-B5i">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="28"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12z-d2-tFy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="1xk-zG-Csa"/>
+                                                    </constraints>
                                                     <state key="normal" title="提问"/>
                                                     <connections>
                                                         <action selector="changeCurrentPage:" destination="iy5-1t-NHc" eventType="touchUpInside" id="Tai-oq-sC7"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfp-Mz-PHF">
-                                                    <rect key="frame" x="140" y="0.0" width="100" height="28"/>
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="28"/>
                                                     <state key="normal" title="回答"/>
                                                     <connections>
                                                         <action selector="changeCurrentPage:" destination="iy5-1t-NHc" eventType="touchUpInside" id="GIU-qk-wn9"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Bfp-Mz-PHF" firstAttribute="width" secondItem="12z-d2-tFy" secondAttribute="width" id="hLx-JD-qcm"/>
-                                                <constraint firstItem="Bfp-Mz-PHF" firstAttribute="height" secondItem="12z-d2-tFy" secondAttribute="height" id="hnP-e9-unM"/>
-                                            </constraints>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hb7-eN-uhS">
                                             <rect key="frame" x="0.0" y="28" width="240" height="5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sS3-mR-toq">
+                                                    <rect key="frame" x="8" y="0.0" width="120" height="5"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="5" id="v4s-Ym-gIU"/>
+                                                <constraint firstItem="sS3-mR-toq" firstAttribute="width" secondItem="Hb7-eN-uhS" secondAttribute="width" multiplier="0.5" id="98g-H5-2vF"/>
+                                                <constraint firstItem="sS3-mR-toq" firstAttribute="height" secondItem="Hb7-eN-uhS" secondAttribute="height" id="Gpt-cC-JTl"/>
+                                                <constraint firstItem="sS3-mR-toq" firstAttribute="leading" secondItem="Hb7-eN-uhS" secondAttribute="leadingMargin" id="HNW-bQ-Otf"/>
+                                                <constraint firstItem="sS3-mR-toq" firstAttribute="top" secondItem="Hb7-eN-uhS" secondAttribute="top" id="oRL-So-5mt"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Hb7-eN-uhS" firstAttribute="top" secondItem="sJI-X5-B5i" secondAttribute="bottom" id="0ez-xf-jBZ"/>
-                                        <constraint firstItem="Hb7-eN-uhS" firstAttribute="top" secondItem="sJI-X5-B5i" secondAttribute="bottom" id="Iz6-jB-cdo"/>
                                         <constraint firstItem="sJI-X5-B5i" firstAttribute="top" secondItem="Hc2-UT-dgW" secondAttribute="top" id="LAK-1S-oDf"/>
-                                        <constraint firstAttribute="bottom" secondItem="Hb7-eN-uhS" secondAttribute="bottom" id="RSv-rl-2wQ"/>
+                                        <constraint firstItem="Hb7-eN-uhS" firstAttribute="top" secondItem="Hc2-UT-dgW" secondAttribute="top" constant="28" id="PPq-2L-OBb"/>
                                         <constraint firstItem="sJI-X5-B5i" firstAttribute="leading" secondItem="Hc2-UT-dgW" secondAttribute="leading" id="THi-mf-ACn"/>
-                                        <constraint firstAttribute="trailing" secondItem="Hb7-eN-uhS" secondAttribute="trailing" id="b2H-K4-NY9"/>
                                         <constraint firstAttribute="trailing" secondItem="sJI-X5-B5i" secondAttribute="trailing" id="e4y-Cu-cxG"/>
-                                        <constraint firstItem="Hb7-eN-uhS" firstAttribute="leading" secondItem="Hc2-UT-dgW" secondAttribute="leading" id="rDm-7y-zMF"/>
+                                        <constraint firstItem="Hb7-eN-uhS" firstAttribute="leading" secondItem="sJI-X5-B5i" secondAttribute="leading" id="ti4-NW-lRk"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="Hc2-UT-dgW" firstAttribute="top" secondItem="S4I-AJ-zX2" secondAttribute="top" id="EQJ-Ad-p5n"/>
                                 <constraint firstItem="Hc2-UT-dgW" firstAttribute="leading" secondItem="S4I-AJ-zX2" secondAttribute="leading" id="Mwq-4L-v7g"/>
@@ -114,7 +117,7 @@
                         </view>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="BND-Ci-9pM">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T7M-xf-6hq">
-                                <rect key="frame" x="285" y="13" width="19" height="18"/>
+                                <rect key="frame" x="561" y="13" width="19" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="add-button"/>
                                 <connections>
@@ -125,6 +128,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addQuestionButton" destination="T7M-xf-6hq" id="HRa-pR-h6Z"/>
+                        <outlet property="indicator" destination="sS3-mR-toq" id="fGH-SA-caN"/>
                         <outlet property="sliderView" destination="Hb7-eN-uhS" id="0pF-Wr-s7z"/>
                         <segue destination="MqK-wf-e5V" kind="show" identifier="showQuestionDetail" id="4jg-FJ-kzF"/>
                     </connections>

@@ -54,6 +54,7 @@ extension Int {
 extension UIScrollView {
     func dg_stopScrollingAnimation() {}
     
+    /**Remember to call dg_stopLoading at the end of the process*/
     func addPullToRefresh(tintColor:UIColor = UIColor.defaultTintColor , backgroundColor:UIColor = UIColor.defaultBackgroundColor , loadingView: DGElasticPullToRefreshLoadingView = DGElasticPullToRefreshLoadingViewCircle(),  actionHandler: () -> Void) {
         loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
         dg_setPullToRefreshFillColor(tintColor)
@@ -61,5 +62,12 @@ extension UIScrollView {
         dg_addPullToRefreshWithActionHandler(actionHandler,loadingView: loadingView)
         
     }
+    
+    
+    func addInfititeScroll(actionHandler: ((AnyObject!) -> Void)!) {
+        infiniteScrollIndicatorView = CustomTableIndicator(frame: CGRectMake(0, 0, 24, 24))
+        addInfiniteScrollWithHandler(actionHandler)
+    }
+    
     
 }
