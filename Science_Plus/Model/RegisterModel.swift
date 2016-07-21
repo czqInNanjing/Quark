@@ -17,8 +17,7 @@ class RegisterModel{
         self.email=email
         self.password=password
         self.inviteCode=inviteCode
-        
-        //HttpHandler.regist(self.email, passwd: self.password)
+//        return HttpHandler.regist(self.email, passwd: self.password)
         return HttpHandler.regist_invite(self.email, passwd: self.password, inviteCode: self.inviteCode)
     }
 }

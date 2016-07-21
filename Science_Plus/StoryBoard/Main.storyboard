@@ -91,7 +91,7 @@
                                     <action selector="dealWithRegister:" destination="uIk-s1-5pL" eventType="touchDown" id="Bmk-Iu-lRv"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="EzH-Kd-AD7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="EzH-Kd-AD7">
                                 <rect key="frame" x="208" y="36" width="184" height="84"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CER-Zg-Ivw">
@@ -134,7 +134,7 @@
                                     <color key="titleColor" red="0.2274509804" green="0.23137254900000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9Yr-YS-iJR" kind="show" id="mwe-af-Gbh"/>
+                                    <segue destination="9Yr-YS-iJR" kind="show" identifier="" id="mwe-af-Gbh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,6 +180,7 @@
                         <outlet property="mainField" destination="khi-PN-RaD" id="d1N-GJ-5yC"/>
                         <outlet property="passwordField" destination="QHU-qR-pRX" id="C1E-pO-h9z"/>
                         <outlet property="registerButton" destination="sLc-Ht-qdt" id="bGq-fJ-CEb"/>
+                        <segue destination="9Yr-YS-iJR" kind="show" identifier="registerSuccess" id="W7A-xz-8ls"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRs-po-Kox" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,7 +246,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnI-dw-Zbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-950" y="1003"/>
+            <point key="canvasLocation" x="-1097.5" y="1004"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="AzH-5v-Q8V">
@@ -314,7 +315,7 @@
                                     <action selector="dealWithLogin:" destination="9Yr-YS-iJR" eventType="touchDown" id="ffg-zE-nfF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qt3-zc-wFa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qt3-zc-wFa">
                                 <rect key="frame" x="208" y="36" width="184" height="84"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASC-IP-yPZ">
@@ -424,4 +425,7 @@
         <image name="guanzhu" width="24" height="24"/>
         <image name="xiaoxi" width="22" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="W7A-xz-8ls"/>
+    </inferredMetricsTieBreakers>
 </document>

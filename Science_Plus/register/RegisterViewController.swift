@@ -39,6 +39,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func dealWithRegister(sender: UIButton){
+        print("email:  \(mainField.text!)   password:  \(passwordField.text!)    inviteCode:  \(inviteCodeField.text!)")
         let code=registerModel.register(mainField.text!, password: passwordField.text!, inviteCode: inviteCodeField.text!)
         var key = 0
         if code > 0{
@@ -51,13 +52,13 @@ class RegisterViewController: UIViewController {
         print("key:\(key)    \(code)")
         
         if let message_show=someMessage.showMessages[key]{
-            let alertController = UIAlertController(title: message_show, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-            let delay = 2.0 * Double(NSEC_PER_SEC)
-            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-            dispatch_after(time, dispatch_get_main_queue(), {
-                alertController.dismissViewControllerAnimated(true, completion: nil)
-            })
-            self.presentViewController(alertController, animated: true, completion:nil)
+            if key==1{
+                self.noticeSuccess(message_show)
+                self.performSegueWithIdentifier("registerSuccess", sender: self)
+            }
+            else{
+                self.noticeError(message_show)
+            }
         }
         
         if key == 1{
@@ -66,7 +67,6 @@ class RegisterViewController: UIViewController {
         }
     }
     
-
     /*
     // MARK: - Navigation
 
