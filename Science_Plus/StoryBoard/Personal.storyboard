@@ -1449,10 +1449,10 @@
             </objects>
             <point key="canvasLocation" x="2367" y="1869"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Person Detail Edit Table View Controller-->
         <scene sceneID="XTE-4V-6Ol">
             <objects>
-                <tableViewController id="tXZ-Bf-HBr" sceneMemberID="viewController">
+                <tableViewController id="tXZ-Bf-HBr" customClass="PersonDetailEditTableViewController" customModule="Science_Plus" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OmW-DQ-sCL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1468,8 +1468,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="A2v-Mb-UZr">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="A2v-Mb-UZr">
                                                     <rect key="frame" x="16" y="14" width="53" height="53"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="53" id="058-Ag-61q"/>
                                                         <constraint firstAttribute="height" constant="53" id="UUJ-xP-zu3"/>
@@ -1479,6 +1480,9 @@
                                                             <real key="value" value="26.5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="Y7Y-mD-OSI" appends="YES" id="TRI-kM-wVy"/>
+                                                    </connections>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="蒋易成" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVi-BT-z7R">
                                                     <rect key="frame" x="83" y="12" width="46" height="15"/>
@@ -1706,8 +1710,16 @@
                     <navigationItem key="navigationItem" id="oRW-hd-gwU">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="u5j-2i-qOu"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="A2v-Mb-UZr" id="8jF-lp-obI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBt-C7-WHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Y7Y-mD-OSI">
+                    <connections>
+                        <action selector="picker:" destination="tXZ-Bf-HBr" id="yhl-3d-30K"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3087" y="1869"/>
         </scene>

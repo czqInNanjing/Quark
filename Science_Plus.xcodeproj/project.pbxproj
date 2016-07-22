@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044389661D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */; };
 		27B734066AF88A5F838CB7CF /* Pods_Science_Plus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55365EC3702112BF7EF2F81B /* Pods_Science_Plus.framework */; };
 		F743221E1D40E39C00316E6C /* AnswerTheQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321BD1D40E39C00316E6C /* AnswerTheQuestionViewController.swift */; };
 		F743221F1D40E39C00316E6C /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321BF1D40E39C00316E6C /* AddCommentViewController.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonDetailEditTableViewController.swift; path = Science_Plus/Controller/Personal/PersonDetailEditTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		44BB97955665B6557CFBE43B /* Pods-Science_Plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Science_Plus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Science_Plus/Pods-Science_Plus.debug.xcconfig"; sourceTree = "<group>"; };
 		55365EC3702112BF7EF2F81B /* Pods_Science_Plus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Science_Plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9567110461E3777EC7801A8 /* Pods-Science_Plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Science_Plus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Science_Plus/Pods-Science_Plus.release.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				F74321D11D40E39C00316E6C /* PersonalTableViewController.swift */,
 				F74321D21D40E39C00316E6C /* PersonDataChangeViewControllerTableViewController.swift */,
 				F74321D31D40E39C00316E6C /* PersonDetailTableViewController.swift */,
+				044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */,
 			);
 			path = personal;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				F743223F1D40E39C00316E6C /* RegisterViewController.swift in Sources */,
 				F74322441D40E39C00316E6C /* AnswerStateChangeModel.swift in Sources */,
 				F74322461D40E39C00316E6C /* CommentViewModel.swift in Sources */,
+				044389661D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift in Sources */,
 				F74322671D40E39C00316E6C /* TimeTransfer.swift in Sources */,
 				F743224D1D40E39C00316E6C /* User.swift in Sources */,
 				F74322291D40E39C00316E6C /* FocusQuestionTableViewController.swift in Sources */,
