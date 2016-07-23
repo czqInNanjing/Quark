@@ -124,6 +124,7 @@ class TotalViewController: UIViewController {
                 main.tabBar.hidden = false
             }
         }
+        navigationController?.navigationBar.hidden=false
     }
     
     

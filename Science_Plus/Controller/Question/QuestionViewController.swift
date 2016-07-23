@@ -15,6 +15,7 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     private struct storyboard {
         static let questionCell = "QuestionCell"
         static let questionDetail =  "showQuestionDetail"
+        static let search = "search"
     }
     
     
@@ -31,7 +32,7 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
         
         questionModel.getQuestionsByPage(questionTable:self)
         
-
+        
         table.addInfititeScroll {[weak self] (scrollView) -> Void in
             self?.questionModel.getQuestionsByPage(questionTable:self)
         }
@@ -43,6 +44,9 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        navigationController?.navigationBar.hidden=false
+    }
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -69,6 +73,28 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
         
     }
     
+    @IBAction func search(){
+        print("tap !!!")
+        self.performSegueWithIdentifier(storyboard.search, sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == storyboard.search {
+            print(self.parentViewController)
+            if let parent = self.parentViewController as? UIPageViewController{
+                print(parent.parentViewController)
+                if let main = parent.parentViewController as? TotalViewController{
+                    if let parent2 = main.parentViewController as? UINavigationController{
+                        if let main2 = parent2.parentViewController as? UITabBarController{
+                            main2.tabBar.hidden = true
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+    }
     
     
     //    func loadNewData(){
