@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		044389661D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */; };
+		046E60281D439D31003AEDD4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E60271D439D31003AEDD4 /* SearchViewController.swift */; };
 		27B734066AF88A5F838CB7CF /* Pods_Science_Plus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55365EC3702112BF7EF2F81B /* Pods_Science_Plus.framework */; };
 		F743221E1D40E39C00316E6C /* AnswerTheQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321BD1D40E39C00316E6C /* AnswerTheQuestionViewController.swift */; };
 		F743221F1D40E39C00316E6C /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321BF1D40E39C00316E6C /* AddCommentViewController.swift */; };
@@ -88,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonDetailEditTableViewController.swift; path = Science_Plus/Controller/Personal/PersonDetailEditTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		046E60271D439D31003AEDD4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Science_Plus/Controller/Question/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		44BB97955665B6557CFBE43B /* Pods-Science_Plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Science_Plus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Science_Plus/Pods-Science_Plus.debug.xcconfig"; sourceTree = "<group>"; };
 		55365EC3702112BF7EF2F81B /* Pods_Science_Plus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Science_Plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9567110461E3777EC7801A8 /* Pods-Science_Plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Science_Plus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Science_Plus/Pods-Science_Plus.release.xcconfig"; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				F74321E41D40E39C00316E6C /* QuestionViewController.swift */,
 				F74321E51D40E39C00316E6C /* ShowAnswerDetailViewController.swift */,
 				F74321E61D40E39C00316E6C /* TotalViewController.swift */,
+				046E60271D439D31003AEDD4 /* SearchViewController.swift */,
 			);
 			path = question;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				F74322651D40E39C00316E6C /* ScrollPager.swift in Sources */,
 				F74322221D40E39C00316E6C /* NoticAgreeTableViewCell.swift in Sources */,
 				F74322681D40E39C00316E6C /* Constants.swift in Sources */,
+				046E60281D439D31003AEDD4 /* SearchViewController.swift in Sources */,
 				F74322251D40E39C00316E6C /* letterTableViewController.swift in Sources */,
 				F743225E1D40E39C00316E6C /* ColorStateButton.swift in Sources */,
 				F74322631D40E39C00316E6C /* StateLabel.swift in Sources */,

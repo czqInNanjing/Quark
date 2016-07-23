@@ -33,8 +33,6 @@
 		<key>NSExceptionDomains</key>
 		<dict/>
 	</dict>
-	<key>UILaunchStoryboardName</key>
-	<string>LanuchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

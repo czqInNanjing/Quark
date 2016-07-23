@@ -37,6 +37,10 @@ class QuestionNeedAnswerViewController: UIViewController ,UITableViewDataSource,
         
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.navigationBar.hidden=false
+    }
 
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -71,13 +75,13 @@ class QuestionNeedAnswerViewController: UIViewController ,UITableViewDataSource,
         
         if segue.identifier == storyboard.addAnswer{
             print("addAnswerFromQuestionNeedAnswer")
-            if let temp = self.parentViewController as? TotalViewController{
-                print("yes total")
-                if let parent = temp.parentViewController as? UINavigationController{
-                    print("yes navi")
-                    if let main = parent.parentViewController as? UITabBarController{
-                        main.tabBar.hidden = true
-                        print("yes hidden")
+            if let parent = self.parentViewController as? UIPageViewController{
+                print(parent.parentViewController)
+                if let main = parent.parentViewController as? TotalViewController{
+                    if let parent2 = main.parentViewController as? UINavigationController{
+                        if let main2 = parent2.parentViewController as? UITabBarController{
+                            main2.tabBar.hidden = true
+                        }
                     }
                 }
                 

@@ -48,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                  NSFontAttributeName:barFont]
         }
         
+//        NSThread.sleepForTimeInterval(3.0)//延长3秒  
         
         return true
     }
