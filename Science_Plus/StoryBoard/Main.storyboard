@@ -199,7 +199,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="Slf-9Q-zUP" kind="relationship" relationship="viewControllers" id="Yx6-9U-Om7"/>
-                        <segue destination="QM7-t1-Tge" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="KaD-4I-agu" kind="relationship" relationship="viewControllers" id="pWK-r1-j8b"/>
                         <segue destination="lIx-5p-bNf" kind="relationship" relationship="viewControllers" id="2LF-6R-wQN"/>
                     </connections>
@@ -207,16 +206,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Following-->
-        <scene sceneID="BaT-4k-Oic">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Following" id="QM7-t1-Tge" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="关注" image="guanzhu" id="6Om-0Z-lGo"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qW7-8D-kDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="360"/>
         </scene>
         <!--Messages-->
         <scene sceneID="hLS-TY-1Db">
@@ -422,7 +411,6 @@
         <image name="Logo" width="184" height="84"/>
         <image name="faxian" width="21" height="23"/>
         <image name="geren" width="20" height="22"/>
-        <image name="guanzhu" width="24" height="24"/>
         <image name="xiaoxi" width="22" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>

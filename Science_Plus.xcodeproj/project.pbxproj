@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040E50EF1D44613B0062148F /* PeopleRelationToFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E50EE1D44613B0062148F /* PeopleRelationToFocus.swift */; };
 		044389661D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */; };
 		046E60281D439D31003AEDD4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E60271D439D31003AEDD4 /* SearchViewController.swift */; };
 		27B734066AF88A5F838CB7CF /* Pods_Science_Plus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55365EC3702112BF7EF2F81B /* Pods_Science_Plus.framework */; };
@@ -88,6 +89,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040E50EE1D44613B0062148F /* PeopleRelationToFocus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleRelationToFocus.swift; path = Science_Plus/Model/PeopleRelationToFocus.swift; sourceTree = SOURCE_ROOT; };
 		044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonDetailEditTableViewController.swift; path = Science_Plus/Controller/Personal/PersonDetailEditTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		046E60271D439D31003AEDD4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Science_Plus/Controller/Question/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		44BB97955665B6557CFBE43B /* Pods-Science_Plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Science_Plus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Science_Plus/Pods-Science_Plus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				F74321F61D40E39C00316E6C /* QusetionDetailModel.swift */,
 				F74321F71D40E39C00316E6C /* RegisterModel.swift */,
 				F74321F81D40E39C00316E6C /* User.swift */,
+				040E50EE1D44613B0062148F /* PeopleRelationToFocus.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				F743221E1D40E39C00316E6C /* AnswerTheQuestionViewController.swift in Sources */,
 				F743225B1D40E39C00316E6C /* ClassExtension.swift in Sources */,
 				F743224A1D40E39C00316E6C /* QuestionNeedAnswerModel.swift in Sources */,
+				040E50EF1D44613B0062148F /* PeopleRelationToFocus.swift in Sources */,
 				F74322301D40E39C00316E6C /* QueryTagViewController.swift in Sources */,
 				F74322231D40E39C00316E6C /* NoticAnswerTableViewCell.swift in Sources */,
 				F74322241D40E39C00316E6C /* NoticOtherTableViewCell.swift in Sources */,
