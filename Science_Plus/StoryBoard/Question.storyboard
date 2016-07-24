@@ -225,7 +225,7 @@
                                         <rect key="frame" x="0.0" y="72" width="600" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nz5-rn-RGx" id="Mvb-61-VNQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="152.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0D-lC-vj9">
@@ -435,7 +435,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="isp-c1-VB3" id="tsX-ob-i34">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="112.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-JQ-vB4">
@@ -839,31 +839,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tip" translatesAutoresizingMaskIntoConstraints="NO" id="wm6-zs-nTS">
-                                <rect key="frame" x="17" y="30" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="8Z6-No-gxM"/>
-                                    <constraint firstAttribute="width" constant="24" id="Zbe-PA-OWX"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这些问题需要你的知识" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrI-RT-n6z">
-                                <rect key="frame" x="53" y="33" width="140" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="YNq-0H-rJi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="112" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pgK-ze-qNU">
-                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" spacing="5" id="1gS-VB-Pve">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-7M-sIX">
+                                            <rect key="frame" x="0.0" y="0.0" width="8" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="8" id="Xan-XE-eCs"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tip" translatesAutoresizingMaskIntoConstraints="NO" id="wm6-zs-nTS">
+                                            <rect key="frame" x="13" y="0.0" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="4X2-rD-Asz"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这些问题需要你的知识" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrI-RT-n6z">
+                                            <rect key="frame" x="42" y="0.0" width="558" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionNeedAnswerCell" id="DIA-qG-4Y1" customClass="QuestionNeedAnswerTableViewCell" customModule="Science_Plus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="112"/>
+                                        <rect key="frame" x="0.0" y="52" width="600" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DIA-qG-4Y1" id="MDZ-7f-MSD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="111"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="111.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你见过哪些神一样的操作？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkC-2J-2mo">
@@ -966,12 +974,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wm6-zs-nTS" firstAttribute="leading" secondItem="smG-Z5-nwN" secondAttribute="leadingMargin" constant="-3" id="9Vb-EU-jsD"/>
-                            <constraint firstItem="wm6-zs-nTS" firstAttribute="top" secondItem="DOf-ck-W8g" secondAttribute="bottom" constant="10" id="USo-tb-A7P"/>
-                            <constraint firstItem="MrI-RT-n6z" firstAttribute="top" secondItem="DOf-ck-W8g" secondAttribute="bottom" constant="13" id="emn-Jb-bms"/>
+                            <constraint firstItem="pgK-ze-qNU" firstAttribute="top" secondItem="DOf-ck-W8g" secondAttribute="bottom" constant="8" id="47U-DR-WvQ"/>
                             <constraint firstItem="pgK-ze-qNU" firstAttribute="leading" secondItem="smG-Z5-nwN" secondAttribute="leadingMargin" constant="-20" id="f3e-0o-w6d"/>
-                            <constraint firstItem="MrI-RT-n6z" firstAttribute="leading" secondItem="wm6-zs-nTS" secondAttribute="trailing" constant="12" id="hNJ-T6-mTi"/>
-                            <constraint firstItem="pgK-ze-qNU" firstAttribute="top" secondItem="MrI-RT-n6z" secondAttribute="bottom" constant="13" id="mPi-e9-lyR"/>
                             <constraint firstItem="V3h-5y-eas" firstAttribute="top" secondItem="pgK-ze-qNU" secondAttribute="bottom" id="sze-0B-bso"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pgK-ze-qNU" secondAttribute="trailing" constant="-20" id="w1o-Q0-cMS"/>
                         </constraints>
@@ -982,7 +986,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbe-fB-J6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="-2045"/>
+            <point key="canvasLocation" x="2047" y="-2045"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Sji-Dk-56p">

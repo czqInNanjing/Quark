@@ -86,6 +86,7 @@
 		F74322661D40E39C00316E6C /* TestUITabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221A1D40E39C00316E6C /* TestUITabTableViewCell.swift */; };
 		F74322671D40E39C00316E6C /* TimeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221B1D40E39C00316E6C /* TimeTransfer.swift */; };
 		F74322681D40E39C00316E6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221D1D40E39C00316E6C /* Constants.swift */; };
+		F7D593871D43AE7600C6D436 /* ModelName.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7D593851D43AE7600C6D436 /* ModelName.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +173,7 @@
 		F743221A1D40E39C00316E6C /* TestUITabTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUITabTableViewCell.swift; sourceTree = "<group>"; };
 		F743221B1D40E39C00316E6C /* TimeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTransfer.swift; sourceTree = "<group>"; };
 		F743221D1D40E39C00316E6C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F7D593861D43AE7600C6D436 /* ModelName.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelName.xcdatamodel; sourceTree = "<group>"; };
 		F7EB5BD21CDD80DA007B5D64 /* Science_Plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Science_Plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -452,6 +454,14 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		F7D593841D43AE3D00C6D436 /* persistance */ = {
+			isa = PBXGroup;
+			children = (
+				F7D593851D43AE7600C6D436 /* ModelName.xcdatamodeld */,
+			);
+			path = persistance;
+			sourceTree = "<group>";
+		};
 		F7EB5BC91CDD80DA007B5D64 = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +483,7 @@
 		F7EB5BD41CDD80DA007B5D64 /* Science_Plus */ = {
 			isa = PBXGroup;
 			children = (
+				F7D593841D43AE3D00C6D436 /* persistance */,
 				F74321BB1D40E39C00316E6C /* controller */,
 				F74321E91D40E39C00316E6C /* entity */,
 				F74321EC1D40E39C00316E6C /* model */,
@@ -650,6 +661,7 @@
 				F743224D1D40E39C00316E6C /* User.swift in Sources */,
 				F74322291D40E39C00316E6C /* FocusQuestionTableViewController.swift in Sources */,
 				F74322451D40E39C00316E6C /* CommentAddedModel.swift in Sources */,
+				F7D593871D43AE7600C6D436 /* ModelName.xcdatamodeld in Sources */,
 				F74322271D40E39C00316E6C /* MessageViewController.swift in Sources */,
 				F743222B1D40E39C00316E6C /* MyAnswerTableViewController.swift in Sources */,
 				F74322401D40E39C00316E6C /* Answer.swift in Sources */,
@@ -823,6 +835,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F7D593851D43AE7600C6D436 /* ModelName.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F7D593861D43AE7600C6D436 /* ModelName.xcdatamodel */,
+			);
+			currentVersion = F7D593861D43AE7600C6D436 /* ModelName.xcdatamodel */;
+			path = ModelName.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F7EB5BCA1CDD80DA007B5D64 /* Project object */;
 }
