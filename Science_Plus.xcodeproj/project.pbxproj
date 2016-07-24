@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		040E50EF1D44613B0062148F /* PeopleRelationToFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E50EE1D44613B0062148F /* PeopleRelationToFocus.swift */; };
+		040E51111D4492F70062148F /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E51101D4492F70062148F /* FieldViewController.swift */; };
+		040E51161D4497D80062148F /* FieldQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E51151D4497D80062148F /* FieldQuestionTableViewCell.swift */; };
 		044389661D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */; };
 		046E60281D439D31003AEDD4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E60271D439D31003AEDD4 /* SearchViewController.swift */; };
 		27B734066AF88A5F838CB7CF /* Pods_Science_Plus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55365EC3702112BF7EF2F81B /* Pods_Science_Plus.framework */; };
@@ -91,6 +93,8 @@
 
 /* Begin PBXFileReference section */
 		040E50EE1D44613B0062148F /* PeopleRelationToFocus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleRelationToFocus.swift; path = Science_Plus/Model/PeopleRelationToFocus.swift; sourceTree = SOURCE_ROOT; };
+		040E51101D4492F70062148F /* FieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldViewController.swift; path = Science_Plus/Controller/Personal/FieldViewController.swift; sourceTree = SOURCE_ROOT; };
+		040E51151D4497D80062148F /* FieldQuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonDetailEditTableViewController.swift; path = Science_Plus/Controller/Personal/PersonDetailEditTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		046E60271D439D31003AEDD4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Science_Plus/Controller/Question/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		44BB97955665B6557CFBE43B /* Pods-Science_Plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Science_Plus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Science_Plus/Pods-Science_Plus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040E51141D4495F20062148F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				040E51151D4497D80062148F /* FieldQuestionTableViewCell.swift */,
+			);
+			name = cell;
+			path = ../../Controller/Personal/cell;
+			sourceTree = "<group>";
+		};
 		86A29458A5664CEB92C56F60 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +292,7 @@
 		F74321CD1D40E39C00316E6C /* personal */ = {
 			isa = PBXGroup;
 			children = (
+				040E51141D4495F20062148F /* cell */,
 				F74321CE1D40E39C00316E6C /* FocusQuestionTableViewController.swift */,
 				F74321CF1D40E39C00316E6C /* FocusTableViewController.swift */,
 				F74321D01D40E39C00316E6C /* MyAnswerTableViewController.swift */,
@@ -286,6 +300,7 @@
 				F74321D21D40E39C00316E6C /* PersonDataChangeViewControllerTableViewController.swift */,
 				F74321D31D40E39C00316E6C /* PersonDetailTableViewController.swift */,
 				044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */,
+				040E51101D4492F70062148F /* FieldViewController.swift */,
 			);
 			path = personal;
 			sourceTree = "<group>";
@@ -648,6 +663,7 @@
 				F743224C1D40E39C00316E6C /* RegisterModel.swift in Sources */,
 				F743225D1D40E39C00316E6C /* SwiftNotice.swift in Sources */,
 				F743223C1D40E39C00316E6C /* QuestionViewController.swift in Sources */,
+				040E51161D4497D80062148F /* FieldQuestionTableViewCell.swift in Sources */,
 				F743222A1D40E39C00316E6C /* FocusTableViewController.swift in Sources */,
 				F74322261D40E39C00316E6C /* MessageDetailViewController.swift in Sources */,
 				F74322591D40E39C00316E6C /* AppDelegate.swift in Sources */,
@@ -692,6 +708,7 @@
 				F74322381D40E39C00316E6C /* Comment.swift in Sources */,
 				F743222D1D40E39C00316E6C /* PersonDataChangeViewControllerTableViewController.swift in Sources */,
 				F743224E1D40E39C00316E6C /* HttpConstants.swift in Sources */,
+				040E51111D4492F70062148F /* FieldViewController.swift in Sources */,
 				F74322431D40E39C00316E6C /* AnswerDetailModel.swift in Sources */,
 				F74322421D40E39C00316E6C /* AnswerAddedModel.swift in Sources */,
 			);
