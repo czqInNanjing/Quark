@@ -3,5 +3,9 @@
 //
 
 
+/** Bridging header file*/
 
-#import "UIScrollView+InfiniteScroll.h"
+#import <UIScrollView_InfiniteScroll/UIScrollView+InfiniteScroll.h>
+#import <AFNetworking/AFNetworking.h>
+#import <Qiniu/QiniuSDK.h>
+#import <HappyDNS/HappyDNS.h>

@@ -11,4 +11,5 @@ target 'Science_Plus' do
   pod 'DGElasticPullToRefresh'
   pod 'UIScrollView-InfiniteScroll'
   pod 'ObjectMapper', '~> 1.3'
+  pod 'Qiniu', '~> 7.1'
 end
