@@ -88,6 +88,7 @@
 		F74322661D40E39C00316E6C /* TestUITabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221A1D40E39C00316E6C /* TestUITabTableViewCell.swift */; };
 		F74322671D40E39C00316E6C /* TimeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221B1D40E39C00316E6C /* TimeTransfer.swift */; };
 		F74322681D40E39C00316E6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221D1D40E39C00316E6C /* Constants.swift */; };
+		F753E8951D449B7000AE3BC5 /* QiniuSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = F753E8941D449B7000AE3BC5 /* QiniuSDK.swift */; };
 		F7D593871D43AE7600C6D436 /* ModelName.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7D593851D43AE7600C6D436 /* ModelName.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -165,7 +166,6 @@
 		F743220A1D40E39C00316E6C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F743220B1D40E39C00316E6C /* Science_Plus-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Science_Plus-Bridging-Header.h"; sourceTree = "<group>"; };
 		F743220C1D40E39C00316E6C /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
-		F743220D1D40E39C00316E6C /* UIScrollView+InfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+InfiniteScroll.h"; sourceTree = "<group>"; };
 		F74322101D40E39C00316E6C /* ColorStateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStateButton.swift; sourceTree = "<group>"; };
 		F74322111D40E39C00316E6C /* StateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateButton.swift; sourceTree = "<group>"; };
 		F74322131D40E39C00316E6C /* CustomTableIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableIndicator.swift; sourceTree = "<group>"; };
@@ -177,6 +177,7 @@
 		F743221A1D40E39C00316E6C /* TestUITabTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUITabTableViewCell.swift; sourceTree = "<group>"; };
 		F743221B1D40E39C00316E6C /* TimeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTransfer.swift; sourceTree = "<group>"; };
 		F743221D1D40E39C00316E6C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F753E8941D449B7000AE3BC5 /* QiniuSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QiniuSDK.swift; path = upload/QiniuSDK.swift; sourceTree = "<group>"; };
 		F7D593861D43AE7600C6D436 /* ModelName.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelName.xcdatamodel; sourceTree = "<group>"; };
 		F7EB5BD21CDD80DA007B5D64 /* Science_Plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Science_Plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -384,6 +385,7 @@
 		F74321F91D40E39C00316E6C /* network */ = {
 			isa = PBXGroup;
 			children = (
+				F753E8931D449AC600AE3BC5 /* upload */,
 				F74321FA1D40E39C00316E6C /* HttpConstants.swift */,
 				F74321FB1D40E39C00316E6C /* HttpHandler.swift */,
 			);
@@ -414,8 +416,6 @@
 				F74322091D40E39C00316E6C /* ClassExtension.swift */,
 				F743220A1D40E39C00316E6C /* Info.plist */,
 				F743220B1D40E39C00316E6C /* Science_Plus-Bridging-Header.h */,
-				F743220C1D40E39C00316E6C /* SwiftNotice.swift */,
-				F743220D1D40E39C00316E6C /* UIScrollView+InfiniteScroll.h */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -447,6 +447,7 @@
 		F74322121D40E39C00316E6C /* indicator */ = {
 			isa = PBXGroup;
 			children = (
+				F743220C1D40E39C00316E6C /* SwiftNotice.swift */,
 				F74322131D40E39C00316E6C /* CustomTableIndicator.swift */,
 			);
 			path = indicator;
@@ -467,6 +468,14 @@
 				F743221D1D40E39C00316E6C /* Constants.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		F753E8931D449AC600AE3BC5 /* upload */ = {
+			isa = PBXGroup;
+			children = (
+				F753E8941D449B7000AE3BC5 /* QiniuSDK.swift */,
+			);
+			name = upload;
 			sourceTree = "<group>";
 		};
 		F7D593841D43AE3D00C6D436 /* persistance */ = {
@@ -498,13 +507,13 @@
 		F7EB5BD41CDD80DA007B5D64 /* Science_Plus */ = {
 			isa = PBXGroup;
 			children = (
+				F74322061D40E39C00316E6C /* support */,
 				F7D593841D43AE3D00C6D436 /* persistance */,
 				F74321BB1D40E39C00316E6C /* controller */,
 				F74321E91D40E39C00316E6C /* entity */,
 				F74321EC1D40E39C00316E6C /* model */,
 				F74321F91D40E39C00316E6C /* network */,
 				F74321FC1D40E39C00316E6C /* storyBoard */,
-				F74322061D40E39C00316E6C /* support */,
 				F743220E1D40E39C00316E6C /* tools */,
 				F743221C1D40E39C00316E6C /* utils */,
 			);
@@ -662,6 +671,7 @@
 				F74322611D40E39C00316E6C /* InfititeScrollerView.swift in Sources */,
 				F743224C1D40E39C00316E6C /* RegisterModel.swift in Sources */,
 				F743225D1D40E39C00316E6C /* SwiftNotice.swift in Sources */,
+				F753E8951D449B7000AE3BC5 /* QiniuSDK.swift in Sources */,
 				F743223C1D40E39C00316E6C /* QuestionViewController.swift in Sources */,
 				040E51161D4497D80062148F /* FieldQuestionTableViewCell.swift in Sources */,
 				F743222A1D40E39C00316E6C /* FocusTableViewController.swift in Sources */,

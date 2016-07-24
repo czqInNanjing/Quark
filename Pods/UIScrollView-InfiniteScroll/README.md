@@ -41,13 +41,26 @@ Objective-C:
         // just make sure to call finishInfiniteScroll in the end
         //
 
+        NSArray<NSIndexPath *> * indexPaths; // index paths of updated rows
+        
+        // make sure to update tableView before calling -finishInfiniteScroll
+        [tableView beginUpdates];
+        [tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView endUpdates];
+
         // finish infinite scroll animation
         [tableView finishInfiniteScroll];
     }];
 }
 ```
 
-Swift (with bridging header):
+Swift
+
+Before using InfiniteScroll you have to add the following line in your bridging header file: 
+
+```objc
+#import <UIScrollView_InfiniteScroll/UIScrollView+InfiniteScroll.h>
+```
 
 ```swift
 override func viewDidLoad() {
@@ -57,14 +70,20 @@ override func viewDidLoad() {
     tableView.infiniteScrollIndicatorStyle = .White
     
     // Add infinite scroll handler
-    tableView.addInfiniteScrollWithHandler { (scrollView) -> Void in
-        let tableView = scrollView as! UITableView
-        
+    tableView.addInfiniteScrollWithHandler { (tableView) -> Void in
         //
         // fetch your data here, can be async operation,
         // just make sure to call finishInfiniteScroll in the end
         //
+
+        let indexPaths = [NSIndexPath]() // index paths of updated rows
         
+        // make sure you update tableView before calling -finishInfiniteScroll
+        tableView.beginUpdates()
+        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+        tableView.endUpdates()
+        
+        // finish infinite scroll animation
         tableView.finishInfiniteScroll()
     }
 }
@@ -189,11 +208,53 @@ Please see example implementation of indicator view:
 
 At the moment InfiniteScroll uses indicator's frame directly so make sure you size custom indicator view beforehand. Such views as `UIImageView` or `UIActivityIndicatorView` will automatically resize themselves so no need to setup frame for them.
 
+### Prevent infinite scroll
+
+Sometimes you need to prevent the infinite scroll from continuing. For example, if your search API has no more results, it does not make sense to keep making the requests or to show the spinner.
+
+Objective-C: 
+```objc
+// Provide a block to be called right before a infinite scroll event is triggered.  Return YES to allow or NO to prevent it from triggering.
+[self.tableView setShouldShowInfiniteScrollHandler:^BOOL(UIScrollView *scrollView) {
+    // Only show up to 5 pages then prevent the infinite scroll
+    return (weakSelf.currentPage < 5);
+}];
+```
+
+### Seamlessly preload content
+
+Ideally you want your content to flow seamlessly without ever showing a spinner. Infinite scroll offers an option to specify offset in points that will be used to start preloader before user reaches the bottom of scroll view. 
+
+The proper balance between the number of results you load each time and large enough offset should give your users a decent experience. Most likely you will have to come up with your own formula for the combination of those based on kind of content and device dimensions.
+
+Objective-C:
+
+```objc
+// Preload more data 500pt before reaching the bottom of scroll view.
+tableView.infiniteScrollTriggerOffset = 500;
+```
+
 ### Contributors
 
+* [@GorkaMM](https://github.com/GorkaMM)<br/>
+  Added custom trigger offset
+* [@intrepidmatt](https://github.com/intrepidmatt)<br/>
+  Solved longstanding issue with dynamic updates in table views (see [#31](https://github.com/pronebird/UIScrollView-InfiniteScroll/issues/31))
+* Ryan Bertrand [@RyanBertrand](https://github.com/RyanBertrand)<br/>
+  Added a handler to conditionally prevent the infinite scroll from showing
+* Maxim Veksler [@maximveksler](https://github.com/maximveksler)<br/>
+  Swift 2.2 upgrade
+* Shigeyuki Takeuchi [@takeshig](https://github.com/takeshig)<br/>
+  Add Carthage support
 * Ivan Chirkov [@nsleader](https://github.com/nsleader)<br/>
   Custom indicators support
 * Alex Shevchenko [@skeeet](https://github.com/skeeet)<br/>
   Fix for bounce back glitch when content size is smaller than view bounds
 * Vlad [brightsider](https://github.com/brightsider)<br/>
   Add access to check loading status
+
+  .. and many others who reported issues and participated in conversations
+
+### Attributions
+
+Demo app icon by [PixelResort](http://appicontemplate.com/ios8/).
