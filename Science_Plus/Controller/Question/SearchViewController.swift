@@ -8,14 +8,17 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
-    @IBOutlet var searchBar:UISearchBar!
+class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate{
+    private var tableView:UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.hidden=true
-//        searchBar.scopeButtonTitles=["问题","人","领域"]
-        // Do any additional setup after loading the view.
+        tableView=UITableView(frame: self.view.frame, style: .Plain)
+        
+        self.view.addSubview(tableView)
+        
+    }
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,9 +26,9 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancel(){
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+//    @IBAction func cancel(){
+//        self.navigationController?.popViewControllerAnimated(true)
+//    }
 
     /*
     // MARK: - Navigation

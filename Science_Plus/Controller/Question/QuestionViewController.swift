@@ -12,6 +12,10 @@ import SwiftyJSON
 //问题列表页
 class QuestionViewController: UIViewController , UITableViewDataSource,UITableViewDelegate{
     
+    private var searchController:UISearchController!
+    
+    private var showController=SearchViewController()
+    
     private struct storyboard {
         static let questionCell = "QuestionCell"
         static let questionDetail =  "showQuestionDetail"
@@ -19,7 +23,7 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     }
     
     
-    @IBOutlet private var searchBar : UISearchBar!
+    
     @IBOutlet var table:UITableView!
     
     
@@ -29,6 +33,17 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchController=UISearchController(searchResultsController: showController)
+        searchController.searchBar.searchBarStyle = .Minimal
+        searchController.searchBar.sizeToFit()
+        searchController.dimsBackgroundDuringPresentation=true
+        
+        searchController.searchResultsUpdater = showController
+        //点击searchBar跳转到另一个页面
+        searchController.searchBar.delegate = showController
+        
+        table.tableHeaderView=searchController.searchBar
+
         
         questionModel.getQuestionsByPage(questionTable:self)
         
@@ -71,11 +86,6 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.parentViewController!.parentViewController!.performSegueWithIdentifier(storyboard.questionDetail, sender: questionModel.getQuestions()[indexPath.section][indexPath.row])
         
-    }
-    
-    @IBAction func search(){
-        print("tap !!!")
-        self.performSegueWithIdentifier(storyboard.search, sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

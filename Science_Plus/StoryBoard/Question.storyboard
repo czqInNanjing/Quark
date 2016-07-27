@@ -205,24 +205,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="153" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aDv-Qp-wnh">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" multipleTouchEnabled="YES" contentMode="redraw" searchBarStyle="prominent" id="COH-Zm-dtu">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <gestureRecognizers/>
-                                    <color key="tintColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="barTintColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                    <scopeButtonTitles>
-                                        <string>Title</string>
-                                        <string>Title</string>
-                                    </scopeButtonTitles>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="ajd-wd-vBT" appends="YES" id="b3j-GG-gL2"/>
-                                    </connections>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" id="Nz5-rn-RGx" customClass="QuestionTableViewCell" customModule="Science_Plus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="600" height="153"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nz5-rn-RGx" id="Mvb-61-VNQ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="152"/>
@@ -319,7 +304,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="COH-Zm-dtu" id="FAo-wq-SeK"/>
                         <outlet property="table" destination="aDv-Qp-wnh" id="nAv-zJ-7Hb"/>
                         <segue destination="kBw-eD-EuJ" kind="show" identifier="search" id="i2s-Sz-ZMB"/>
                     </connections>
