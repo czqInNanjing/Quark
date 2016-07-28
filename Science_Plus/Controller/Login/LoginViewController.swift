@@ -36,13 +36,17 @@ class LoginViewController: UIViewController {
             if let password = self.passwordField.text{
                 
                 HttpHandler.httpPost(HttpAPI.api_login, parameters: ["mail":mail , "password":password]) { [weak self] json in
-                    let token = json["message"]["token"].stringValue
+                    let token = json[HttpConstants.message][HttpConstants.token].stringValue
+                    let user_id = json[HttpConstants.message][HttpConstants.id].intValue
                     print(json)
                     print(token)
                     if token != ""{
                         HttpHandler.token = token
-                    self?.performSegueWithIdentifier("loginSuccess", sender: nil)
+                        self?.performSegueWithIdentifier("loginSuccess", sender: nil)
                         
+                    }
+                    if user_id != 0{
+                        PersonalTableViewController.setUserId(user_id)
                     }
                     self?.loginbutton.enabled = true
                 }
@@ -66,7 +70,7 @@ class LoginViewController: UIViewController {
         
     }
     
-       
+    
     
     /*
      // MARK: - Navigation

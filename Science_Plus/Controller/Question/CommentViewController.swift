@@ -32,7 +32,7 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
         super.viewWillAppear(true)
 //        self.table
         model.loadComment(self)
-        self.table.reloadData()
+//        self.table.reloadData()
         print("comment add ............")
 
     }

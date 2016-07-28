@@ -20,7 +20,7 @@ class Answer {
     
     var questionID:Int = 0
     
-    var user = User()
+    var user = Person()
     
     var isCollected = false
     var isDown = false
@@ -63,7 +63,7 @@ class Answer {
         answer.id = json["id"].intValue
         answer.content = json["content"].stringValue
         answer.praiseNum = json["praise_num"].intValue
-        answer.user = User.makeSimpleUser(json[HttpConstants.user])
+        answer.user = Person.makeSimplePerson(json[HttpConstants.user])
         
         return answer
         
@@ -82,7 +82,7 @@ class Answer {
         answer.createTime = json[HttpConstants.message]["create_time"].stringValue
         
         
-        answer.user = User.makeSimpleUser(json[HttpConstants.message][HttpConstants.writer])
+        answer.user = Person.makeSimplePerson(json[HttpConstants.message][HttpConstants.writer])
         answer.isCollected = json[HttpConstants.message]["is_collected"].boolValue
         answer.isDown = json[HttpConstants.message]["is_down"].boolValue
         answer.isPraised = json[HttpConstants.message]["is_praised"].boolValue

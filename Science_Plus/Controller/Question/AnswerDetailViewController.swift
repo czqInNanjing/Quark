@@ -124,7 +124,7 @@ class AnswerDetailViewController: UIViewController {
             name.text = newAnswer.user.name
             
             introduction.text = newAnswer.user.introduction
-            thumbnailImageView.image = UIImage(named: newAnswer.user.image)
+            thumbnailImageView.image = UIImage(named: newAnswer.user.img_url)
             
             upButton.selected = newAnswer.isPraised
             upState.enabled = newAnswer.isPraised

@@ -39,6 +39,9 @@ struct HttpAPI{
     static let api_praise = prefix + "/api/answer/praise"
     static let api_down = prefix + "/api/answer/down"
     static let api_collect = prefix + "/api/answer/collect"
+    static let api_userDetail=prefix+"/api/user/detail"
+    static let api_userFollowee=prefix+"/api/user/followee?"
+    static let api_userFollower=prefix+"/api/user/follower?"
 }
 
 
@@ -57,8 +60,11 @@ struct HttpConstants{
     static let answerPage = "answer_page"
     static let answerResult = "answers"
     static let answerId = "answer_id"
+    static let account_id="account_id"
     
+    static let token="token"
     
+    static let id="id"
     
 }
 

@@ -47,13 +47,13 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
         table.tableHeaderView=searchController.searchBar
         
         
-        searchController.searchBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "viewTap"))
+//        searchController.searchBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "viewTap"))
         
         questionModel.getQuestionsByPage(questionTable:self)
         
-        if searchController.active {
-            print("sssssss")
-        }
+//        if searchController.active {
+//            print("sssssss")
+//        }
         
         
         table.addInfititeScroll {[weak self] (scrollView) -> Void in

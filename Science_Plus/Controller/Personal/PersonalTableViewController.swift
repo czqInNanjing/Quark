@@ -16,7 +16,9 @@ class PersonalTableViewController: UITableViewController {
     @IBOutlet var upNumber:UIButton!
     @IBOutlet var focusNumber:UIButton!
     @IBOutlet var fansNumber:UIButton!
-
+    
+    private var model=PersonShowModel()
+    
     private struct storyboard{
         static let showFocus="showFocus"
         static let showFans="showFans"
@@ -26,40 +28,53 @@ class PersonalTableViewController: UITableViewController {
         static let showQuery="showQuery"
         static let showAnswerQuestion="showAnswerQuestion"
         static let showPersonDetail="showPersonDetail"
+        static var user_id=3
+
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        
-        nameL.text="蒋易成"
-        nameL.textColor=UIColor(red: 23/255, green: 68/255, blue: 101/255, alpha: 1)
-        
-        introduction.text="一个奋斗在一线的实习理论化学家"
-        introduction.textColor=UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1)
-        
-        thumbnailImageView.layer.cornerRadius=26.5
-        thumbnailImageView.clipsToBounds=true
-
-        tableView.separatorStyle=UITableViewCellSeparatorStyle.SingleLine
-        
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-//        self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:"返回" style:UIBarButtonItemStylePlain target:nil action:nil], autorelease];
-    }
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        
+//        
+//        nameL.text="蒋易成"
+//        nameL.textColor=UIColor(red: 23/255, green: 68/255, blue: 101/255, alpha: 1)
+//        
+//        introduction.text="一个奋斗在一线的实习理论化学家"
+//        introduction.textColor=UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1)
+//        
+//        thumbnailImageView.layer.cornerRadius=26.5
+//        thumbnailImageView.clipsToBounds=true
+//
+//        tableView.separatorStyle=UITableViewCellSeparatorStyle.SingleLine
+//        
+//        
+//
+//        // Uncomment the following line to preserve selection between presentations
+//        // self.clearsSelectionOnViewWillAppear = false
+//
+//        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+//        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+////        self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:"返回" style:UIBarButtonItemStylePlain target:nil action:nil], autorelease];
+//    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
+        model.getPersonInfo(storyboard.user_id,controller: self)
         
     }
     
+    static func setUserId(id:Int){
+        storyboard.user_id=id
+    }
+    
+    func showPersonInfo(person:Person){
+        nameL.text=person.name
+        introduction.text=person.introduction
+        upNumber.titleLabel?.text=String(person.numberOfUp)
+        focusNumber.titleLabel?.text=String(person.numberOfFocus)
+        fansNumber.titleLabel?.text=String(person.numberOfFans)
+    }
     
     
     

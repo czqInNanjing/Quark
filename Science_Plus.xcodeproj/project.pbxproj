@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040E50EF1D44613B0062148F /* PeopleRelationToFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E50EE1D44613B0062148F /* PeopleRelationToFocus.swift */; };
 		040E51111D4492F70062148F /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E51101D4492F70062148F /* FieldViewController.swift */; };
 		040E51161D4497D80062148F /* FieldQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E51151D4497D80062148F /* FieldQuestionTableViewCell.swift */; };
+		0419CB8E1D49E91A00846D9B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419CB8D1D49E91A00846D9B /* Person.swift */; };
+		0419CB901D49F01400846D9B /* PersonShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419CB8F1D49F01400846D9B /* PersonShowModel.swift */; };
 		044389661D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */; };
 		046E60281D439D31003AEDD4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E60271D439D31003AEDD4 /* SearchViewController.swift */; };
 		04FDAB971D48A1FC004205ED /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FDAB961D48A1FC004205ED /* Search.storyboard */; };
@@ -61,7 +62,6 @@
 		F743224A1D40E39C00316E6C /* QuestionNeedAnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321F51D40E39C00316E6C /* QuestionNeedAnswerModel.swift */; };
 		F743224B1D40E39C00316E6C /* QusetionDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321F61D40E39C00316E6C /* QusetionDetailModel.swift */; };
 		F743224C1D40E39C00316E6C /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321F71D40E39C00316E6C /* RegisterModel.swift */; };
-		F743224D1D40E39C00316E6C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321F81D40E39C00316E6C /* User.swift */; };
 		F743224E1D40E39C00316E6C /* HttpConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321FA1D40E39C00316E6C /* HttpConstants.swift */; };
 		F743224F1D40E39C00316E6C /* HttpHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321FB1D40E39C00316E6C /* HttpHandler.swift */; };
 		F74322501D40E39C00316E6C /* AnswerTheQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74321FD1D40E39C00316E6C /* AnswerTheQuestion.storyboard */; };
@@ -94,9 +94,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		040E50EE1D44613B0062148F /* PeopleRelationToFocus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleRelationToFocus.swift; path = Science_Plus/Model/PeopleRelationToFocus.swift; sourceTree = SOURCE_ROOT; };
 		040E51101D4492F70062148F /* FieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FieldViewController.swift; path = Science_Plus/Controller/Personal/FieldViewController.swift; sourceTree = SOURCE_ROOT; };
 		040E51151D4497D80062148F /* FieldQuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		0419CB8D1D49E91A00846D9B /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Science_Plus/Entity/Person.swift; sourceTree = SOURCE_ROOT; };
+		0419CB8F1D49F01400846D9B /* PersonShowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonShowModel.swift; sourceTree = "<group>"; };
 		044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonDetailEditTableViewController.swift; path = Science_Plus/Controller/Personal/PersonDetailEditTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		046E60271D439D31003AEDD4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Science_Plus/Controller/Question/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		04FDAB961D48A1FC004205ED /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Search.storyboard; path = Science_Plus/StoryBoard/Search.storyboard; sourceTree = SOURCE_ROOT; };
@@ -150,7 +151,6 @@
 		F74321F51D40E39C00316E6C /* QuestionNeedAnswerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionNeedAnswerModel.swift; sourceTree = "<group>"; };
 		F74321F61D40E39C00316E6C /* QusetionDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QusetionDetailModel.swift; sourceTree = "<group>"; };
 		F74321F71D40E39C00316E6C /* RegisterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
-		F74321F81D40E39C00316E6C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F74321FA1D40E39C00316E6C /* HttpConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConstants.swift; sourceTree = "<group>"; };
 		F74321FB1D40E39C00316E6C /* HttpHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHandler.swift; sourceTree = "<group>"; };
 		F74321FD1D40E39C00316E6C /* AnswerTheQuestion.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AnswerTheQuestion.storyboard; sourceTree = "<group>"; };
@@ -360,6 +360,7 @@
 			children = (
 				F74321EA1D40E39C00316E6C /* Answer.swift */,
 				F74321EB1D40E39C00316E6C /* Question.swift */,
+				0419CB8D1D49E91A00846D9B /* Person.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -378,8 +379,7 @@
 				F74321F51D40E39C00316E6C /* QuestionNeedAnswerModel.swift */,
 				F74321F61D40E39C00316E6C /* QusetionDetailModel.swift */,
 				F74321F71D40E39C00316E6C /* RegisterModel.swift */,
-				F74321F81D40E39C00316E6C /* User.swift */,
-				040E50EE1D44613B0062148F /* PeopleRelationToFocus.swift */,
+				0419CB8F1D49F01400846D9B /* PersonShowModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -688,7 +688,6 @@
 				F74322461D40E39C00316E6C /* CommentViewModel.swift in Sources */,
 				044389661D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift in Sources */,
 				F74322671D40E39C00316E6C /* TimeTransfer.swift in Sources */,
-				F743224D1D40E39C00316E6C /* User.swift in Sources */,
 				F74322291D40E39C00316E6C /* FocusQuestionTableViewController.swift in Sources */,
 				F74322451D40E39C00316E6C /* CommentAddedModel.swift in Sources */,
 				F7D593871D43AE7600C6D436 /* ModelName.xcdatamodeld in Sources */,
@@ -706,6 +705,7 @@
 				F74322601D40E39C00316E6C /* CustomTableIndicator.swift in Sources */,
 				F74322321D40E39C00316E6C /* AnswerDetailViewController.swift in Sources */,
 				F74322281D40E39C00316E6C /* NotificationTableViewController.swift in Sources */,
+				0419CB901D49F01400846D9B /* PersonShowModel.swift in Sources */,
 				F74322661D40E39C00316E6C /* TestUITabTableViewCell.swift in Sources */,
 				F743222C1D40E39C00316E6C /* PersonalTableViewController.swift in Sources */,
 				F743223B1D40E39C00316E6C /* QuestionNeedAnswerViewController.swift in Sources */,
@@ -715,7 +715,7 @@
 				F743221E1D40E39C00316E6C /* AnswerTheQuestionViewController.swift in Sources */,
 				F743225B1D40E39C00316E6C /* ClassExtension.swift in Sources */,
 				F743224A1D40E39C00316E6C /* QuestionNeedAnswerModel.swift in Sources */,
-				040E50EF1D44613B0062148F /* PeopleRelationToFocus.swift in Sources */,
+				0419CB8E1D49E91A00846D9B /* Person.swift in Sources */,
 				F74322301D40E39C00316E6C /* QueryTagViewController.swift in Sources */,
 				F74322231D40E39C00316E6C /* NoticAnswerTableViewCell.swift in Sources */,
 				F74322241D40E39C00316E6C /* NoticOtherTableViewCell.swift in Sources */,
