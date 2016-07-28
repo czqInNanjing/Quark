@@ -19,7 +19,7 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     private struct storyboard {
         static let questionCell = "QuestionCell"
         static let questionDetail =  "showQuestionDetail"
-        static let search = "search"
+        static let search = "showSearch"
     }
     
     
@@ -33,19 +33,27 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchController=UISearchController(searchResultsController: showController)
+        
+        
+        searchController=UISearchController(searchResultsController: nil)
         searchController.searchBar.searchBarStyle = .Minimal
         searchController.searchBar.sizeToFit()
-        searchController.dimsBackgroundDuringPresentation=true
+        searchController.dimsBackgroundDuringPresentation=false
         
         searchController.searchResultsUpdater = showController
         //点击searchBar跳转到另一个页面
         searchController.searchBar.delegate = showController
         
         table.tableHeaderView=searchController.searchBar
-
+        
+        
+        searchController.searchBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "viewTap"))
         
         questionModel.getQuestionsByPage(questionTable:self)
+        
+        if searchController.active {
+            print("sssssss")
+        }
         
         
         table.addInfititeScroll {[weak self] (scrollView) -> Void in
@@ -57,6 +65,10 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
         }
         
         
+    }
+    
+    func viewTap(sender: UITapGestureRecognizer){
+        print("clicked")
     }
     
     override func viewDidAppear(animated: Bool) {

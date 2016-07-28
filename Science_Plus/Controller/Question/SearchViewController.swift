@@ -9,16 +9,20 @@
 import UIKit
 
 class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate{
-    private var tableView:UITableView!
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView=UITableView(frame: self.view.frame, style: .Plain)
+//        tableView=UITableView(frame: self.view.frame, style: .Plain)
+        tableView.backgroundColor=UIColor.blueColor()
         
         self.view.addSubview(tableView)
         
     }
     func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
     }
 
     override func didReceiveMemoryWarning() {

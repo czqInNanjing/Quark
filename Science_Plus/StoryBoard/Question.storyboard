@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vjX-0U-OFL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vjX-0U-OFL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -137,59 +137,6 @@
             </objects>
             <point key="canvasLocation" x="1266" y="-1741"/>
         </scene>
-        <!--Search View Controller-->
-        <scene sceneID="ZSf-Xf-X8o">
-            <objects>
-                <viewController id="kBw-eD-EuJ" customClass="SearchViewController" customModule="Science_Plus" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qdv-2f-wRF"/>
-                        <viewControllerLayoutGuide type="bottom" id="fJu-7E-UR2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ex3-S1-sPT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PRi-Uj-72L">
-                                <rect key="frame" x="13" y="20" width="533" height="88"/>
-                                <color key="tintColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap1-ii-VWT">
-                                <rect key="frame" x="564" y="33" width="24" height="12"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="12" id="G7Y-gv-2Qe"/>
-                                    <constraint firstAttribute="width" constant="24" id="afI-dE-nuA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="tintColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="取消"/>
-                                <connections>
-                                    <action selector="cancel" destination="kBw-eD-EuJ" eventType="touchDown" id="UOI-aN-0ls"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ap1-ii-VWT" secondAttribute="trailing" constant="-8" id="BzB-CE-Yfz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PRi-Uj-72L" secondAttribute="trailing" constant="34" id="GbO-OV-p5H"/>
-                            <constraint firstItem="PRi-Uj-72L" firstAttribute="top" secondItem="qdv-2f-wRF" secondAttribute="bottom" id="d3O-Gc-PTw"/>
-                            <constraint firstItem="ap1-ii-VWT" firstAttribute="top" secondItem="qdv-2f-wRF" secondAttribute="bottom" constant="13" id="e4X-kd-hzy"/>
-                            <constraint firstItem="PRi-Uj-72L" firstAttribute="leading" secondItem="ex3-S1-sPT" secondAttribute="leadingMargin" constant="-7" id="kYS-0h-ntQ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="searchBar" destination="PRi-Uj-72L" id="RUf-oM-o56"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7hT-EB-Kxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3424" y="-2025"/>
-        </scene>
         <!--Question View Controller-->
         <scene sceneID="sdi-Is-ACA">
             <objects>
@@ -305,17 +252,20 @@
                     </view>
                     <connections>
                         <outlet property="table" destination="aDv-Qp-wnh" id="nAv-zJ-7Hb"/>
-                        <segue destination="kBw-eD-EuJ" kind="show" identifier="search" id="i2s-Sz-ZMB"/>
+                        <segue destination="yd0-VP-zKf" kind="show" identifier="showSearch" id="WJs-br-9ad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGd-6v-oSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ajd-wd-vBT">
-                    <connections>
-                        <action selector="search" destination="SLo-3C-z0j" id="70K-q3-7NL"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2748" y="-2034"/>
+            <point key="canvasLocation" x="2738" y="-2037"/>
+        </scene>
+        <!--search-->
+        <scene sceneID="iCG-KQ-2tP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="search" id="yd0-VP-zKf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDD-Ps-x2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3151.5" y="-2269"/>
         </scene>
         <!--6月5日创建-->
         <scene sceneID="YXN-IF-aod">
