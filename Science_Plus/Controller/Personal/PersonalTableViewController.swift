@@ -13,9 +13,9 @@ class PersonalTableViewController: UITableViewController {
     @IBOutlet var nameL: UILabel!
     @IBOutlet var introduction:UILabel!
     @IBOutlet var thumbnailImageView: UIImageView!
-    @IBOutlet var upNumber:UIButton!
-    @IBOutlet var focusNumber:UIButton!
-    @IBOutlet var fansNumber:UIButton!
+    @IBOutlet weak var upNumber: UILabel!
+    @IBOutlet weak var fansNumber: UILabel!
+    @IBOutlet weak var focusNumber: UILabel!
     
     private var model=PersonShowModel()
     
@@ -38,11 +38,15 @@ class PersonalTableViewController: UITableViewController {
         
     }
     
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        model.getPersonInfo(storyboard.user_id,controller: self)
-//        
-//    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        model.getPersonInfo(storyboard.user_id,controller: self)
+        if let parent = self.parentViewController as? UINavigationController{
+            if let main = parent.parentViewController as? UITabBarController{
+                main.tabBar.hidden = false
+            }
+        }
+    }
     
     static func setUserId(id:Int){
         storyboard.user_id=id
@@ -51,9 +55,9 @@ class PersonalTableViewController: UITableViewController {
     func showPersonInfo(person:Person){
         nameL.text=person.name
         introduction.text=person.introduction
-        upNumber.titleLabel?.text=String(person.numberOfUp)
-        focusNumber.titleLabel?.text=String(person.numberOfFocus)
-        fansNumber.titleLabel?.text=String(person.numberOfFans)
+        upNumber.text=String(person.numberOfUp)
+        focusNumber.text=String(person.numberOfFocus)
+        fansNumber.text=String(person.numberOfFans)
     }
     
     
@@ -105,6 +109,7 @@ class PersonalTableViewController: UITableViewController {
                 }
                 if let showDetailController = segue.destinationViewController as? PersonDetailTableViewController{
                     showDetailController.title=nameL.text
+                    PersonDetailTableViewController.setUserId(storyboard.user_id)
                 }
             default:
                 break

@@ -52,9 +52,9 @@ class Person{
         person.id=json["id"].intValue
         person.name=json["name"].stringValue
         person.introduction=json["introduction"].stringValue
-//        person.numberOfUp=
-//        person.numberOfFans=
-//        person.numberOfFocus=
+        person.numberOfUp=json["praised_sum"].intValue
+        person.numberOfFans=json["follower_sum"].intValue
+        person.numberOfFocus=json["followee_sum"].intValue
         
         return person
     }
@@ -73,9 +73,9 @@ class Person{
         person.profession=json["profession"].intValue
         person.create_time=json["create_time"].stringValue
         
-        //        person.numberOfUp=
-        //        person.numberOfFans=
-        //        person.numberOfFocus=
+        person.numberOfUp=json["praised_sum"].intValue
+        person.numberOfFans=json["follower_sum"].intValue
+        person.numberOfFocus=json["followee_sum"].intValue
         
         return person
     }

@@ -22,4 +22,27 @@ class PersonShowModel {
             }
         }
     }
+    
+    func getPersonDetailInfo(user_id:Int,controller:PersonDetailTableViewController){
+        if user_id != 0{
+            HttpHandler.httpGET(HttpAPI.api_userDetail, parameters: [HttpConstants.account_id:user_id]){[weak self] json in
+                if HttpStaticHelper.checkIfStatusOK(json){
+                    self!.personInfo=Person.makeFullPerson(json[HttpConstants.message])
+                    controller.showPersonInfo(self!.personInfo)
+                }
+            }
+        }
+    }
+    
+    func changePersonInfo(person:Person,controller:PersonDetailEditTableViewController){
+        HttpHandler.httpPost(HttpAPI.api_userDetail, parameters: ["name":person.name,"introduction":person.introduction]){[weak self] json in
+            if HttpStaticHelper.checkIfStatusOK(json){
+                controller.noticeSuccess(HttpConstants.editSuccess)
+            }
+            else{
+                controller.noticeError(json["error_code"].stringValue)
+            }
+        }
+
+    }
 }

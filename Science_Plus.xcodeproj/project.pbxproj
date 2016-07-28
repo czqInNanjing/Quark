@@ -30,7 +30,6 @@
 		F743222A1D40E39C00316E6C /* FocusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321CF1D40E39C00316E6C /* FocusTableViewController.swift */; };
 		F743222B1D40E39C00316E6C /* MyAnswerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321D01D40E39C00316E6C /* MyAnswerTableViewController.swift */; };
 		F743222C1D40E39C00316E6C /* PersonalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321D11D40E39C00316E6C /* PersonalTableViewController.swift */; };
-		F743222D1D40E39C00316E6C /* PersonDataChangeViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321D21D40E39C00316E6C /* PersonDataChangeViewControllerTableViewController.swift */; };
 		F743222E1D40E39C00316E6C /* PersonDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321D31D40E39C00316E6C /* PersonDetailTableViewController.swift */; };
 		F743222F1D40E39C00316E6C /* QueryDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321D51D40E39C00316E6C /* QueryDetialViewController.swift */; };
 		F74322301D40E39C00316E6C /* QueryTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74321D61D40E39C00316E6C /* QueryTagViewController.swift */; };
@@ -119,7 +118,6 @@
 		F74321CF1D40E39C00316E6C /* FocusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusTableViewController.swift; sourceTree = "<group>"; };
 		F74321D01D40E39C00316E6C /* MyAnswerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnswerTableViewController.swift; sourceTree = "<group>"; };
 		F74321D11D40E39C00316E6C /* PersonalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableViewController.swift; sourceTree = "<group>"; };
-		F74321D21D40E39C00316E6C /* PersonDataChangeViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDataChangeViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		F74321D31D40E39C00316E6C /* PersonDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailTableViewController.swift; sourceTree = "<group>"; };
 		F74321D51D40E39C00316E6C /* QueryDetialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryDetialViewController.swift; sourceTree = "<group>"; };
 		F74321D61D40E39C00316E6C /* QueryTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryTagViewController.swift; sourceTree = "<group>"; };
@@ -300,7 +298,6 @@
 				F74321CF1D40E39C00316E6C /* FocusTableViewController.swift */,
 				F74321D01D40E39C00316E6C /* MyAnswerTableViewController.swift */,
 				F74321D11D40E39C00316E6C /* PersonalTableViewController.swift */,
-				F74321D21D40E39C00316E6C /* PersonDataChangeViewControllerTableViewController.swift */,
 				F74321D31D40E39C00316E6C /* PersonDetailTableViewController.swift */,
 				044389651D41BD3E00D2D5E9 /* PersonDetailEditTableViewController.swift */,
 				040E51101D4492F70062148F /* FieldViewController.swift */,
@@ -720,7 +717,6 @@
 				F74322231D40E39C00316E6C /* NoticAnswerTableViewCell.swift in Sources */,
 				F74322241D40E39C00316E6C /* NoticOtherTableViewCell.swift in Sources */,
 				F74322381D40E39C00316E6C /* Comment.swift in Sources */,
-				F743222D1D40E39C00316E6C /* PersonDataChangeViewControllerTableViewController.swift in Sources */,
 				F743224E1D40E39C00316E6C /* HttpConstants.swift in Sources */,
 				040E51111D4492F70062148F /* FieldViewController.swift in Sources */,
 				F74322431D40E39C00316E6C /* AnswerDetailModel.swift in Sources */,

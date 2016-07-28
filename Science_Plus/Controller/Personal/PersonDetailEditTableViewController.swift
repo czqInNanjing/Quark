@@ -12,23 +12,87 @@ import Photos
 
 class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate{
     
+    var person=Person()
+    private var model=PersonShowModel()
+    
+    @IBOutlet weak var nameT: UITextField!
+    @IBOutlet weak var introductionT: UITextField!
+    @IBOutlet weak var unitT: UITextField!
+    @IBOutlet weak var genderT: UITextField!
+    @IBOutlet weak var majorT: UITextField!
+    @IBOutlet weak var provinceT: UITextField!
+    @IBOutlet weak var cityT: UITextField!
+    @IBOutlet weak var schoolT: UITextField!
+    @IBOutlet weak var degreeT: UITextField!
+    @IBOutlet weak var workspaceT: UITextField!
+    
+    @IBOutlet weak var positionT: UITextField!
+    
+    
     @IBOutlet weak var imageView:UIImageView!
     private var sheet:UIAlertController!
     private var sourceType = UIImagePickerControllerSourceType.PhotoLibrary
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        print(person.name)
+        showInfo()
+    }
+    
+    private struct storyboard{
+        
+        static let nullInfo="信息不完整"
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func showInfo(){
+        nameT.text=person.name
+        introductionT.text=person.introduction
+        
+        let address=person.residence
+        if address != ""{
+            let fullAddressArr = address.componentsSeparatedByString("&")
+            provinceT.text=fullAddressArr[0]
+            cityT.text=fullAddressArr.count>1 ? fullAddressArr[1] : " "
+        }
+        
+        //woman的图片未上传
+        //        let gender=person.gender == 0 ? storyboard.woman : storyboard.man
+        //        genderImage=UIImage(named: gender)
+        
+        let education=person.education
+        if education != ""{
+            let fullArr = education.componentsSeparatedByString("%")
+            schoolT.text=fullArr[0]
+            degreeT.text=fullArr.count>1 ? fullArr[1] : " "
+        }
+        
+        let work=person.work
+        if work != ""{
+            let fullArr = work.componentsSeparatedByString("%")
+            workspaceT.text=fullArr[0]
+            positionT.text=fullArr.count>1 ? fullArr[1] : " "
+        }
+    }
+    
+    
+    @IBAction func save(){
+        if nameT.text == "" || introductionT.text == ""{
+            self.noticeInfo(storyboard.nullInfo)
+        }
+        else{//由于API问题，只修改了名字和介绍
+            let editedPerson=Person()
+            editedPerson.name=nameT.text!
+            editedPerson.introduction=introductionT.text!
+            model.changePersonInfo(editedPerson, controller: self)
+            self.navigationController?.popViewControllerAnimated(false)
+        }
+        
     }
 
     // MARK: - Table view data source

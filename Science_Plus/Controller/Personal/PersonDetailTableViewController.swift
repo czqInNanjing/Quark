@@ -14,9 +14,10 @@ class PersonDetailTableViewController: UITableViewController {
     @IBOutlet weak var nameL: UILabel!
     @IBOutlet weak var introductionL: UILabel!
     @IBOutlet weak var genderImage: UIImageView!
-    @IBOutlet weak var numberOfUpL: UIButton!
-    @IBOutlet weak var numberOfFocusL: UIButton!
-    @IBOutlet weak var numberOfFansL: UIButton!
+    @IBOutlet weak var numberOfUpL: UILabel!
+    @IBOutlet weak var numberOfFocusL: UILabel!
+    @IBOutlet weak var numberOfFansL: UILabel!
+    
     @IBOutlet weak var provinceL: UILabel!
     @IBOutlet weak var cityL: UILabel!
     @IBOutlet weak var schoolOneL: UILabel!
@@ -28,29 +29,89 @@ class PersonDetailTableViewController: UITableViewController {
     @IBOutlet weak var workspaceTwoL: UILabel!
     @IBOutlet weak var positionTwoL: UILabel!
     
+    private var model=PersonShowModel()
     
+    private var personInfo=Person()
+    
+    private struct storyboard{
+        
+        static var user_id=1
+        static let man="man"
+        static let woman="woman"
+        static let edit="edit"
+        
+    }
+    
+    static func setUserId(id:Int){
+        storyboard.user_id=id
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("PersonDetailTableViewController")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        model.getPersonDetailInfo(storyboard.user_id,controller: self)
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        model.getPersonDetailInfo(storyboard.user_id,controller: self)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    //图片没有加
     func showPersonInfo(person:Person){
+        self.personInfo=person
+        print("showPersonInfo")
         nameL.text=person.name
         introductionL.text=person.introduction
-        numberOfUpL.titleLabel?.text=String(person.numberOfUp)
-        numberOfFocusL.titleLabel?.text=String(person.numberOfFocus)
-        numberOfFansL.titleLabel?.text=String(person.numberOfFans)
+        numberOfUpL.text=String(person.numberOfUp)
+        numberOfFocusL.text=String(person.numberOfFocus)
+        numberOfFansL.text=String(person.numberOfFans)
+        let address=person.residence
+        if address != ""{
+            let fullAddressArr = address.componentsSeparatedByString("&")
+            provinceL.text=fullAddressArr[0]
+            cityL.text=fullAddressArr.count>1 ? fullAddressArr[1] : " "
+        }
+        
+        //woman的图片未上传
+//        let gender=person.gender == 0 ? storyboard.woman : storyboard.man
+//        genderImage=UIImage(named: gender)
+        
+        let education=person.education
+        if education != ""{
+            let fullArr = education.componentsSeparatedByString("%")
+            schoolOneL.text=fullArr[0]
+            degreeOneL.text=fullArr.count>1 ? fullArr[1] : " "
+        }
+        
+        let work=person.work
+        if work != ""{
+            let fullArr = work.componentsSeparatedByString("%")
+            workspaceOneL.text=fullArr[0]
+            positionOneL.text=fullArr.count>1 ? fullArr[1] : " "
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier{
+            switch identifier {
+            case storyboard.edit:
+                if let editController = segue.destinationViewController as? PersonDetailEditTableViewController{
+                    editController.person=self.personInfo
+                    
+                }
+
+            default:
+                break
+            }
+        }
+
         
     }
     

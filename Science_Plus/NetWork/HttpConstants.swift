@@ -66,6 +66,8 @@ struct HttpConstants{
     
     static let id="id"
     
+    static let editSuccess="修改成功"
+    
 }
 
 

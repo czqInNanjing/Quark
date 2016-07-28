@@ -214,7 +214,7 @@ class SwiftNotice: NSObject {
     }
     
     static func showNoticeWithText(type: NoticeType,text: String, autoClear: Bool, autoClearTime: Int) {
-        let frame = CGRectMake(0, 0, CGFloat(13*text.length), 90)
+        let frame = CGRectMake(0, 0, 90, 90)
         let window = UIWindow()
         window.backgroundColor = UIColor.clearColor()
         let mainView = UIView()
@@ -234,7 +234,7 @@ class SwiftNotice: NSObject {
         checkmarkView.frame = CGRectMake(27, 15, 36, 36)
         mainView.addSubview(checkmarkView)
         
-        let label = UILabel(frame: CGRectMake(0, 60, CGFloat(13*text.length), 16))
+        let label = UILabel(frame: CGRectMake(0, 60, 90, 16))
         label.font = UIFont.systemFontOfSize(13)
         label.textColor = UIColor.whiteColor()
         label.text = text
