@@ -85,7 +85,6 @@
 		F74322631D40E39C00316E6C /* StateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74322171D40E39C00316E6C /* StateLabel.swift */; };
 		F74322641D40E39C00316E6C /* MyTopicLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = F74322181D40E39C00316E6C /* MyTopicLabel.xib */; };
 		F74322651D40E39C00316E6C /* ScrollPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74322191D40E39C00316E6C /* ScrollPager.swift */; };
-		F74322661D40E39C00316E6C /* TestUITabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221A1D40E39C00316E6C /* TestUITabTableViewCell.swift */; };
 		F74322671D40E39C00316E6C /* TimeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221B1D40E39C00316E6C /* TimeTransfer.swift */; };
 		F74322681D40E39C00316E6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221D1D40E39C00316E6C /* Constants.swift */; };
 		F753E8951D449B7000AE3BC5 /* QiniuSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = F753E8941D449B7000AE3BC5 /* QiniuSDK.swift */; };
@@ -174,7 +173,6 @@
 		F74322171D40E39C00316E6C /* StateLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateLabel.swift; sourceTree = "<group>"; };
 		F74322181D40E39C00316E6C /* MyTopicLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTopicLabel.xib; sourceTree = "<group>"; };
 		F74322191D40E39C00316E6C /* ScrollPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPager.swift; sourceTree = "<group>"; };
-		F743221A1D40E39C00316E6C /* TestUITabTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUITabTableViewCell.swift; sourceTree = "<group>"; };
 		F743221B1D40E39C00316E6C /* TimeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTransfer.swift; sourceTree = "<group>"; };
 		F743221D1D40E39C00316E6C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F753E8941D449B7000AE3BC5 /* QiniuSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QiniuSDK.swift; path = upload/QiniuSDK.swift; sourceTree = "<group>"; };
@@ -429,7 +427,6 @@
 				F74322151D40E39C00316E6C /* label */,
 				F74322181D40E39C00316E6C /* MyTopicLabel.xib */,
 				F74322191D40E39C00316E6C /* ScrollPager.swift */,
-				F743221A1D40E39C00316E6C /* TestUITabTableViewCell.swift */,
 				F743221B1D40E39C00316E6C /* TimeTransfer.swift */,
 			);
 			path = tools;
@@ -703,7 +700,6 @@
 				F74322321D40E39C00316E6C /* AnswerDetailViewController.swift in Sources */,
 				F74322281D40E39C00316E6C /* NotificationTableViewController.swift in Sources */,
 				0419CB901D49F01400846D9B /* PersonShowModel.swift in Sources */,
-				F74322661D40E39C00316E6C /* TestUITabTableViewCell.swift in Sources */,
 				F743222C1D40E39C00316E6C /* PersonalTableViewController.swift in Sources */,
 				F743223B1D40E39C00316E6C /* QuestionNeedAnswerViewController.swift in Sources */,
 				F74322361D40E39C00316E6C /* QuestionNeedAnswerTableViewCell.swift in Sources */,

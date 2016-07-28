@@ -9,22 +9,6 @@
 import Foundation
 import UIKit
 
-
-
-
-//```swift
-//self.pleaseWait()
-//
-//self.noticeTop("OK!")
-//
-//self.noticeSuccess("Success!")
-//self.noticeError("Error!")
-//self.noticeInfo("Info")
-//
-//self.noticeOnlyText("Only Text")
-//
-//self.clearAllNotice() // clear
-//```
 extension UIViewController {
     /// wait with your own animated images
     func pleaseWaitWithImages(imageNames: Array<UIImage>, timeInterval: Int) {
@@ -36,13 +20,13 @@ extension UIViewController {
     }
     
     // new apis from v3.3
-    func noticeSuccess(text: String, autoClear: Bool = true, autoClearTime: Int = 1) {
+    func noticeSuccess(text: String, autoClear: Bool = true, autoClearTime: Int = 3) {
         SwiftNotice.showNoticeWithText(NoticeType.success, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
-    func noticeError(text: String, autoClear: Bool = true, autoClearTime: Int = 1) {
+    func noticeError(text: String, autoClear: Bool = true, autoClearTime: Int = 3) {
         SwiftNotice.showNoticeWithText(NoticeType.error, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
-    func noticeInfo(text: String, autoClear: Bool = true, autoClearTime: Int = 1) {
+    func noticeInfo(text: String, autoClear: Bool = true, autoClearTime: Int = 3) {
         SwiftNotice.showNoticeWithText(NoticeType.info, text: text, autoClear: autoClear, autoClearTime: autoClearTime)
     }
     
