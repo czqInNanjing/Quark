@@ -1703,6 +1703,25 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cityL" destination="wXQ-Qw-KFG" id="s7h-Lr-X61"/>
+                        <outlet property="degreeOneL" destination="QCm-us-1mY" id="2Wr-j4-u36"/>
+                        <outlet property="degreeTwoL" destination="H1M-1O-zEQ" id="WWF-7n-Wl3"/>
+                        <outlet property="genderImage" destination="rh0-aY-VVh" id="SW0-9l-Ad4"/>
+                        <outlet property="image" destination="1Ff-Nc-Qyg" id="MYr-Th-dJk"/>
+                        <outlet property="introductionL" destination="gKD-Gm-zDV" id="uq8-la-I4U"/>
+                        <outlet property="nameL" destination="qeX-yY-xIg" id="hCO-Z7-PLp"/>
+                        <outlet property="numberOfFansL" destination="zeZ-af-x7i" id="YBF-z5-0eq"/>
+                        <outlet property="numberOfFocusL" destination="16d-zf-Lol" id="cIQ-mQ-e5x"/>
+                        <outlet property="numberOfUpL" destination="8FZ-0E-om5" id="U4A-sY-N1i"/>
+                        <outlet property="positionOneL" destination="bEE-wA-5Re" id="rJo-ar-Ymo"/>
+                        <outlet property="positionTwoL" destination="qji-TV-6xA" id="Vcg-6P-BGi"/>
+                        <outlet property="provinceL" destination="p29-e8-1JF" id="ren-Kp-3gm"/>
+                        <outlet property="schoolOneL" destination="YdQ-DG-3ep" id="Xy6-C7-JGu"/>
+                        <outlet property="schoolTwoL" destination="XMq-Ub-p2W" id="CY4-td-5j6"/>
+                        <outlet property="workspaceOneL" destination="o2b-54-vZe" id="vMS-bY-vrt"/>
+                        <outlet property="workspaceTwoL" destination="22P-MZ-X9F" id="OuM-xv-qJI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDI-Rg-4xc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

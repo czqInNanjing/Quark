@@ -9,6 +9,26 @@
 import UIKit
 
 class PersonDetailTableViewController: UITableViewController {
+    
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var nameL: UILabel!
+    @IBOutlet weak var introductionL: UILabel!
+    @IBOutlet weak var genderImage: UIImageView!
+    @IBOutlet weak var numberOfUpL: UIButton!
+    @IBOutlet weak var numberOfFocusL: UIButton!
+    @IBOutlet weak var numberOfFansL: UIButton!
+    @IBOutlet weak var provinceL: UILabel!
+    @IBOutlet weak var cityL: UILabel!
+    @IBOutlet weak var schoolOneL: UILabel!
+    @IBOutlet weak var degreeOneL: UILabel!
+    @IBOutlet weak var schoolTwoL: UILabel!
+    @IBOutlet weak var degreeTwoL: UILabel!
+    @IBOutlet weak var workspaceOneL: UILabel!
+    @IBOutlet weak var positionOneL: UILabel!
+    @IBOutlet weak var workspaceTwoL: UILabel!
+    @IBOutlet weak var positionTwoL: UILabel!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +43,15 @@ class PersonDetailTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func showPersonInfo(person:Person){
+        nameL.text=person.name
+        introductionL.text=person.introduction
+        numberOfUpL.titleLabel?.text=String(person.numberOfUp)
+        numberOfFocusL.titleLabel?.text=String(person.numberOfFocus)
+        numberOfFansL.titleLabel?.text=String(person.numberOfFans)
+        
     }
     
 
