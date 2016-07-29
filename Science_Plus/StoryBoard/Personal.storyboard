@@ -3089,7 +3089,7 @@
         <image name="restaurant" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vdt-ej-fGc"/>
         <segue reference="8O5-Us-cw3"/>
+        <segue reference="u5Y-ee-sjy"/>
     </inferredMetricsTieBreakers>
 </document>
