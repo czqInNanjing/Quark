@@ -1329,7 +1329,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="江苏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p29-e8-1JF">
-                                                    <rect key="frame" x="194" y="10" width="34" height="15"/>
+                                                    <rect key="frame" x="438" y="10" width="34" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="NyJ-ie-4nD"/>
                                                     </constraints>
@@ -1338,7 +1338,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南京" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXQ-Qw-KFG">
-                                                    <rect key="frame" x="289" y="10" width="34" height="15"/>
+                                                    <rect key="frame" x="538" y="10" width="34" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="tmS-se-86W"/>
                                                     </constraints>
@@ -1351,11 +1351,11 @@
                                                 <constraint firstItem="Nj9-5F-6am" firstAttribute="leading" secondItem="DC9-UC-G9Y" secondAttribute="trailing" constant="15" id="1eo-CW-5NX"/>
                                                 <constraint firstItem="wXQ-Qw-KFG" firstAttribute="top" secondItem="jp6-Ha-VFq" secondAttribute="topMargin" constant="2" id="3t4-Pv-7bU"/>
                                                 <constraint firstItem="Nj9-5F-6am" firstAttribute="top" secondItem="jp6-Ha-VFq" secondAttribute="topMargin" constant="2" id="AWH-YH-H0Z"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wXQ-Qw-KFG" secondAttribute="trailing" constant="20" id="NeD-oc-aV4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="p29-e8-1JF" secondAttribute="trailing" constant="120" id="UNe-iR-TMN"/>
                                                 <constraint firstItem="p29-e8-1JF" firstAttribute="top" secondItem="jp6-Ha-VFq" secondAttribute="topMargin" constant="2" id="Uhg-b8-3Vw"/>
                                                 <constraint firstItem="DC9-UC-G9Y" firstAttribute="top" secondItem="jp6-Ha-VFq" secondAttribute="topMargin" id="ctO-QC-e8v"/>
                                                 <constraint firstItem="DC9-UC-G9Y" firstAttribute="leading" secondItem="jp6-Ha-VFq" secondAttribute="leadingMargin" constant="15" id="fgj-WY-wrl"/>
-                                                <constraint firstItem="p29-e8-1JF" firstAttribute="leading" secondItem="jp6-Ha-VFq" secondAttribute="leadingMargin" constant="186" id="fhH-hC-vt1"/>
-                                                <constraint firstItem="wXQ-Qw-KFG" firstAttribute="leading" secondItem="jp6-Ha-VFq" secondAttribute="leadingMargin" constant="281" id="wMd-0i-7V3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1383,7 +1383,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南京大学" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdQ-DG-3ep">
-                                                    <rect key="frame" x="194" y="10" width="68" height="15"/>
+                                                    <rect key="frame" x="439" y="10" width="68" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="BU8-kr-Csj"/>
                                                     </constraints>
@@ -1392,7 +1392,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="博士" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCm-us-1mY">
-                                                    <rect key="frame" x="289" y="10" width="34" height="15"/>
+                                                    <rect key="frame" x="538" y="10" width="34" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="mQl-9B-210"/>
                                                     </constraints>
@@ -1401,13 +1401,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="东京大学" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMq-Ub-p2W">
-                                                    <rect key="frame" x="194" y="48" width="68" height="21"/>
+                                                    <rect key="frame" x="439" y="48" width="68" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本科" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1M-1O-zEQ">
-                                                    <rect key="frame" x="289" y="48" width="34" height="21"/>
+                                                    <rect key="frame" x="538" y="48" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1418,13 +1418,13 @@
                                                 <constraint firstItem="XMq-Ub-p2W" firstAttribute="top" secondItem="YdQ-DG-3ep" secondAttribute="bottom" constant="23" id="8M7-NS-1uk"/>
                                                 <constraint firstItem="H1M-1O-zEQ" firstAttribute="top" secondItem="QCm-us-1mY" secondAttribute="bottom" constant="23" id="BqE-7L-wbP"/>
                                                 <constraint firstItem="XMq-Ub-p2W" firstAttribute="leading" secondItem="YdQ-DG-3ep" secondAttribute="leading" id="IkD-5E-UYb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QCm-us-1mY" secondAttribute="trailing" constant="20" id="MPx-ba-I2V"/>
                                                 <constraint firstItem="H1M-1O-zEQ" firstAttribute="leading" secondItem="QCm-us-1mY" secondAttribute="leading" id="O2p-ic-5nd"/>
                                                 <constraint firstItem="Hm8-QK-TZq" firstAttribute="top" secondItem="Yh3-zG-AhS" secondAttribute="topMargin" constant="2" id="bgq-gX-AmW"/>
-                                                <constraint firstItem="QCm-us-1mY" firstAttribute="leading" secondItem="Yh3-zG-AhS" secondAttribute="leadingMargin" constant="281" id="geW-us-faM"/>
                                                 <constraint firstItem="Hm8-QK-TZq" firstAttribute="leading" secondItem="Bdo-Z7-ZQd" secondAttribute="trailing" constant="9" id="kh6-fT-aIl"/>
                                                 <constraint firstItem="QCm-us-1mY" firstAttribute="top" secondItem="Yh3-zG-AhS" secondAttribute="topMargin" constant="2" id="pdd-gC-9Qo"/>
                                                 <constraint firstItem="Bdo-Z7-ZQd" firstAttribute="leading" secondItem="Yh3-zG-AhS" secondAttribute="leadingMargin" constant="12" id="uDG-Rb-5Oz"/>
-                                                <constraint firstItem="YdQ-DG-3ep" firstAttribute="leading" secondItem="Yh3-zG-AhS" secondAttribute="leadingMargin" constant="186" id="uqa-mt-GxD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YdQ-DG-3ep" secondAttribute="trailing" constant="85" id="ymp-al-eas"/>
                                                 <constraint firstItem="Bdo-Z7-ZQd" firstAttribute="top" secondItem="Yh3-zG-AhS" secondAttribute="topMargin" id="zsT-xS-jjt"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1453,7 +1453,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南京大学" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2b-54-vZe">
-                                                    <rect key="frame" x="194" y="10" width="68" height="15"/>
+                                                    <rect key="frame" x="439" y="10" width="68" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="TMD-sg-rHL"/>
                                                     </constraints>
@@ -1462,7 +1462,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教授" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEE-wA-5Re">
-                                                    <rect key="frame" x="289" y="10" width="34" height="15"/>
+                                                    <rect key="frame" x="538" y="10" width="34" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="bBd-iT-Zn5"/>
                                                     </constraints>
@@ -1471,13 +1471,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="东京大学" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22P-MZ-X9F">
-                                                    <rect key="frame" x="194" y="48" width="68" height="21"/>
+                                                    <rect key="frame" x="439" y="48" width="68" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高级研究员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qji-TV-6xA">
-                                                    <rect key="frame" x="289" y="48" width="85" height="21"/>
+                                                    <rect key="frame" x="538" y="48" width="85" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1486,15 +1486,15 @@
                                             <constraints>
                                                 <constraint firstItem="22P-MZ-X9F" firstAttribute="top" secondItem="o2b-54-vZe" secondAttribute="bottom" constant="23" id="4FZ-Sn-SDn"/>
                                                 <constraint firstItem="bEE-wA-5Re" firstAttribute="top" secondItem="URf-qO-PdX" secondAttribute="topMargin" constant="2" id="Bxg-1M-EIp"/>
-                                                <constraint firstItem="o2b-54-vZe" firstAttribute="leading" secondItem="URf-qO-PdX" secondAttribute="leadingMargin" constant="186" id="D7u-cC-X0m"/>
                                                 <constraint firstItem="Odm-TD-8eq" firstAttribute="top" secondItem="URf-qO-PdX" secondAttribute="topMargin" id="DQG-JY-TxE"/>
                                                 <constraint firstItem="o2b-54-vZe" firstAttribute="top" secondItem="URf-qO-PdX" secondAttribute="topMargin" constant="2" id="G9S-T3-DLg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="o2b-54-vZe" secondAttribute="trailing" constant="85" id="Nr3-cu-XLB"/>
                                                 <constraint firstItem="22P-MZ-X9F" firstAttribute="leading" secondItem="o2b-54-vZe" secondAttribute="leading" id="OJG-0Z-8L9"/>
                                                 <constraint firstItem="6NM-qU-Kg0" firstAttribute="leading" secondItem="Odm-TD-8eq" secondAttribute="trailing" constant="9" id="SOS-FZ-Thw"/>
                                                 <constraint firstItem="Odm-TD-8eq" firstAttribute="leading" secondItem="URf-qO-PdX" secondAttribute="leadingMargin" constant="14" id="WmM-2H-WO2"/>
                                                 <constraint firstItem="qji-TV-6xA" firstAttribute="top" secondItem="bEE-wA-5Re" secondAttribute="bottom" constant="23" id="coG-gG-0ra"/>
-                                                <constraint firstItem="bEE-wA-5Re" firstAttribute="leading" secondItem="URf-qO-PdX" secondAttribute="leadingMargin" constant="281" id="hru-vO-xze"/>
                                                 <constraint firstItem="6NM-qU-Kg0" firstAttribute="top" secondItem="URf-qO-PdX" secondAttribute="topMargin" constant="2" id="hu4-2P-HIj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bEE-wA-5Re" secondAttribute="trailing" constant="20" id="szB-Ma-UDB"/>
                                                 <constraint firstItem="qji-TV-6xA" firstAttribute="leading" secondItem="bEE-wA-5Re" secondAttribute="leading" id="tDt-0K-KGT"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -3089,7 +3089,7 @@
         <image name="restaurant" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="vdt-ej-fGc"/>
         <segue reference="8O5-Us-cw3"/>
-        <segue reference="u5Y-ee-sjy"/>
     </inferredMetricsTieBreakers>
 </document>

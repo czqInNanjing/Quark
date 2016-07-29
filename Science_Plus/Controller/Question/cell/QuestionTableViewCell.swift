@@ -33,7 +33,8 @@ class QuestionTableViewCell: UITableViewCell {
         if let nowQuestion = question{
             
             content.text=nowQuestion.bestAnswer?.content
-            thumbnailImageView.image=UIImage(named: nowQuestion.bestAnswer?.user.img_url ?? SystemConstants.defaultUserImage)
+//            thumbnailImageView.image=UIImage(named: nowQuestion.bestAnswer?.user.img_url ?? SystemConstants.defaultUserImage)
+            thumbnailImageView.image=UIImage(named: SystemConstants.defaultUserImage)
             title.text=nowQuestion.title
             upNumber.text = nowQuestion.bestAnswer!.praiseNum.str
             
