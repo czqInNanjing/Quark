@@ -51,6 +51,7 @@ class Person{
         let person=Person()
         person.id=json["id"].intValue
         person.name=json["name"].stringValue
+        person.img_url = json["img_url"].stringValue
         person.introduction=json["introduction"].stringValue
         person.numberOfUp=json["praised_sum"].intValue
         person.numberOfFans=json["follower_sum"].intValue
@@ -72,7 +73,8 @@ class Person{
         person.major=json["major"].stringValue
         person.profession=json["profession"].intValue
         person.create_time=json["create_time"].stringValue
-        
+        person.img_url = json["img_url"].stringValue
+
         person.numberOfUp=json["praised_sum"].intValue
         person.numberOfFans=json["follower_sum"].intValue
         person.numberOfFocus=json["followee_sum"].intValue

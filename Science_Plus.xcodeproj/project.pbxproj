@@ -88,6 +88,7 @@
 		F74322671D40E39C00316E6C /* TimeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221B1D40E39C00316E6C /* TimeTransfer.swift */; };
 		F74322681D40E39C00316E6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F743221D1D40E39C00316E6C /* Constants.swift */; };
 		F753E8951D449B7000AE3BC5 /* QiniuSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = F753E8941D449B7000AE3BC5 /* QiniuSDK.swift */; };
+		F79F8B081D8044CC0015E1AB /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79F8B071D8044CC0015E1AB /* TimeHelper.swift */; };
 		F7D593871D43AE7600C6D436 /* ModelName.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F7D593851D43AE7600C6D436 /* ModelName.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +177,7 @@
 		F743221B1D40E39C00316E6C /* TimeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTransfer.swift; sourceTree = "<group>"; };
 		F743221D1D40E39C00316E6C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F753E8941D449B7000AE3BC5 /* QiniuSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QiniuSDK.swift; path = upload/QiniuSDK.swift; sourceTree = "<group>"; };
+		F79F8B071D8044CC0015E1AB /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		F7D593861D43AE7600C6D436 /* ModelName.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelName.xcdatamodel; sourceTree = "<group>"; };
 		F7EB5BD21CDD80DA007B5D64 /* Science_Plus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Science_Plus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -428,6 +430,7 @@
 				F74322181D40E39C00316E6C /* MyTopicLabel.xib */,
 				F74322191D40E39C00316E6C /* ScrollPager.swift */,
 				F743221B1D40E39C00316E6C /* TimeTransfer.swift */,
+				F79F8B071D8044CC0015E1AB /* TimeHelper.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				TargetAttributes = {
 					F7EB5BD11CDD80DA007B5D64 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2XC75MU658;
 					};
 				};
 			};
@@ -684,6 +688,7 @@
 				F74322671D40E39C00316E6C /* TimeTransfer.swift in Sources */,
 				F74322291D40E39C00316E6C /* FocusQuestionTableViewController.swift in Sources */,
 				F74322451D40E39C00316E6C /* CommentAddedModel.swift in Sources */,
+				F79F8B081D8044CC0015E1AB /* TimeHelper.swift in Sources */,
 				F7D593871D43AE7600C6D436 /* ModelName.xcdatamodeld in Sources */,
 				F74322271D40E39C00316E6C /* MessageViewController.swift in Sources */,
 				F743222B1D40E39C00316E6C /* MyAnswerTableViewController.swift in Sources */,
@@ -811,12 +816,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Science_Plus/support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kubi.quark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Science_Plus/support/Science_Plus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -827,12 +835,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Science_Plus/support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kubi.quark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Science_Plus/support/Science_Plus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

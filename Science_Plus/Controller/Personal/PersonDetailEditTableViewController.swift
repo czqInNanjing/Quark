@@ -45,10 +45,6 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     private func showInfo(){
         nameT.text=person.name
@@ -91,6 +87,15 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
             editedPerson.introduction=introductionT.text!
             model.changePersonInfo(editedPerson, controller: self)
             self.navigationController?.popViewControllerAnimated(false)
+            
+            
+            // add by Qiang  about the upload of the userImage
+            let picName = "\(HttpHandler.userID)\(MyDate.getContemporaryTime()).png"
+            
+            
+            let data = UIImagePNGRepresentation(imageView.image ?? UIImage(named: SystemConstants.defaultUserImage)! )
+            
+            QiniuSDK.upload(data, name: picName)
         }
         
     }
@@ -152,6 +157,9 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         imageView.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+        
         
     }
     

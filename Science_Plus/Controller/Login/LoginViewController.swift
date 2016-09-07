@@ -21,11 +21,25 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    @IBAction func testPan(sender: UIPanGestureRecognizer) {
+        
+        switch sender.state {
+        case .Began:
+            print("Start . . .")
+        case .Cancelled:
+            print("cancel. . .")
+        case .Ended:
+            print("ended")
+        case .Possible:
+            print("possible")
+        case .Failed:
+            print("fail")
+        case .Changed:
+            print("change")
+        }
+    }
+
     
     
     @IBAction func dealWithLogin(sender: UIButton) {
@@ -42,6 +56,7 @@ class LoginViewController: UIViewController {
                     print(token)
                     if token != ""{
                         HttpHandler.token = token
+                        HttpHandler.userID = String(user_id)
                         self?.performSegueWithIdentifier("loginSuccess", sender: nil)
                         
                     }

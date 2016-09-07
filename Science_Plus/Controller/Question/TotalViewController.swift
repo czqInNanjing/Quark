@@ -19,8 +19,9 @@ class TotalViewController: UIViewController {
     
     @IBOutlet var indicator: UIView!
  
-    @objc func pan(sender: UIPanGestureRecognizer) {
-        print("get . .. ")
+    @IBOutlet var panGesture: UIPanGestureRecognizer!
+//
+    private func testAction(sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .Began:
             print("Start . . .")
@@ -28,10 +29,17 @@ class TotalViewController: UIViewController {
             print("cancel. . .")
         case .Ended:
             print("ended")
+        case .Changed:
+            print("change")
         default:
-            print("   not")
+            print("nothing")
         }
+
     }
+//
+    
+    
+    
     
     private struct myStoryboard {
         
@@ -77,7 +85,7 @@ class TotalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeController()
-        
+        panGesture.delegate = self
 //        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(TotalViewController.pan(_:)))
 //        panGestureRecognizer.delegate = self
 //        view.userInteractionEnabled = true
@@ -208,12 +216,15 @@ extension TotalViewController : UIPageViewControllerDataSource, UIPageViewContro
         }
     }
     
+        
+    
 }
-//extension TotalViewController: UIGestureRecognizerDelegate{
-//    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-//        if touch.view!.isDescendantOfView(view){
-//            return true
-//        }
-//        return false
-//    }
-//}
+extension TotalViewController: UIGestureRecognizerDelegate{
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        print("Judging")
+        if gestureRecognizer is UIPanGestureRecognizer {
+            testAction(gestureRecognizer as! UIPanGestureRecognizer)
+        }
+        return true
+    }
+}

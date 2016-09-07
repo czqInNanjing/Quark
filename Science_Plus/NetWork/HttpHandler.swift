@@ -14,7 +14,7 @@ public class HttpHandler {
     
     
     static var token:String? = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNDY1MDkzMTc2NTc0fQ.9KV_4QP2mveK8g4I8FKTRYT9zsHnn6UXSYBNQJzkshU"
-    
+    static var userID :String = ""
     static let httpInstance = HttpHandler()
     
     
@@ -89,7 +89,6 @@ public class HttpHandler {
             }
         }
     }
-    
     
     static func login(mail:String , passwd:String) ->Bool{
         let urlPath = HttpAPI.api_login + "mail=\(mail)&password=\(passwd)"

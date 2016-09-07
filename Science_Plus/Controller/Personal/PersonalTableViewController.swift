@@ -58,8 +58,20 @@ class PersonalTableViewController: UITableViewController {
         upNumber.text=String(person.numberOfUp)
         focusNumber.text=String(person.numberOfFocus)
         fansNumber.text=String(person.numberOfFans)
+        
     }
-    
+    func downloadImage(url: URL){
+        print("Download Started")
+        getDataFromUrl(url: url) { (data, response, error)  in
+            guard let data = data where error == nil else { return }
+            DispatchQueue.main.async() { () -> Void in
+                print(response?.suggestedFilename ?? url.lastPathComponent ?? "")
+                print("Download Finished")
+                self.imageView.image = UIImage(data: data)
+            }
+        }
+    }
+
     
     
     override func didReceiveMemoryWarning() {

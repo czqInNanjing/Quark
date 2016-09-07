@@ -42,6 +42,8 @@ struct HttpAPI{
     static let api_userDetail=prefix+"/api/user/detail"
     static let api_userFollowee=prefix+"/api/user/followee?"
     static let api_userFollower=prefix+"/api/user/follower?"
+    static let api_getImageToken = prefix + "/api/img/token"
+    
 }
 
 
