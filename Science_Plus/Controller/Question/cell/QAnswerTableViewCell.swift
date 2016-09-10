@@ -28,7 +28,7 @@ class QAnswerTableViewCell: UITableViewCell {
         name.text=answer?.user.name
         introduction.text=answer?.user.introduction
         content.text=answer?.content
-        thumbnailImageView.image=UIImage(named: answer?.user.img_url ?? SystemConstants.defaultUserImage)
+        thumbnailImageView.imageFromUrl((answer?.user.img_url)!)
         upNumber.text = "\(answer?.praiseNum ?? 0)"
         
     }

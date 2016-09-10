@@ -33,9 +33,7 @@ class QiniuSDK : NSObject{
         let bucket = "bucket"
         let key = "key"
         
-        let tempBucketName = "quarkavatar"
-        let userPref = "user/avatar/"
-        var imageToken = ""
+        
         /**
          *    上传完成后的回调函数
          *
@@ -43,16 +41,16 @@ class QiniuSDK : NSObject{
          *    @param key  上传时指定的key，原样返回
          *    @param resp 上传成功会返回文件信息，失败为nil; 可以通过此值是否为nil 判断上传结果
          */
-        HttpHandler.httpGET(HttpAPI.api_getImageToken , parameters: [bucket:tempBucketName , key : userPref + name] ){json in
+        HttpHandler.httpGET(HttpAPI.api_getImageToken , parameters: [bucket:HttpConstants.qiniuBucketName , key : name] ){json in
             print("name \(name)")
             
             if HttpStaticHelper.checkIfStatusOK(json){
-                imageToken = json[HttpConstants.message]["token"].stringValue
-//                imageToken = "teZRVKzAJIkzNrvKfcqetkCn3bbdvYT7-nL_VFeE:gTkpWVhepdC63DKQWn-w0LY_n0g=:eyJzY29wZSI6InF1YXJraW1hZ2U6aGgucG5nIiwiZGVhZGxpbmUiOjE0NzMyNTQ2Nzh9"
+                let imageToken = json[HttpConstants.message]["token"].stringValue
+
                 print(json)
                 print(imageToken)
                 qnUploadManager.putData(data,
-                                        key: userPref + name,
+                                        key:  name,
                                         token: imageToken,
                                         complete: { (responseInfo, keyImageName, res) in
                                             if(!responseInfo.broken){

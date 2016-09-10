@@ -35,7 +35,7 @@ class PersonShowModel {
     }
     
     func changePersonInfo(person:Person,controller:PersonDetailEditTableViewController){
-        HttpHandler.httpPost(HttpAPI.api_userDetail, parameters: ["name":person.name,"introduction":person.introduction]){[weak self] json in
+        HttpHandler.httpPost(HttpAPI.api_userDetail, parameters: ["img_url":person.img_url, "name":person.name,"introduction":person.introduction]){[weak self] json in
             if HttpStaticHelper.checkIfStatusOK(json){
                 controller.noticeSuccess(HttpConstants.editSuccess)
             }
