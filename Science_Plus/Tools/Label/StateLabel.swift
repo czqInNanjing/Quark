@@ -14,9 +14,9 @@ class StateLabel: UILabel {
     @IBInspectable
     var textClicked:String = ""
     
-    override var enabled: Bool{
+    override var isEnabled: Bool{
         didSet{
-            if enabled {
+            if isEnabled {
                 text = textClicked
                 
             }else{

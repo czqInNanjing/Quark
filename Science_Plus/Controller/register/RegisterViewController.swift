@@ -14,9 +14,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var inviteCodeField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     
-    private var registerModel=RegisterModel()
+    fileprivate var registerModel=RegisterModel()
 
-    private struct someMessage{
+    fileprivate struct someMessage{
 //        static let registerSuccess="registerSuccess"
 //        static let mail_exist="该邮箱已被注册"
 //        static let bad_mail="邮箱错误"
@@ -38,7 +38,7 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dealWithRegister(sender: UIButton){
+    @IBAction func dealWithRegister(_ sender: UIButton){
         print("email:  \(mainField.text!)   password:  \(passwordField.text!)    inviteCode:  \(inviteCodeField.text!)")
         let code=registerModel.register(mainField.text!, password: passwordField.text!, inviteCode: inviteCodeField.text!)
         var key = 0
@@ -54,7 +54,7 @@ class RegisterViewController: UIViewController {
         if let message_show=someMessage.showMessages[key]{
             if key==1{
                 self.noticeSuccess(message_show)
-                self.performSegueWithIdentifier("registerSuccess", sender: self)
+                self.performSegue(withIdentifier: "registerSuccess", sender: self)
             }
             else{
                 self.noticeError(message_show)
@@ -63,7 +63,7 @@ class RegisterViewController: UIViewController {
         
         if key == 1{
             let loginController = LoginViewController()
-            self.presentViewController(loginController,animated: true, completion:nil)
+            self.present(loginController,animated: true, completion:nil)
         }
     }
     

@@ -10,9 +10,9 @@ import Foundation
 import SwiftyJSON
 class QuestionListModel {
     
-    private var currentPage = 1
-    private var questions = [Array<Question>]()
-    func getQuestionsByPage(isRefresh:Bool = false , questionTable qtable:QuestionViewController? )  {
+    fileprivate var currentPage = 1
+    fileprivate var questions = [Array<Question>]()
+    func getQuestionsByPage(_ isRefresh:Bool = false , questionTable qtable:QuestionViewController? )  {
         
         
         

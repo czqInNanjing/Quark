@@ -24,7 +24,7 @@ class QuestionNeedAnswerTableViewCell: UITableViewCell {
         }
     }
     
-    private func updateUI(){
+    fileprivate func updateUI(){
         
         if let nowQuestion = question{
             title.text=nowQuestion.title

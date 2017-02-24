@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-public class HttpHandler {
+open class HttpHandler {
     
     
     
@@ -20,22 +20,22 @@ public class HttpHandler {
     
     
     
-    private init(){
+    fileprivate init(){
         print("Initialize the instance of HttpHandler , is in Singleton pattern.\n")
     }
     
     /* 本方法采用默认的GET请求和登录时获得的Token，传入URL , 参数和 获得json后的处理方式即可*/
-    static func httpGET(url:String ,parameters:[String : AnyObject] = [:] , handler:(JSON)->Void ){
+    static func httpGET(_ url:String ,parameters:[String : AnyObject] = [:] , handler:(JSON)->Void ){
         if let token = HttpHandler.token{
             Alamofire.request(.GET, url, parameters: parameters, headers: [HttpAPI.tokenHeader : token]).validate().responseJSON{response in
                 switch response.result {
-                case .Success:
+                case .success:
                     if let value = response.result.value {
                         let json = JSON(value)
                         handler(json)
                     }
                     
-                case .Failure(let error):
+                case .failure(let error):
                     print(error)
                 }
                 
@@ -50,18 +50,18 @@ public class HttpHandler {
         }
     }
     /**本方法采用默认的POST请求和登录时获得的Token，传入URL , 参数和 获得json后的处理方式即可 */
-    static func httpPost(url:String ,parameters:[String : AnyObject] , handler:(JSON)->Void ){
+    static func httpPost(_ url:String ,parameters:[String : AnyObject] , handler:(JSON)->Void ){
         print("post started!")
         if let token=HttpHandler.token{
             Alamofire.request(.POST, url, parameters: parameters,  headers: [HttpAPI.tokenHeader : token]).validate().responseJSON{response in
                 switch response.result {
-                case .Success:
+                case .success:
                     if let value = response.result.value {
                         let json = JSON(value)
                         handler(json)
                     }
                     
-                case .Failure(let error):
+                case .failure(let error):
                     print(error)
                 }
                 
@@ -71,39 +71,39 @@ public class HttpHandler {
     }
     
     /**本方法采用默认的DELETE请求和登录时获得的Token，传入URL , 参数和 获得json后的处理方式即可 */
-    static func httpDelete(url:String ,parameters:[String : AnyObject] , handler:(JSON)->Void ){
+    static func httpDelete(_ url:String ,parameters:[String : AnyObject] , handler:(JSON)->Void ){
         print("delete started!")
         if let token=HttpHandler.token{
-            Alamofire.request(.DELETE, url, parameters: parameters, encoding: .JSON, headers: [HttpAPI.tokenHeader : token]).validate().responseJSON{response in
+            Alamofire.request(.DELETE, url, parameters: parameters, encoding: .json, headers: [HttpAPI.tokenHeader : token]).validate().responseJSON{response in
                 print(url)
                 switch response.result {
-                case .Success:
+                case .success:
                     if let value = response.result.value {
                         let json = JSON(value)
                         handler(json)
                     }
                     
-                case .Failure(let error):
+                case .failure(let error):
                     print(error)
                 }
             }
         }
     }
     
-    static func login(mail:String , passwd:String) ->Bool{
+    static func login(_ mail:String , passwd:String) ->Bool{
         let urlPath = HttpAPI.api_login + "mail=\(mail)&password=\(passwd)"
         let token = "token"
         //创建NSURL对象
         
-        let url:NSURL! = NSURL(string:urlPath)
+        let url:URL! = URL(string:urlPath)
         //创建请求对象
-        let request:NSURLRequest = NSURLRequest(URL: url)
+        let request:URLRequest = URLRequest(url: url)
         
-        let session = NSURLSession.sharedSession()
+        let session = URLSession.shared
         
-        let semaphore = dispatch_semaphore_create(0)
+        let semaphore = DispatchSemaphore(value: 0)
         var result = true
-        let dataTask = session.dataTaskWithRequest(request,
+        let dataTask = session.dataTask(with: request,
                                                    completionHandler: {(data, response, error) -> Void in
                                                     if error != nil{
                                                         print(error?.code)
@@ -120,23 +120,23 @@ public class HttpHandler {
                                                         }
                                                     }
                                                     
-                                                    dispatch_semaphore_signal(semaphore)
-        }) as NSURLSessionTask
+                                                    semaphore.signal()
+        }) as URLSessionTask
         
         //使用resume方法启动任务
         dataTask.resume()
         
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        semaphore.wait(timeout: DispatchTime.distantFuture)
         
         return result
     }
     
-    static func regist(mail:String , passwd:String) -> Int{
+    static func regist(_ mail:String , passwd:String) -> Int{
         let urlPath = HttpAPI.api_regist
         var user_id:Int = -1
-        Alamofire.request(.POST, urlPath, parameters: ["mail" : mail , "password" : passwd],encoding: .JSON).validate().responseJSON{ response in
+        Alamofire.request(.POST, urlPath, parameters: ["mail" : mail , "password" : passwd],encoding: .json).validate().responseJSON{ response in
             switch response.result {
-            case .Success:
+            case .success:
                 if let value = response.result.value {
                     let json = JSON(value)
                     if json["status"].intValue == 1 {
@@ -144,7 +144,7 @@ public class HttpHandler {
                     }
                     print("JSON: \(json)")
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
             }
             
@@ -152,12 +152,12 @@ public class HttpHandler {
         return user_id
     }
     
-    static func regist_invite(mail:String , passwd:String,inviteCode:String) -> Int{
+    static func regist_invite(_ mail:String , passwd:String,inviteCode:String) -> Int{
         let urlPath = HttpAPI.api_regist_invite
         var user_id:Int = 1//==-2000,not email;==-2001,mail exist;==-2005,not correct inviteCode
-        Alamofire.request(.POST, urlPath, parameters: ["mail" : mail , "password" : passwd,"invite":inviteCode],encoding: .JSON).validate().responseJSON{ response in
+        Alamofire.request(.POST, urlPath, parameters: ["mail" : mail , "password" : passwd,"invite":inviteCode],encoding: .json).validate().responseJSON{ response in
             switch response.result {
-            case .Success:
+            case .success:
                 if let value = response.result.value {
                     let json = JSON(value)
                     if json["status"].intValue == 1 {
@@ -170,7 +170,7 @@ public class HttpHandler {
                     print("JSON: \(json)")
                     print("error_code: \(json["error_code"].intValue)")
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
             }
             

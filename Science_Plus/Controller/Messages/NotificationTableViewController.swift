@@ -14,12 +14,12 @@ class NotificationTableViewController: UITableViewController {
     
     
     
-    var names = [String](count: 30, repeatedValue:"蒋易成")
-    var questuins = [String](count: 30, repeatedValue:"如何成为人生赢家")
+    var names = [String](repeating: "蒋易成", count: 30)
+    var questuins = [String](repeating: "如何成为人生赢家", count: 30)
     
-    var titles = [String](count: 30, repeatedValue:"话费充值提醒")
+    var titles = [String](repeating: "话费充值提醒", count: 30)
     
-    var notifications = [String](count: 30, repeatedValue:"您的话费余额已不足，请尽快充值 。 。  。 。。 您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。")
+    var notifications = [String](repeating: "您的话费余额已不足，请尽快充值 。 。  。 。。 您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。", count: 30)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,20 +39,20 @@ class NotificationTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return names.count + titles.count
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row%2 == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("NoticAnswerTableViewCell", forIndexPath: indexPath) as! NoticAnswerTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NoticAnswerTableViewCell", for: indexPath) as! NoticAnswerTableViewCell
             cell.nameL.text = names[indexPath.row/2]
             cell.nameL.textColor=UIColor(red: 131/255, green: 163/255, blue: 186/255, alpha: 1)
             
@@ -60,7 +60,7 @@ class NotificationTableViewController: UITableViewController {
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("NoticOtherTableViewCell", forIndexPath: indexPath) as! NoticOtherTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NoticOtherTableViewCell", for: indexPath) as! NoticOtherTableViewCell
             cell.titleL.text = titles[indexPath.row/2]
             cell.contentL.text = notifications[indexPath.row/2]
             
@@ -113,10 +113,10 @@ class NotificationTableViewController: UITableViewController {
 
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "showMessageDetail" {
-           let detailController:MessageDetailViewController = segue.destinationViewController as! MessageDetailViewController
+           let detailController:MessageDetailViewController = segue.destination as! MessageDetailViewController
             if let messageCell:NoticOtherTableViewCell = sender as? NoticOtherTableViewCell {
 //                print("it's  a segue from message")
 //                print(messageCell.contentL.text)

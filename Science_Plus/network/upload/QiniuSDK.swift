@@ -16,7 +16,7 @@ class QiniuSDK : NSObject{
     static let qnUploadManager:QNUploadManager = QNUploadManager()
     
     /**get the image of the user*/
-    static func getUserImage(complete:() -> Void) {
+    static func getUserImage(_ complete:() -> Void) {
         
         
         
@@ -24,7 +24,7 @@ class QiniuSDK : NSObject{
     
     
     
-    static func upload(data:NSData?, name:String) {
+    static func upload(_ data:Data?, name:String) {
 
         
 
@@ -49,11 +49,11 @@ class QiniuSDK : NSObject{
 
                 print(json)
                 print(imageToken)
-                qnUploadManager.putData(data,
+                qnUploadManager.put(data,
                                         key:  name,
                                         token: imageToken,
                                         complete: { (responseInfo, keyImageName, res) in
-                                            if(!responseInfo.broken){
+                                            if(!responseInfo.isConnectionBroken){
                                                     print(responseInfo.statusCode)
                                                     print(responseInfo.description)
                                                     if(res == nil){

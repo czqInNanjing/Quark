@@ -16,7 +16,7 @@ class QuestionAddedModel{
     
     
     
-    func addQuestion(title:String ,content:String,tag:[String]){
+    func addQuestion(_ title:String ,content:String,tag:[String]){
         self.content=content
         self.tag=tag
         self.title=title

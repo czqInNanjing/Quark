@@ -18,7 +18,7 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
     
     var question_title = ""
     
-    private struct storyboard {
+    fileprivate struct storyboard {
         static let questionTag =  "showQueryTag"
     }
     
@@ -33,10 +33,10 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == storyboard.questionTag {
             
-            if let queryTagViewController = segue.destinationViewController as? QueryTagViewController {
+            if let queryTagViewController = segue.destination as? QueryTagViewController {
                 queryTagViewController.question_title=question_title
                 queryTagViewController.question_content=text.text
                 
@@ -58,22 +58,22 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
          }
          ps:委托方法在最下边。
          */
-        self.text.textContainerInset = UIEdgeInsetsZero
+        self.text.textContainerInset = UIEdgeInsets.zero
         self.text.textContainer.lineFragmentPadding = 0
         
         self.text.layoutManager.allowsNonContiguousLayout = false   //用于解决改变文字属性，TextView自动滑到顶部问题
         self.Toolbar.clipsToBounds = true
         
         //        text.text = "Typing you want!"
-        text.textColor = UIColor.lightGrayColor()
+        text.textColor = UIColor.lightGray
         
-        self.text.editable = true
+        self.text.isEditable = true
     }
     
     /*
      //移动Toolbar到右边
      */
-    @IBAction func toright(sender: UIBarButtonItem) {
+    @IBAction func toright(_ sender: UIBarButtonItem) {
         if self.toRight.constant < 0{                               //简单判断左移还是右移
             self.Toolbar.layer.cornerRadius = 22                    //改成圆角
             self.toRight.constant += (text.bounds.width - 40)
@@ -88,18 +88,18 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
     /*
      //隐藏键盘
      */
-    @IBAction func keybordDown(sender: UIBarButtonItem) {
+    @IBAction func keybordDown(_ sender: UIBarButtonItem) {
         self.text.resignFirstResponder()
     }
     
     /*
      //减小字体
      */
-    @IBAction func down(sender: AnyObject) {
+    @IBAction func down(_ sender: AnyObject) {
         if fontSize > 16 {
             self.fontSize = text.font!.pointSize
             self.fontSize -= 2
-            self.text.typingAttributes[NSFontAttributeName] = UIFont.systemFontOfSize((CGFloat)(self.fontSize))
+            self.text.typingAttributes[NSFontAttributeName] = UIFont.systemFont(ofSize: (CGFloat)(self.fontSize))
         }
         //        Notice.showText("减小字体", fontsize: fontSize,obliqueness: 0)//弹出提示
         
@@ -108,12 +108,12 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
     /*
      //增大字体
      */
-    @IBAction func up(sender: AnyObject) {
+    @IBAction func up(_ sender: AnyObject) {
         
         if fontSize < 40 {
             self.fontSize = text.font!.pointSize
             fontSize += 4
-            self.text.typingAttributes[NSFontAttributeName] = UIFont.systemFontOfSize((CGFloat)(self.fontSize))
+            self.text.typingAttributes[NSFontAttributeName] = UIFont.systemFont(ofSize: (CGFloat)(self.fontSize))
             
         }
         //        Notice.showText("增大字体", fontsize: fontSize,obliqueness: 0)//弹出提示
@@ -122,7 +122,7 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
     /*
      //下划线
      */
-    @IBAction func underLine(sender: UIBarButtonItem) {
+    @IBAction func underLine(_ sender: UIBarButtonItem) {
         _ = UIFont(name:NSUnderlineStyleAttributeName, size: fontSize)
         let typ = text.typingAttributes[NSUnderlineStyleAttributeName] as? NSNumber
         if (typ == 1) {
@@ -139,14 +139,14 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
     /*
      //粗体字
      */
-    @IBAction func bold(sender: UIBarButtonItem) {
-        let changedFontDescriptor = UIFont.systemFontOfSize((CGFloat)(self.fontSize))
+    @IBAction func bold(_ sender: UIBarButtonItem) {
+        let changedFontDescriptor = UIFont.systemFont(ofSize: (CGFloat)(self.fontSize))
         let typ = text.typingAttributes[NSFontAttributeName] as? UIFont
         if ( typ == changedFontDescriptor) {
-            self.text.typingAttributes[NSFontAttributeName] = UIFont.boldSystemFontOfSize((CGFloat)(self.fontSize))
+            self.text.typingAttributes[NSFontAttributeName] = UIFont.boldSystemFont(ofSize: (CGFloat)(self.fontSize))
             //            Notice.showText("粗体", fontsize: fontSize, obliqueness: 2)
         }else {
-            self.text.typingAttributes[NSFontAttributeName] = UIFont.systemFontOfSize((CGFloat)(self.fontSize))
+            self.text.typingAttributes[NSFontAttributeName] = UIFont.systemFont(ofSize: (CGFloat)(self.fontSize))
             //            Notice.showText("取消粗体", fontsize: fontSize, obliqueness: 2)
             
         }
@@ -156,7 +156,7 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
     /*
      //斜体字
      */
-    @IBAction func Obliqueness(sender: UIBarButtonItem) {
+    @IBAction func Obliqueness(_ sender: UIBarButtonItem) {
         let typ = text.typingAttributes[NSObliquenessAttributeName] as? NSNumber
         if typ == 0.5 {
             //            text.typingAttributes[NSObliquenessAttributeName] = (text.typingAttributes[NSObliquenessAttributeName] as? NSNumber) == 0.5 ? 0 : 0.5
@@ -173,35 +173,35 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
     /*
      //选取照片
      */
-    @IBAction func photoSelect(sender: AnyObject) {
+    @IBAction func photoSelect(_ sender: AnyObject) {
         
         self.text.resignFirstResponder()
         var sheet:UIActionSheet
-        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
+        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
             sheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil,otherButtonTitles: "从相册选择", "拍照")
         }else{
             sheet = UIActionSheet(title:nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "从相册选择")
         }
-        sheet.showInView(self.view)
+        sheet.show(in: self.view)
     }
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        var sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+        var sourceType = UIImagePickerControllerSourceType.photoLibrary
         if(buttonIndex != 0){
             if(buttonIndex==1){                                     //相册
-                sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                sourceType = UIImagePickerControllerSourceType.photoLibrary
                 self.text.resignFirstResponder()
             }else{
-                sourceType = UIImagePickerControllerSourceType.Camera
+                sourceType = UIImagePickerControllerSourceType.camera
             }
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
             imagePickerController.allowsEditing = true              //true为拍照、选择完进入图片编辑模式
             imagePickerController.sourceType = sourceType
-            self.presentViewController(imagePickerController, animated: true, completion: nil)
+            self.present(imagePickerController, animated: true, completion: nil)
         }
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         let string:NSMutableAttributedString = NSMutableAttributedString(attributedString: self.text.attributedText)
         var img  = info[UIImagePickerControllerEditedImage] as! UIImage
         img = self.scaleImage(img)
@@ -210,26 +210,26 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
         let textAttachmentString = NSAttributedString(attachment: textAttachment)
         
         let countString:Int = self.text.text.characters.count as Int
-        string.insertAttributedString(textAttachmentString, atIndex: countString) //可以用这个函数实现 插入到光标所在点 ps:如果你实现了希望能共享
+        string.insert(textAttachmentString, at: countString) //可以用这个函数实现 插入到光标所在点 ps:如果你实现了希望能共享
         text.attributedText = string
         /*
          //
          */
         //string.appendAttributedString(textAttachmentString)                    //也可以直接添加都后面
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
         
     }
     
-    func scaleImage(image:UIImage)->UIImage{
-        UIGraphicsBeginImageContext(CGSizeMake(self.view.bounds.size.width, image.size.height*(self.view.bounds.size.width/image.size.width)))
-        image.drawInRect(CGRectMake(0, 0, self.view.bounds.size.width, image.size.height*(self.view.bounds.size.width/image.size.width)))
+    func scaleImage(_ image:UIImage)->UIImage{
+        UIGraphicsBeginImageContext(CGSize(width: self.view.bounds.size.width, height: image.size.height*(self.view.bounds.size.width/image.size.width)))
+        image.draw(in: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: image.size.height*(self.view.bounds.size.width/image.size.width)))
         let scaledimage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return scaledimage
+        return scaledimage!
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Listen for changes to keyboard visibility so that we can adjust the text view accordingly.
@@ -237,9 +237,9 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
         /*
          // 用于注册键盘通知服务
          */
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: #selector(QueryDetialViewController.handleKeyboardWillShowNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(QueryDetialViewController.handleKeyboardWillHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(QueryDetialViewController.handleKeyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(QueryDetialViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     
@@ -247,14 +247,14 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
      //此bool 标志是为了让键盘 出现和隐藏 成对出现，否则会出现跳出两次的情况.
      */
     var bool:Bool = true
-    func handleKeyboardWillShowNotification(notification: NSNotification) {
+    func handleKeyboardWillShowNotification(_ notification: Notification) {
         if bool {
             keyboardWillChangeFrameWithNotification(notification, showsKeyboard: true)
             print("---show")
             bool = !bool
         }
     }
-    func handleKeyboardWillHideNotification(notification: NSNotification) {
+    func handleKeyboardWillHideNotification(_ notification: Notification) {
         if !bool {
             keyboardWillChangeFrameWithNotification(notification, showsKeyboard: false)
             print("---hide")
@@ -263,17 +263,17 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
         }
     }
     
-    func keyboardWillChangeFrameWithNotification(notification: NSNotification, showsKeyboard: Bool) {
+    func keyboardWillChangeFrameWithNotification(_ notification: Notification, showsKeyboard: Bool) {
         print("4")
         
         let userInfo = notification.userInfo!
-        let animationDuration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let animationDuration: TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
         // Convert the keyboard frame from screen to view coordinates.
-        let keyboardScreenBeginFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let keyboardScreenBeginFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
-        let keyboardViewBeginFrame = view.convertRect(keyboardScreenBeginFrame, fromView: view.window)
-        let keyboardViewEndFrame = view.convertRect(keyboardScreenEndFrame, fromView: view.window)
+        let keyboardViewBeginFrame = view.convert(keyboardScreenBeginFrame, from: view.window)
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
         print(keyboardViewBeginFrame.origin.y)
         print(keyboardViewEndFrame.origin.y)
         let originDelta = abs((keyboardViewEndFrame.origin.y - keyboardViewBeginFrame.origin.y))
@@ -287,7 +287,7 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
             textViewBottomLayoutGuideConstraint.constant -= (originDelta-44)
             self.toolBarLayOut.constant -= originDelta
         }
-        UIView.animateWithDuration(animationDuration, delay: 0, options: .BeginFromCurrentState, animations: {
+        UIView.animate(withDuration: animationDuration, delay: 0, options: .beginFromCurrentState, animations: {
             self.view.layoutIfNeeded()
             }, completion: nil)
         
@@ -295,7 +295,7 @@ class QueryDetialViewController: UIViewController ,UIImagePickerControllerDelega
         self.text.scrollRangeToVisible(self.text.selectedRange)              //让TextView滑到光标所在地方
     }
     
-    func textViewDidChange(textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         self.text.scrollRangeToVisible(self.text.selectedRange)
     }
     

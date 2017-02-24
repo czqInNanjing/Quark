@@ -21,15 +21,15 @@ class TotalViewController: UIViewController {
  
     @IBOutlet var panGesture: UIPanGestureRecognizer!
 //
-    private func testAction(sender: UIPanGestureRecognizer) {
+    fileprivate func testAction(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
-        case .Began:
+        case .began:
             print("Start . . .")
-        case .Cancelled:
+        case .cancelled:
             print("cancel. . .")
-        case .Ended:
+        case .ended:
             print("ended")
-        case .Changed:
+        case .changed:
             print("change")
         default:
             print("nothing")
@@ -41,7 +41,7 @@ class TotalViewController: UIViewController {
     
     
     
-    private struct myStoryboard {
+    fileprivate struct myStoryboard {
         
         static let questionDetail =  "showQuestionDetail"
         static let addQuestion = "addQuestion"
@@ -64,16 +64,16 @@ class TotalViewController: UIViewController {
             //根据当前页面计算得到偏移量
             //一个微小的动画移动提示条
             let offset = self.sliderView.frame.width / 2.0 * CGFloat(currentPage)
-            UIView.animateWithDuration(0.3) { () -> Void in
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
                 self.indicator.frame.origin = CGPoint(x: offset, y: -1)
-            }
+            }) 
             
             //根据currentPage 和 lastPage的大小关系，控制页面的切换方向
             if currentPage > lastPage {
-                self.pageViewController.setViewControllers([controllers[currentPage]], direction: .Forward, animated: true, completion: nil)
+                self.pageViewController.setViewControllers([controllers[currentPage]], direction: .forward, animated: true, completion: nil)
             }
             else {
-                self.pageViewController.setViewControllers([controllers[currentPage]], direction: .Reverse, animated: true, completion: nil)
+                self.pageViewController.setViewControllers([controllers[currentPage]], direction: .reverse, animated: true, completion: nil)
             }
             
             lastPage = currentPage
@@ -99,15 +99,15 @@ class TotalViewController: UIViewController {
         pageViewController = self.childViewControllers.first as! UIPageViewController
         
         //根据Storyboard ID来创建一个View Controller
-        questionController = storyboard?.instantiateViewControllerWithIdentifier(myStoryboard.questionViewControllerID) as! QuestionViewController
-        answerController = storyboard?.instantiateViewControllerWithIdentifier(myStoryboard.answerViewControllerID) as! QuestionNeedAnswerViewController
+        questionController = storyboard?.instantiateViewController(withIdentifier: myStoryboard.questionViewControllerID) as! QuestionViewController
+        answerController = storyboard?.instantiateViewController(withIdentifier: myStoryboard.answerViewControllerID) as! QuestionNeedAnswerViewController
         
         //设置pageViewController的数据源、代理为当前Controller
         pageViewController.dataSource = self
         pageViewController.delegate = self
         
         //手动为pageViewController提供提一个页面
-        pageViewController.setViewControllers([questionController], direction: .Forward, animated: true, completion: nil)
+        pageViewController.setViewControllers([questionController], direction: .forward, animated: true, completion: nil)
         
         //把页面添加到数组中
         controllers.append(questionController)
@@ -116,7 +116,7 @@ class TotalViewController: UIViewController {
         
     }
     
-    @IBAction func changeCurrentPage(sender: UIButton) {
+    @IBAction func changeCurrentPage(_ sender: UIButton) {
         if sender.currentTitle == myStoryboard.answerButtonName {
             currentPage = 1
         } else{
@@ -126,30 +126,30 @@ class TotalViewController: UIViewController {
     
     
     
-    override func viewWillAppear(animated: Bool) {
-        if let parent = self.parentViewController as? UINavigationController{
-            if let main = parent.parentViewController as? UITabBarController{
-                main.tabBar.hidden = false
+    override func viewWillAppear(_ animated: Bool) {
+        if let parent = self.parent as? UINavigationController{
+            if let main = parent.parent as? UITabBarController{
+                main.tabBar.isHidden = false
             }
         }
-        navigationController?.navigationBar.hidden=false
+        navigationController?.navigationBar.isHidden=false
     }
     
     
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == myStoryboard.questionDetail {
             
-            if let parent = self.parentViewController as? UINavigationController{
-                if let main = parent.parentViewController as? UITabBarController{
-                    main.tabBar.hidden = true
+            if let parent = self.parent as? UINavigationController{
+                if let main = parent.parent as? UITabBarController{
+                    main.tabBar.isHidden = true
                 }
             }
             if let question = sender as? Question {
                 
-                if let questionDetailController = segue.destinationViewController as? QAnswerViewController {
+                if let questionDetailController = segue.destination as? QAnswerViewController {
                     questionDetailController.question = question
                 }
             }
@@ -158,9 +158,9 @@ class TotalViewController: UIViewController {
         }
         
         if segue.identifier == myStoryboard.addQuestion{
-            if let parent = self.parentViewController as? UINavigationController{
-                if let main = parent.parentViewController as? UITabBarController{
-                    main.tabBar.hidden = true
+            if let parent = self.parent as? UINavigationController{
+                if let main = parent.parent as? UITabBarController{
+                    main.tabBar.isHidden = true
                 }
             }
         }
@@ -188,17 +188,17 @@ class TotalViewController: UIViewController {
 
 extension TotalViewController : UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        if viewController.isKindOfClass(QuestionViewController){
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if viewController.isKind(of: QuestionViewController.self){
 //            print("question View")
             return answerController
         }
         return nil
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
-        if viewController.isKindOfClass(QuestionNeedAnswerViewController) {
+        if viewController.isKind(of: QuestionNeedAnswerViewController.self) {
 //            print("answer View")
             return questionController
         }
@@ -206,9 +206,9 @@ extension TotalViewController : UIPageViewControllerDataSource, UIPageViewContro
         return nil
     }
     /** Will change the slide view when the page did change*/
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            if previousViewControllers[0].isKindOfClass(QuestionViewController){
+            if previousViewControllers[0].isKind(of: QuestionViewController.self){
                 currentPage = 1
             }else{
                 currentPage = 0
@@ -220,7 +220,7 @@ extension TotalViewController : UIPageViewControllerDataSource, UIPageViewContro
     
 }
 extension TotalViewController: UIGestureRecognizerDelegate{
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         print("Judging")
         if gestureRecognizer is UIPanGestureRecognizer {
             testAction(gestureRecognizer as! UIPanGestureRecognizer)

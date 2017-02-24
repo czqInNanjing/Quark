@@ -24,7 +24,7 @@ class QAnswerTableViewCell: UITableViewCell {
         }
     }
     
-    private func updateUI(){
+    fileprivate func updateUI(){
         name.text=answer?.user.name
         introduction.text=answer?.user.introduction
         content.text=answer?.content

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class InfititeScrollerView {
     
-    static func addView ( scrollView: UIScrollView){
+    static func addView ( _ scrollView: UIScrollView){
         
     }
     

@@ -24,31 +24,31 @@ class MyDate {
     
     init (){
         // get the current date and time
-        let currentDateTime = NSDate()
+        let currentDateTime = Date()
         
         // get the user's calendar
-        let userCalendar = NSCalendar.currentCalendar()
+        let userCalendar = Calendar.current
         
         // choose which date and time components are needed
-        let requestedComponents: NSCalendarUnit = [
-            NSCalendarUnit.Year,
-            NSCalendarUnit.Month,
-            NSCalendarUnit.Day,
-            NSCalendarUnit.Hour,
-            NSCalendarUnit.Minute,
-            NSCalendarUnit.Second
+        let requestedComponents: NSCalendar.Unit = [
+            NSCalendar.Unit.year,
+            NSCalendar.Unit.month,
+            NSCalendar.Unit.day,
+            NSCalendar.Unit.hour,
+            NSCalendar.Unit.minute,
+            NSCalendar.Unit.second
         ]
         
         // get the components
-        let dateTimeComponents = userCalendar.components(requestedComponents, fromDate: currentDateTime)
+        let dateTimeComponents = (userCalendar as NSCalendar).components(requestedComponents, from: currentDateTime)
         
         // now the components are available
-        year = dateTimeComponents.year   // 2015
-        month = dateTimeComponents.month  // 10
-        day = dateTimeComponents.day    // 26
-        hour = dateTimeComponents.hour   // 17
-        minute = dateTimeComponents.minute // 41
-        second = dateTimeComponents.second // 57
+        year = dateTimeComponents.year!   // 2015
+        month = dateTimeComponents.month!  // 10
+        day = dateTimeComponents.day!    // 26
+        hour = dateTimeComponents.hour!   // 17
+        minute = dateTimeComponents.minute! // 41
+        second = dateTimeComponents.second! // 57
     }
     
 }

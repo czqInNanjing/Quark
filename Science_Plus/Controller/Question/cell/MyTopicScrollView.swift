@@ -10,7 +10,7 @@ import Foundation
 /**Reused Compoment of the topic Scroll View*/
 class MyTopicScrollView {
     
-    private struct myStoryBoard {
+    fileprivate struct myStoryBoard {
         static let topicLabelName = "MyTopicLabel"
         static let labelY = 2
         static let labelHeight = 23
@@ -24,7 +24,7 @@ class MyTopicScrollView {
 
 
     
-    static func config(scrollView:UIScrollView, topics:[String]){
+    static func config(_ scrollView:UIScrollView, topics:[String]){
         
         var nextStart = myStoryBoard.labelStart
         for view in scrollView.subviews{
@@ -35,7 +35,7 @@ class MyTopicScrollView {
         
         
         for topic in topics {
-            let labelView:UIView = NSBundle.mainBundle().loadNibNamed(myStoryBoard.topicLabelName, owner: nil, options: nil)[0] as! UIView
+            let labelView:UIView = Bundle.main.loadNibNamed(myStoryBoard.topicLabelName, owner: nil, options: nil)![0] as! UIView
             
             if let topicLabel = labelView.subviews[0] as? UILabel{
                 topicLabel.removeFromSuperview()

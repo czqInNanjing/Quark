@@ -21,13 +21,13 @@ class StateButton: UIButton {
     
     
     
-    override var selected: Bool{
+    override var isSelected: Bool{
         didSet{
-            if selected{
-                setImage(UIImage(named: imageClicked), forState: .Normal)
+            if isSelected{
+                setImage(UIImage(named: imageClicked), for: UIControlState())
 
             }else{
-                setImage(UIImage(named: imageNotClicked), forState: .Normal)
+                setImage(UIImage(named: imageNotClicked), for: UIControlState())
             }
         }
     }

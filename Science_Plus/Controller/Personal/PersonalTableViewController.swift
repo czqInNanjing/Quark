@@ -17,9 +17,9 @@ class PersonalTableViewController: UITableViewController {
     @IBOutlet weak var fansNumber: UILabel!
     @IBOutlet weak var focusNumber: UILabel!
     
-    private var model=PersonShowModel()
+    fileprivate var model=PersonShowModel()
     
-    private struct storyboard{
+    fileprivate struct storyboard{
         static let showFocus="showFocus"
         static let showFans="showFans"
         static let showArea="showArea"
@@ -38,21 +38,21 @@ class PersonalTableViewController: UITableViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         model.getPersonInfo(storyboard.user_id,controller: self)
-        if let parent = self.parentViewController as? UINavigationController{
-            if let main = parent.parentViewController as? UITabBarController{
-                main.tabBar.hidden = false
+        if let parent = self.parent as? UINavigationController{
+            if let main = parent.parent as? UITabBarController{
+                main.tabBar.isHidden = false
             }
         }
     }
     
-    static func setUserId(id:Int){
+    static func setUserId(_ id:Int){
         storyboard.user_id=id
     }
     
-    func showPersonInfo(person:Person){
+    func showPersonInfo(_ person:Person){
         nameL.text=person.name
         introduction.text=person.introduction
         upNumber.text=String(person.numberOfUp)
@@ -70,47 +70,47 @@ class PersonalTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //        navigationItem.backBarButtonItem=UIBarButtonItem(title: "", style:
         //            .Plain, target: nil, action: nil)
         
         if let identifier = segue.identifier{
             switch identifier {
             case storyboard.showUp:
-                if let showFocusViewController = segue.destinationViewController as? FocusTableViewController{
+                if let showFocusViewController = segue.destination as? FocusTableViewController{
                     showFocusViewController.title="赞我的人"
                 }
             case storyboard.showFocus:
-                if let showFocusViewController = segue.destinationViewController as? FocusTableViewController{
+                if let showFocusViewController = segue.destination as? FocusTableViewController{
                     showFocusViewController.title="我关注的人"
                 }
             case storyboard.showFans:
-                if let showFocusViewController = segue.destinationViewController as? FocusTableViewController{
+                if let showFocusViewController = segue.destination as? FocusTableViewController{
                     showFocusViewController.title="关注我的人"
                 }
             case storyboard.showArea:
-                if let showFocusViewController = segue.destinationViewController as? FocusTableViewController{
+                if let showFocusViewController = segue.destination as? FocusTableViewController{
                     showFocusViewController.title="我关注的领域"
                 }
             case storyboard.showFocusQuestion:
-                if let showFocusViewController = segue.destinationViewController as? FocusQuestionTableViewController{
+                if let showFocusViewController = segue.destination as? FocusQuestionTableViewController{
                     showFocusViewController.title="我关注的问题"
                 }
             case storyboard.showQuery:
-                if let showFocusViewController = segue.destinationViewController as? FocusQuestionTableViewController{
+                if let showFocusViewController = segue.destination as? FocusQuestionTableViewController{
                     showFocusViewController.title="我提出的问题"
                 }
             case storyboard.showAnswerQuestion:
-                if let showFocusViewController = segue.destinationViewController as? MyAnswerTableViewController{
+                if let showFocusViewController = segue.destination as? MyAnswerTableViewController{
                     showFocusViewController.title="我回答的问题"
                 }
             case storyboard.showPersonDetail:
-                if let parent = self.parentViewController as? UINavigationController{
-                    if let main = parent.parentViewController as? UITabBarController{
-                        main.tabBar.hidden = true
+                if let parent = self.parent as? UINavigationController{
+                    if let main = parent.parent as? UITabBarController{
+                        main.tabBar.isHidden = true
                     }
                 }
-                if let showDetailController = segue.destinationViewController as? PersonDetailTableViewController{
+                if let showDetailController = segue.destination as? PersonDetailTableViewController{
                     showDetailController.title=nameL.text
                     PersonDetailTableViewController.setUserId(storyboard.user_id)
                 }

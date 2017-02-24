@@ -16,12 +16,12 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tableView=UITableView(frame: self.view.frame, style: .Plain)
-        tableView.backgroundColor=UIColor.blueColor()
+        tableView.backgroundColor=UIColor.blue
         
         self.view.addSubview(tableView)
         
     }
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         
     }
 

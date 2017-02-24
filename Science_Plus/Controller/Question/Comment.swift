@@ -43,7 +43,7 @@ class Comment {
     }
     
     
-    static func makeComment(json:JSON) -> Comment{
+    static func makeComment(_ json:JSON) -> Comment{
         return Comment(id: json["id"].intValue, answerId: json["answer_id"].intValue, answerWriterId: json["answer_writer"].intValue, replyerId: json["replyer_id"].intValue, replyerName: json["replyer_name"].stringValue, replyeeId: json["replyee_id"].intValue, replyeeName: json["replyee_name"].stringValue, imageURL: json["img_url"].stringValue, createTime: json["create_time"].stringValue, content: json["content"].stringValue)
         
         

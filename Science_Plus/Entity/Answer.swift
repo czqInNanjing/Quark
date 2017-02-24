@@ -57,7 +57,7 @@ class Answer {
     
     
     
-    static func makeSimpleAnswer(json:JSON) -> Answer {
+    static func makeSimpleAnswer(_ json:JSON) -> Answer {
         let answer = Answer()
         
         answer.id = json["id"].intValue
@@ -69,7 +69,7 @@ class Answer {
         
     }
     
-    static func makeFullAnswer(json : JSON) -> Answer{
+    static func makeFullAnswer(_ json : JSON) -> Answer{
         let answer = Answer()
 //        print("To make answer : \(json)")
         answer.id = json[HttpConstants.message]["id"].intValue

@@ -9,11 +9,11 @@
 import Foundation
 
 class RegisterModel{
-    private var email=""
-    private var password=""
-    private var inviteCode=""
+    fileprivate var email=""
+    fileprivate var password=""
+    fileprivate var inviteCode=""
     
-    func register(email:String,password:String,inviteCode:String)->Int{
+    func register(_ email:String,password:String,inviteCode:String)->Int{
         self.email=email
         self.password=password
         self.inviteCode=inviteCode

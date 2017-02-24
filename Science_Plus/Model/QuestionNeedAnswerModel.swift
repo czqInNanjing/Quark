@@ -10,8 +10,8 @@ import Foundation
 import SwiftyJSON
 /**“这些问题需要你的回答“界面Model*/
 class QuestionNeedAnswerModel {
-    private var currentPage = 1
-    private var questions = [Array<Question>]()
+    fileprivate var currentPage = 1
+    fileprivate var questions = [Array<Question>]()
     func getQuestionsByPage(questionTable qtable:QuestionNeedAnswerViewController? )  {
         
         

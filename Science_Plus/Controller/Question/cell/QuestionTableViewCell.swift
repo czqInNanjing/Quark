@@ -15,7 +15,7 @@ class QuestionTableViewCell: UITableViewCell {
     @IBOutlet var thumbnailImageView: UIImageView!
     @IBOutlet var topicScrollView: UIScrollView!{
         didSet{
-            topicScrollView.scrollEnabled = true
+            topicScrollView.isScrollEnabled = true
         }
     }
     var question : Question? {
@@ -28,7 +28,7 @@ class QuestionTableViewCell: UITableViewCell {
     
     
     
-    private func updateUI(){
+    fileprivate func updateUI(){
         
         if let nowQuestion = question{
             

@@ -35,7 +35,7 @@ class Question {
     init(){
     }
     
-    static func makeSimpleQuestion(json:JSON) -> Question {
+    static func makeSimpleQuestion(_ json:JSON) -> Question {
         let question = Question()
         
         question.id = json["id"].intValue
@@ -50,7 +50,7 @@ class Question {
         
     }
     
-    static func makeNeedAnswerQuestion( json:JSON) -> Question{
+    static func makeNeedAnswerQuestion( _ json:JSON) -> Question{
         let question = Question()
         
         question.id = json["id"].intValue
@@ -65,7 +65,7 @@ class Question {
     //
     //    }
     
-    static func makeFullQuestion(json:JSON) -> Question{
+    static func makeFullQuestion(_ json:JSON) -> Question{
         let question = Question()
         question.id = json["id"].intValue
         question.title = json["title"].stringValue

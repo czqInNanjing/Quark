@@ -47,7 +47,7 @@ class Person{
         
     }
     
-    static func makeSimplePerson(json:JSON) -> Person {
+    static func makeSimplePerson(_ json:JSON) -> Person {
         let person=Person()
         person.id=json["id"].intValue
         person.name=json["name"].stringValue
@@ -60,7 +60,7 @@ class Person{
         return person
     }
     
-    static func makeFullPerson(json:JSON) ->Person {
+    static func makeFullPerson(_ json:JSON) ->Person {
         let person=Person()
         person.id=json["id"].intValue
         person.name=json["name"].stringValue

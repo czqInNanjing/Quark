@@ -12,11 +12,11 @@ import SwiftyJSON
 //问题列表页
 class QuestionViewController: UIViewController , UITableViewDataSource,UITableViewDelegate{
     
-    private var searchController:UISearchController!
+    fileprivate var searchController:UISearchController!
     
-    private var showController=SearchViewController()
+    fileprivate var showController=SearchViewController()
     
-    private struct storyboard {
+    fileprivate struct storyboard {
         static let questionCell = "QuestionCell"
         static let questionDetail =  "showQuestionDetail"
         static let search = "showSearch"
@@ -27,7 +27,7 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
     @IBOutlet var table:UITableView!
     
     
-    private var questionModel = QuestionListModel()
+    fileprivate var questionModel = QuestionListModel()
     
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
         
         
         searchController=UISearchController(searchResultsController: nil)
-        searchController.searchBar.searchBarStyle = .Minimal
+        searchController.searchBar.searchBarStyle = .minimal
         searchController.searchBar.sizeToFit()
         searchController.dimsBackgroundDuringPresentation=false
         
@@ -67,48 +67,48 @@ class QuestionViewController: UIViewController , UITableViewDataSource,UITableVi
         
     }
     
-    func viewTap(sender: UITapGestureRecognizer){
+    func viewTap(_ sender: UITapGestureRecognizer){
         print("clicked")
     }
     
-    override func viewDidAppear(animated: Bool) {
-        navigationController?.navigationBar.hidden=false
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden=false
     }
     
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return questionModel.getQuestions().count
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionModel.getQuestions()[section].count
     }
     
     
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCellWithIdentifier(storyboard.questionCell, forIndexPath: indexPath) as! QuestionTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell=tableView.dequeueReusableCell(withIdentifier: storyboard.questionCell, for: indexPath) as! QuestionTableViewCell
         let questions = questionModel.getQuestions()
         cell.question = questions[indexPath.section][indexPath.row]
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.parentViewController!.parentViewController!.performSegueWithIdentifier(storyboard.questionDetail, sender: questionModel.getQuestions()[indexPath.section][indexPath.row])
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.parent!.parent!.performSegue(withIdentifier: storyboard.questionDetail, sender: questionModel.getQuestions()[indexPath.section][indexPath.row])
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == storyboard.search {
-            print(self.parentViewController)
-            if let parent = self.parentViewController as? UIPageViewController{
-                print(parent.parentViewController)
-                if let main = parent.parentViewController as? TotalViewController{
-                    if let parent2 = main.parentViewController as? UINavigationController{
-                        if let main2 = parent2.parentViewController as? UITabBarController{
-                            main2.tabBar.hidden = true
+            print(self.parent)
+            if let parent = self.parent as? UIPageViewController{
+                print(parent.parent)
+                if let main = parent.parent as? TotalViewController{
+                    if let parent2 = main.parent as? UINavigationController{
+                        if let main2 = parent2.parent as? UITabBarController{
+                            main2.tabBar.isHidden = true
                         }
                     }
                 }

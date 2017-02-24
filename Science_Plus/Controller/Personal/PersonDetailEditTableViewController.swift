@@ -13,7 +13,7 @@ import Photos
 class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate{
     
     var person=Person()
-    private var model=PersonShowModel()
+    fileprivate var model=PersonShowModel()
     
     @IBOutlet weak var nameT: UITextField!
     @IBOutlet weak var introductionT: UITextField!
@@ -30,8 +30,8 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
     
     
     @IBOutlet weak var imageView:UIImageView!
-    private var sheet:UIAlertController!
-    private var sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+    fileprivate var sheet:UIAlertController!
+    fileprivate var sourceType = UIImagePickerControllerSourceType.photoLibrary
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,20 +39,20 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
         showInfo()
     }
     
-    private struct storyboard{
+    fileprivate struct storyboard{
         
         static let nullInfo="信息不完整"
         
     }
 
     
-    private func showInfo(){
+    fileprivate func showInfo(){
         nameT.text=person.name
         introductionT.text=person.introduction
         
         let address=person.residence
         if address != ""{
-            let fullAddressArr = address.componentsSeparatedByString("&")
+            let fullAddressArr = address.components(separatedBy: "&")
             provinceT.text=fullAddressArr[0]
             cityT.text=fullAddressArr.count>1 ? fullAddressArr[1] : " "
         }
@@ -63,14 +63,14 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
         
         let education=person.education
         if education != ""{
-            let fullArr = education.componentsSeparatedByString("%")
+            let fullArr = education.components(separatedBy: "%")
             schoolT.text=fullArr[0]
             degreeT.text=fullArr.count>1 ? fullArr[1] : " "
         }
         
         let work=person.work
         if work != ""{
-            let fullArr = work.componentsSeparatedByString("%")
+            let fullArr = work.components(separatedBy: "%")
             workspaceT.text=fullArr[0]
             positionT.text=fullArr.count>1 ? fullArr[1] : " "
         }
@@ -99,7 +99,7 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
             
             
             model.changePersonInfo(editedPerson, controller: self)
-            self.navigationController?.popViewControllerAnimated(false)
+            self.navigationController?.popViewController(animated: false)
 
         }
         
@@ -114,9 +114,9 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
      */
     func cameraPermissions() -> Bool{
         
-        let authStatus:AVAuthorizationStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
+        let authStatus:AVAuthorizationStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         
-        if(authStatus == AVAuthorizationStatus.Denied || authStatus == AVAuthorizationStatus.Restricted) {
+        if(authStatus == AVAuthorizationStatus.denied || authStatus == AVAuthorizationStatus.restricted) {
             return false
         }else {
             return true
@@ -133,7 +133,7 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
     func PhotoLibraryPermissions() -> Bool {
         
         let library:PHAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
-        if(library == PHAuthorizationStatus.Denied || library == PHAuthorizationStatus.Restricted){
+        if(library == PHAuthorizationStatus.denied || library == PHAuthorizationStatus.restricted){
             return false
         }else {
             return true
@@ -141,81 +141,81 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
     }
     
     //    取消图片选择操作
-    func imagePickerControllerDidCancel(picker:UIImagePickerController)
+    func imagePickerControllerDidCancel(_ picker:UIImagePickerController)
     {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
     
     //    选择完图片操作
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [AnyHashable: Any]!) {
         imageView.image = image
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
         
         
         
     }
     
-    @IBAction func picker(sender: AnyObject) {
+    @IBAction func picker(_ sender: AnyObject) {
         
         //判断设置是否支持图片库和相机
         
         
-        sheet = UIAlertController(title: nil, message: "选择获取头像方式", preferredStyle: .ActionSheet)
+        sheet = UIAlertController(title: nil, message: "选择获取头像方式", preferredStyle: .actionSheet)
         
         //取消
-        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: {(action) in
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: {(action) in
             print("取消")
         })
         sheet.addAction(cancelAction)
         
         
         //相册
-        let OKAction = UIAlertAction(title: "相册", style: .Default, handler: {(action) in
+        let OKAction = UIAlertAction(title: "相册", style: .default, handler: {(action) in
             if(self.PhotoLibraryPermissions() == true){
-                self.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                self.sourceType = UIImagePickerControllerSourceType.photoLibrary
                 self.open()
             }else{
                 //弹出提示框
-                self.sheet = UIAlertController(title: nil, message: "请在设置中打开相册权限", preferredStyle: .Alert)
+                self.sheet = UIAlertController(title: nil, message: "请在设置中打开相册权限", preferredStyle: .alert)
                 
-                let tempAction = UIAlertAction(title: "确定", style: .Cancel) { (action) in
+                let tempAction = UIAlertAction(title: "确定", style: .cancel) { (action) in
                     print("取消")
                     
                 }
                 self.sheet.addAction(tempAction)
-                self.presentViewController(self.sheet, animated: true, completion: nil)
+                self.present(self.sheet, animated: true, completion: nil)
             }
         })
-        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)){
+        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary)){
             sheet.addAction(OKAction)
         }
         
         
         //摄像头
-        let destroyAction = UIAlertAction(title: "摄像头", style: .Default, handler: { (action) in
+        let destroyAction = UIAlertAction(title: "摄像头", style: .default, handler: { (action) in
             if(self.cameraPermissions() == true){
-                self.sourceType = UIImagePickerControllerSourceType.Camera
+                self.sourceType = UIImagePickerControllerSourceType.camera
                 self.open()
             }else {
                 //弹出提示框
-                self.sheet = UIAlertController(title: nil, message: "请在设置中打开摄像头权限", preferredStyle: .Alert)
+                self.sheet = UIAlertController(title: nil, message: "请在设置中打开摄像头权限", preferredStyle: .alert)
                 
-                let tempAction = UIAlertAction(title: "确定", style: .Cancel) { (action) in
+                let tempAction = UIAlertAction(title: "确定", style: .cancel) { (action) in
                 }
                 self.sheet.addAction(tempAction)
-                self.presentViewController(self.sheet, animated: true, completion: nil)
+                self.present(self.sheet, animated: true, completion: nil)
             }
         })
-        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
+        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
             sheet.addAction(destroyAction)
         }
         
         
         
-        self.presentViewController(self.sheet, animated: true, completion: nil)
+        self.present(self.sheet, animated: true, completion: nil)
     }
     
     //    打开图库或相机
@@ -225,7 +225,7 @@ class PersonDetailEditTableViewController: UITableViewController ,UIImagePickerC
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true//true为拍照、选择完进入图片编辑模式
         imagePickerController.sourceType = sourceType
-        self.presentViewController(imagePickerController, animated: true, completion:{
+        self.present(imagePickerController, animated: true, completion:{
             
         })
         

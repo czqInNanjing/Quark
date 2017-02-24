@@ -12,9 +12,9 @@ import UIKit
 class QuestionNeedAnswerViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
     @IBOutlet var table:UITableView!
     
-    private var questionModel = QuestionNeedAnswerModel()
+    fileprivate var questionModel = QuestionNeedAnswerModel()
 
-    private struct storyboard {
+    fileprivate struct storyboard {
         static let questionCell = "QuestionNeedAnswerCell"
         static let questionDetail =  "showQuestionDetail"
         static let addAnswer = "addAnswer"
@@ -38,23 +38,23 @@ class QuestionNeedAnswerViewController: UIViewController ,UITableViewDataSource,
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        navigationController?.navigationBar.hidden=false
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden=false
     }
 
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return questionModel.getQuestions().count
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionModel.getQuestions()[section].count
     }
 
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCellWithIdentifier(storyboard.questionCell, forIndexPath: indexPath) as! QuestionNeedAnswerTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell=tableView.dequeueReusableCell(withIdentifier: storyboard.questionCell, for: indexPath) as! QuestionNeedAnswerTableViewCell
 //        print(indexPath.section)
 //        print(indexPath.row)
 //        print(questionModel.getQuestions().count)
@@ -65,22 +65,22 @@ class QuestionNeedAnswerViewController: UIViewController ,UITableViewDataSource,
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.parentViewController!.parentViewController!.performSegueWithIdentifier(storyboard.questionDetail, sender: questionModel.getQuestions()[indexPath.section][indexPath.row])
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.parent!.parent!.performSegue(withIdentifier: storyboard.questionDetail, sender: questionModel.getQuestions()[indexPath.section][indexPath.row])
         
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == storyboard.addAnswer{
             print("addAnswerFromQuestionNeedAnswer")
-            if let parent = self.parentViewController as? UIPageViewController{
-                print(parent.parentViewController)
-                if let main = parent.parentViewController as? TotalViewController{
-                    if let parent2 = main.parentViewController as? UINavigationController{
-                        if let main2 = parent2.parentViewController as? UITabBarController{
-                            main2.tabBar.hidden = true
+            if let parent = self.parent as? UIPageViewController{
+                print(parent.parent)
+                if let main = parent.parent as? TotalViewController{
+                    if let parent2 = main.parent as? UINavigationController{
+                        if let main2 = parent2.parent as? UITabBarController{
+                            main2.tabBar.isHidden = true
                         }
                     }
                 }

@@ -12,7 +12,7 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     
     @IBOutlet weak var table: UITableView!
-    private var model = CommentViewModel()
+    fileprivate var model = CommentViewModel()
     
     var answerID:Int?{
         get{
@@ -23,12 +23,12 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
     }
     
-    private struct storyBoard{
+    fileprivate struct storyBoard{
         static let commentCell = "CommentCell"
         static let addComment="addComment"
     }
     
-    override func viewWillAppear(animated: Bool){
+    override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(true)
 //        self.table
         model.loadComment(self)
@@ -44,28 +44,28 @@ class CommentViewController: UIViewController,UITableViewDataSource,UITableViewD
 //        // Do any additional setup after loading the view.
 //    }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int{
+    func numberOfSections(in tableView: UITableView) -> Int{
         return model.getComment().count
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.getComment()[section].count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(storyBoard.commentCell, forIndexPath: indexPath) as! CommentTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: storyBoard.commentCell, for: indexPath) as! CommentTableViewCell
         
 
         cell.comment = model.getComment()[indexPath.section][indexPath.row]
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
             case storyBoard.addComment:
-                if let addCommentViewController=segue.destinationViewController as? AddCommentViewController{
+                if let addCommentViewController=segue.destination as? AddCommentViewController{
                     if let id = answerID{
                         addCommentViewController.setAnswerId(id)
                     }

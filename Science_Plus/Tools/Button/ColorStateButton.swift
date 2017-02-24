@@ -25,14 +25,14 @@ class ColorStateButton: UIButton {
     
     
     
-    override var selected: Bool{
+    override var isSelected: Bool{
         didSet{
-            if selected{
+            if isSelected{
                 self.backgroundColor=colorClicked
-                self.setTitle(textClicked, forState: .Normal)
+                self.setTitle(textClicked, for: UIControlState())
             }else{
                 self.backgroundColor=colorNotClicked
-                self.setTitle(textNotClicked, forState: .Normal)
+                self.setTitle(textNotClicked, for: UIControlState())
             }
         }
     }

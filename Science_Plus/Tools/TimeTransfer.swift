@@ -11,13 +11,13 @@ import Foundation
 class TimeTransfer {
     static var formatter = "yyyy年MM月dd日"
     
-    static func stringToTimeStamp(stringTime:String)->String {
+    static func stringToTimeStamp(_ stringTime:String)->String {
         
-        let dfmatter = NSDateFormatter()
+        let dfmatter = DateFormatter()
         dfmatter.dateFormat = formatter
-        let date = dfmatter.dateFromString(stringTime)
+        let date = dfmatter.date(from: stringTime)
         
-        let dateStamp:NSTimeInterval = date!.timeIntervalSince1970
+        let dateStamp:TimeInterval = date!.timeIntervalSince1970
         
         let dateSt:Int = Int(dateStamp)
         print(dateSt)
@@ -25,21 +25,21 @@ class TimeTransfer {
         
     }
     
-    static func timeStampToString(timeStamp:String)->String {
+    static func timeStampToString(_ timeStamp:String)->String {
         
         let string = NSString(string: timeStamp)
         
-        let timeSta:NSTimeInterval = string.doubleValue
-        let dfmatter = NSDateFormatter()
+        let timeSta:TimeInterval = string.doubleValue
+        let dfmatter = DateFormatter()
         dfmatter.dateFormat = formatter
         
-        let date = NSDate(timeIntervalSince1970: timeSta)
+        let date = Date(timeIntervalSince1970: timeSta)
         
-        print(dfmatter.stringFromDate(date))
-        return dfmatter.stringFromDate(date)
+        print(dfmatter.string(from: date))
+        return dfmatter.string(from: date)
     }
     
-    static func timeStampToStringWithoutYear(timeStamp:String) -> String {
+    static func timeStampToStringWithoutYear(_ timeStamp:String) -> String {
         formatter = "MM月dd日"
         return timeStampToString(timeStamp)
     }

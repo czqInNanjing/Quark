@@ -9,14 +9,14 @@
 import UIKit
 
 class AddCommentViewController: UIViewController {
-    private var answer_id=0
-    private var comment_content=""
+    fileprivate var answer_id=0
+    fileprivate var comment_content=""
     
-    private var commentAddedModel=CommentAddedModel()
+    fileprivate var commentAddedModel=CommentAddedModel()
     
     @IBOutlet var textView:UITextView!
     
-    private struct showMessage{
+    fileprivate struct showMessage{
         static let addSuccess="添加评论成功！"
         
     }
@@ -33,7 +33,7 @@ class AddCommentViewController: UIViewController {
     }
     
     
-    func setAnswerId(id:Int){
+    func setAnswerId(_ id:Int){
         print("set id",id)
         answer_id=id
     }
@@ -42,7 +42,7 @@ class AddCommentViewController: UIViewController {
     @IBAction func addComment(){
         comment_content=textView.text
         commentAddedModel.addComment(answer_id, content: comment_content)
-        self.navigationController?.popViewControllerAnimated(false)
+        self.navigationController?.popViewController(animated: false)
         self.noticeSuccess("增加评论成功！")
         
         

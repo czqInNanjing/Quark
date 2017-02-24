@@ -11,13 +11,13 @@ import Alamofire
 import SwiftyJSON
 class CommentViewModel {
     
-    private var answerID:Int?
+    fileprivate var answerID:Int?
     
-    private var comment = [Array<Comment>]()
+    fileprivate var comment = [Array<Comment>]()
     
-    private var currentPage = 1
+    fileprivate var currentPage = 1
     
-    func loadComment(controller: CommentViewController) {
+    func loadComment(_ controller: CommentViewController) {
         if let id = answerID{
             HttpHandler.httpGET(HttpAPI.apiGetCommentList, parameters: ["answer_id":id,"page":currentPage] ){[weak self] json in
 //                print("comment Data: \(json)")
@@ -51,7 +51,7 @@ class CommentViewModel {
     }
     
     
-    func setAnswer(id:Int?){
+    func setAnswer(_ id:Int?){
         answerID = id
     }
     func getAnswer() -> Int?{

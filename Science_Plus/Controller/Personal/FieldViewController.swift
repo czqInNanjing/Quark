@@ -18,7 +18,7 @@ class FieldViewController: UIViewController , UITableViewDataSource,UITableViewD
     @IBOutlet weak var tableView: UITableView!
 
     
-    private struct storyboard {
+    fileprivate struct storyboard {
         static let questionCell = "questionCell"
     }
     
@@ -34,18 +34,18 @@ class FieldViewController: UIViewController , UITableViewDataSource,UITableViewD
     }
     
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int{
+    func numberOfSections(in tableView: UITableView) -> Int{
         return 0
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCellWithIdentifier(storyboard.questionCell , forIndexPath: indexPath) as! FieldQuestionTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell=tableView.dequeueReusableCell(withIdentifier: storyboard.questionCell , for: indexPath) as! FieldQuestionTableViewCell
         
         return cell
     }

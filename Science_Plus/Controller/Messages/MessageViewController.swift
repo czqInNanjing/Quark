@@ -19,30 +19,30 @@ class MessageViewController: UIViewController {
         super.viewDidLoad()
         
             
-        notificationView.hidden = false
-        letterView.hidden = true
-        agreeView.hidden = true
+        notificationView.isHidden = false
+        letterView.isHidden = true
+        agreeView.isHidden = true
         
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func indexChanged(sender: UISegmentedControl) {
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch SegementController.selectedSegmentIndex
         {
         case 0:
-            notificationView.hidden = false
-            letterView.hidden = true
-            agreeView.hidden = true
+            notificationView.isHidden = false
+            letterView.isHidden = true
+            agreeView.isHidden = true
             
         case 1:
-            agreeView.hidden = false
+            agreeView.isHidden = false
 
-            notificationView.hidden = true
-            letterView.hidden = true
+            notificationView.isHidden = true
+            letterView.isHidden = true
         case 2:
-            letterView.hidden = false
-            notificationView.hidden = true
-            agreeView.hidden = true
+            letterView.isHidden = false
+            notificationView.isHidden = true
+            agreeView.isHidden = true
             
             
             

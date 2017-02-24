@@ -9,11 +9,11 @@
 import Foundation
 
 class AnswerStateChangeModel{
-    private var answer_id=0
-    private var isTrue=true
-    private var api=""
+    fileprivate var answer_id=0
+    fileprivate var isTrue=true
+    fileprivate var api=""
     
-    func changeFocusState(answer_id:Int,isFocused:Bool,api:String){
+    func changeFocusState(_ answer_id:Int,isFocused:Bool,api:String){
         self.isTrue = isFocused
         self.answer_id = answer_id
         print(answer_id)

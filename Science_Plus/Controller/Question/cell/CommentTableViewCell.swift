@@ -21,7 +21,7 @@ class CommentTableViewCell: UITableViewCell {
         }
     }
     
-    private func updateUI(){
+    fileprivate func updateUI(){
         // TODO
         if let comment = self.comment{
             name.text = comment.replyerName

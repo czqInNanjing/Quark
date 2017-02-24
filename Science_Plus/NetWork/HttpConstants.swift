@@ -13,11 +13,11 @@ import SwiftyJSON
 
 
 class HttpStaticHelper{
-    static func checkIfStatusOK(json:JSON) -> Bool{
+    static func checkIfStatusOK(_ json:JSON) -> Bool{
         return json[HttpConstants.status].intValue == 1
     }
     
-    static func checkIfValueExist(json:JSON , value:String) -> Bool{
+    static func checkIfValueExist(_ json:JSON , value:String) -> Bool{
         return json[value].stringValue != "null"
     }
 }

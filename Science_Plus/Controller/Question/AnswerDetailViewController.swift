@@ -25,7 +25,7 @@ class AnswerDetailViewController: UIViewController {
     @IBOutlet var commentButton:UIButton!
     @IBOutlet var commentState:UILabel!
     
-    private var answer:Answer?{
+    fileprivate var answer:Answer?{
         get{
             return answerDetailModel.getAnswer()
         }
@@ -33,10 +33,10 @@ class AnswerDetailViewController: UIViewController {
             answerDetailModel.setAnswerID(newValue?.id ?? 0)
         }
     }
-    private var answerDetailModel = AnswerDetailModel()
-    private var answerStateChangeModel = AnswerStateChangeModel()
+    fileprivate var answerDetailModel = AnswerDetailModel()
+    fileprivate var answerStateChangeModel = AnswerStateChangeModel()
     
-    private struct storyBoard {
+    fileprivate struct storyBoard {
         static let showCommentSegue = "showAnswerComment"
     }
     
@@ -48,7 +48,7 @@ class AnswerDetailViewController: UIViewController {
         initUI()
     }
     
-    private func initUI(){
+    fileprivate func initUI(){
         if let answer = self.answer{
             name.text = answer.user.name
             introduction.text = answer.user.introduction
@@ -61,57 +61,57 @@ class AnswerDetailViewController: UIViewController {
     
     
     @IBAction func UpChangeState (){
-        answerStateChangeModel.changeFocusState(answer!.id, isFocused: upButton.selected, api: HttpAPI.api_praise)
+        answerStateChangeModel.changeFocusState(answer!.id, isFocused: upButton.isSelected, api: HttpAPI.api_praise)
         
-        if(downButton.selected){
-            answerStateChangeModel.changeFocusState(answer!.id, isFocused: downButton.selected, api: HttpAPI.api_down)
-            downButton.selected = false
-            downState.enabled = false
+        if(downButton.isSelected){
+            answerStateChangeModel.changeFocusState(answer!.id, isFocused: downButton.isSelected, api: HttpAPI.api_down)
+            downButton.isSelected = false
+            downState.isEnabled = false
             
         }
         
         var tempUpNum = Int(upNumber.text!) ?? 0
-        if (upButton.selected){
+        if (upButton.isSelected){
             tempUpNum -= 1
         }else{
             tempUpNum += 1
         }
         
         upNumber.text = String(tempUpNum)
-        upButton.selected = !upButton.selected
+        upButton.isSelected = !upButton.isSelected
         
     }
     
     @IBAction func DownChangeState (){
-        answerStateChangeModel.changeFocusState(answer!.id, isFocused: downButton.selected, api: HttpAPI.api_down)
+        answerStateChangeModel.changeFocusState(answer!.id, isFocused: downButton.isSelected, api: HttpAPI.api_down)
         var tempUpNum = Int(upNumber.text!) ?? 0
-        if(upButton.selected){
-            answerStateChangeModel.changeFocusState(answer!.id, isFocused: upButton.selected, api: HttpAPI.api_down)
+        if(upButton.isSelected){
+            answerStateChangeModel.changeFocusState(answer!.id, isFocused: upButton.isSelected, api: HttpAPI.api_down)
             
             tempUpNum -= 1
-            upButton.selected = false
-            upState.enabled = false
+            upButton.isSelected = false
+            upState.isEnabled = false
         }
         upNumber.text = String(tempUpNum)
-        downButton.selected = !downButton.selected
+        downButton.isSelected = !downButton.isSelected
     }
     
     @IBAction func MarkChangeState(){
-        answerStateChangeModel.changeFocusState(answer!.id, isFocused: markButton.selected, api: HttpAPI.api_collect)
-        markButton.selected = !markButton.selected
+        answerStateChangeModel.changeFocusState(answer!.id, isFocused: markButton.isSelected, api: HttpAPI.api_collect)
+        markButton.isSelected = !markButton.isSelected
     }
     
     @IBAction func agreeOrNot(){
-        upState.enabled = !upState.enabled
+        upState.isEnabled = !upState.isEnabled
         
     }
     
     @IBAction func helpOrNot(){
-        downState.enabled = !downState.enabled
+        downState.isEnabled = !downState.isEnabled
     }
     
     @IBAction func markOrNot(){
-        markState.enabled = !markState.enabled
+        markState.isEnabled = !markState.isEnabled
     }
     
     func refreshUI()  {
@@ -126,14 +126,14 @@ class AnswerDetailViewController: UIViewController {
             introduction.text = newAnswer.user.introduction
             thumbnailImageView.imageFromUrl(newAnswer.user.img_url)
             
-            upButton.selected = newAnswer.isPraised
-            upState.enabled = newAnswer.isPraised
+            upButton.isSelected = newAnswer.isPraised
+            upState.isEnabled = newAnswer.isPraised
             
-            downButton.selected = newAnswer.isDown
-            downState.enabled = newAnswer.isDown
+            downButton.isSelected = newAnswer.isDown
+            downState.isEnabled = newAnswer.isDown
             
-            markState.enabled = newAnswer.isCollected
-            markButton.selected = newAnswer.isCollected
+            markState.isEnabled = newAnswer.isCollected
+            markButton.isSelected = newAnswer.isCollected
         }
         
         
@@ -145,11 +145,11 @@ class AnswerDetailViewController: UIViewController {
     
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
             case storyBoard.showCommentSegue:
-                if let commentController = segue.destinationViewController as? CommentViewController {
+                if let commentController = segue.destination as? CommentViewController {
                     print("Show the comment view answerid id \(answer?.id)")
                     commentController.answerID = answer?.id
                     
@@ -163,7 +163,7 @@ class AnswerDetailViewController: UIViewController {
         
     }
     
-    func setAnswer(answer:Answer?)  {
+    func setAnswer(_ answer:Answer?)  {
         self.answer = answer
     }
     

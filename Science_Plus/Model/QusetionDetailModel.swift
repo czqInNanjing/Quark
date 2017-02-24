@@ -18,9 +18,9 @@ class QuestionDetailModel {
         }
     }
     
-    private var answers:[Array<Answer>] = []
+    fileprivate var answers:[Array<Answer>] = []
     
-    private var currentPage = 1
+    fileprivate var currentPage = 1
     /**用于刷新界面使用*/
     func regetQuestionDetail(questionDetailController qController : QAnswerViewController?)  {
         currentPage = 1
@@ -69,7 +69,7 @@ class QuestionDetailModel {
     func getAnswers() -> [Array<Answer>] {
         return answers
     }
-    func setQuestion(question:Question) {
+    func setQuestion(_ question:Question) {
         self.question = question
     }
     

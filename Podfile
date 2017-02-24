@@ -7,9 +7,9 @@ target 'Science_Plus' do
 
   # Pods for Science_Plus
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
-  pod 'Alamofire', '~> 3.4'
+  pod 'Alamofire'
   pod 'DGElasticPullToRefresh'
   pod 'UIScrollView-InfiniteScroll'
-  pod 'ObjectMapper', '~> 1.3'
+  pod 'ObjectMapper', '~> 2.2'
   pod 'Qiniu', '~> 7.1'
 end

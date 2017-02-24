@@ -10,15 +10,15 @@ import UIKit
 
 class agreeTableViewController: UITableViewController {
     
-    var upnum = [Int](count: 30, repeatedValue: 512)
+    var upnum = [Int](repeating: 512, count: 30)
     
 //    var
-    var whoups = [String](count: 30, repeatedValue:"蒋易成")
+    var whoups = [String](repeating: "蒋易成", count: 30)
 //    var questuins = [String](count: 30, repeatedValue:"如何成为人生赢家")
     
-    var titles = [String](count: 30, repeatedValue:"话费充值提醒")
+    var titles = [String](repeating: "话费充值提醒", count: 30)
     
-    var answers = [String](count: 30, repeatedValue:"您的话费余额已不足，请尽快充值 。 。  。 。。 您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。")
+    var answers = [String](repeating: "您的话费余额已不足，请尽快充值 。 。  。 。。 您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。您的话费余额已不足，请尽快充值 。 。  。 。。", count: 30)
     
     
     
@@ -39,19 +39,19 @@ class agreeTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return upnum.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("NoticficAgreeCell", forIndexPath: indexPath) as! NoticAgreeTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticficAgreeCell", for: indexPath) as! NoticAgreeTableViewCell
         cell.whoUpLabel.text = whoups[indexPath.row] + "等 \(upnum[indexPath.row])人赞同了回答"
         cell.titleL.text = titles[indexPath.row]
         cell.numofUpL.text = String(upnum[indexPath.row])

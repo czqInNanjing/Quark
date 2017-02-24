@@ -29,11 +29,11 @@ class PersonDetailTableViewController: UITableViewController {
     @IBOutlet weak var workspaceTwoL: UILabel!
     @IBOutlet weak var positionTwoL: UILabel!
     
-    private var model=PersonShowModel()
+    fileprivate var model=PersonShowModel()
     
-    private var personInfo=Person()
+    fileprivate var personInfo=Person()
     
-    private struct storyboard{
+    fileprivate struct storyboard{
         
         static var user_id=1
         static let man="man"
@@ -42,7 +42,7 @@ class PersonDetailTableViewController: UITableViewController {
         
     }
     
-    static func setUserId(id:Int){
+    static func setUserId(_ id:Int){
         storyboard.user_id=id
     }
 
@@ -52,7 +52,7 @@ class PersonDetailTableViewController: UITableViewController {
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         model.getPersonDetailInfo(storyboard.user_id,controller: self)
         
@@ -63,7 +63,7 @@ class PersonDetailTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     //图片没有加
-    func showPersonInfo(person:Person){
+    func showPersonInfo(_ person:Person){
         self.personInfo=person
         print("showPersonInfo")
         nameL.text=person.name
@@ -73,7 +73,7 @@ class PersonDetailTableViewController: UITableViewController {
         numberOfFansL.text=String(person.numberOfFans)
         let address=person.residence
         if address != ""{
-            let fullAddressArr = address.componentsSeparatedByString("&")
+            let fullAddressArr = address.components(separatedBy: "&")
             provinceL.text=fullAddressArr[0]
             cityL.text=fullAddressArr.count>1 ? fullAddressArr[1] : " "
         }
@@ -84,25 +84,25 @@ class PersonDetailTableViewController: UITableViewController {
         
         let education=person.education
         if education != ""{
-            let fullArr = education.componentsSeparatedByString("%")
+            let fullArr = education.components(separatedBy: "%")
             schoolOneL.text=fullArr[0]
             degreeOneL.text=fullArr.count>1 ? fullArr[1] : " "
         }
         
         let work=person.work
         if work != ""{
-            let fullArr = work.componentsSeparatedByString("%")
+            let fullArr = work.components(separatedBy: "%")
             workspaceOneL.text=fullArr[0]
             positionOneL.text=fullArr.count>1 ? fullArr[1] : " "
         }
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier{
             switch identifier {
             case storyboard.edit:
-                if let editController = segue.destinationViewController as? PersonDetailEditTableViewController{
+                if let editController = segue.destination as? PersonDetailEditTableViewController{
                     editController.person=self.personInfo
                     
                 }

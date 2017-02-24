@@ -9,10 +9,10 @@
 import Foundation
 
 class CommentAddedModel{
-    private var answer_id=0
-    private var comment_content=""
+    fileprivate var answer_id=0
+    fileprivate var comment_content=""
     
-    func addComment(id:Int ,content:String){
+    func addComment(_ id:Int ,content:String){
         print("answer id :",id)
         self.comment_content=content
         self.answer_id=id

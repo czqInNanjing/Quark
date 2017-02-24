@@ -23,9 +23,9 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
 //    @IBOutlet weak var tableViewToTitleConstraint:NSLayoutConstraint!
     @IBOutlet weak var tableViewToButtonConstraint:NSLayoutConstraint!
     
-    private var totalDistance=15.0+74.0
+    fileprivate var totalDistance=15.0+74.0
     
-    private struct storyBoard{
+    fileprivate struct storyBoard{
         static let qAnswerCell = "QAnswerCell"
         static let showAnswerDetail = "showAnswerDetail"
         static let focusNum = "人关注"
@@ -34,8 +34,8 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
         static let answerTheQuestion="addAnswer"
     }
     
-    private var questionDetailModel = QuestionDetailModel()
-    private var focusStateChangeModel = FocusStateChangeModel()
+    fileprivate var questionDetailModel = QuestionDetailModel()
+    fileprivate var focusStateChangeModel = FocusStateChangeModel()
     
     var question:Question{
         set{
@@ -52,41 +52,41 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
         let upSwipe = UISwipeGestureRecognizer(target: self, action:#selector(QAnswerViewController.handleSwipes(_:)))
         let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(QAnswerViewController.handleSwipes(_:)))
         
-        upSwipe.direction = .Up
-        downSwipe.direction = .Down
+        upSwipe.direction = .up
+        downSwipe.direction = .down
         
         
         view.addGestureRecognizer(upSwipe)
         view.addGestureRecognizer(downSwipe)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         questionDetailModel.regetQuestionDetail(questionDetailController: self)
 //        self.tableViewToTitleConstraint.active=false
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int{
+    func numberOfSections(in tableView: UITableView) -> Int{
         return questionDetailModel.getAnswers().count
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionDetailModel.getAnswers()[section].count
     }
     
-    func handleSwipes(sender:UISwipeGestureRecognizer) {
-        if (sender.direction == .Up) {
+    func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .up) {
             tableViewToButtonConstraint.constant-=(CGFloat(totalDistance)+questionContentLabel.frame.height+focusNumber.frame.height+answerButton.frame.height)
         }
         
-        if (sender.direction == .Down) {
+        if (sender.direction == .down) {
            tableViewToButtonConstraint.constant+=(CGFloat(totalDistance)+questionContentLabel.frame.height+focusNumber.frame.height+answerButton.frame.height)
         }
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCellWithIdentifier(storyBoard.qAnswerCell , forIndexPath: indexPath) as! QAnswerTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell=tableView.dequeueReusableCell(withIdentifier: storyBoard.qAnswerCell , for: indexPath) as! QAnswerTableViewCell
         
         cell.answer = questionDetailModel.getAnswers()[indexPath.section][indexPath.row]
         
@@ -109,16 +109,16 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
     
     @IBAction func focus(){
         print("Focus Button is Clicked!")
-        focusStateChangeModel.changeFocusState(question.id, isFocused: focusButton.selected)
-        focusButton.selected = !focusButton.selected
+        focusStateChangeModel.changeFocusState(question.id, isFocused: focusButton.isSelected)
+        focusButton.isSelected = !focusButton.isSelected
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let identifier = segue.identifier{
             switch identifier {
             case storyBoard.showAnswerDetail:
-                let showAnswerDetailController = segue.destinationViewController as! AnswerDetailViewController
+                let showAnswerDetailController = segue.destination as! AnswerDetailViewController
                 if let cell = sender as? QAnswerTableViewCell {
                     print("show answer detail \(cell.answerID)")
                     showAnswerDetailController.setAnswer(cell.answer)
@@ -127,7 +127,7 @@ class QAnswerViewController: UIViewController ,UITableViewDataSource,UITableView
             case storyBoard.answerTheQuestion:
                 print(question.getId())
                 print("QAnswer")
-                if let answerTheQuestionController = segue.destinationViewController as?  AnswerTheQuestionViewController{
+                if let answerTheQuestionController = segue.destination as?  AnswerTheQuestionViewController{
                     answerTheQuestionController.setQuestionId(question.getId())
                 }
             default:

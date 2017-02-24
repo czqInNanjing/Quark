@@ -15,9 +15,9 @@ class QueryTagViewController: UIViewController {
     
     @IBOutlet var tagText:UITextView!
     
-    private var questionAddedModel = QuestionAddedModel()
+    fileprivate var questionAddedModel = QuestionAddedModel()
     
-    private struct showMessage{
+    fileprivate struct showMessage{
         static let addSuccess="问题添加成功！"
     }
 
@@ -36,9 +36,9 @@ class QueryTagViewController: UIViewController {
     
     
     @IBAction func saveQuestion(){
-        question_tag=tagText.text.componentsSeparatedByString("，")
+        question_tag=tagText.text.components(separatedBy: "，")
         questionAddedModel.addQuestion(question_title, content: question_content, tag: question_tag)
-        self.navigationController?.popToRootViewControllerAnimated(false)
+        self.navigationController?.popToRootViewController(animated: false)
         self.noticeSuccess("提问成功！")
     }
     

@@ -10,7 +10,7 @@ import Foundation
 //答案详情界面Model
 class AnswerDetailModel {
     
-    private var answer:Answer?
+    fileprivate var answer:Answer?
     
     func getAnswerDetail (answerController controller:AnswerDetailViewController) {
         print("answer id is \(answer?.id)" )
@@ -39,7 +39,7 @@ class AnswerDetailModel {
         
     }
     
-    func setAnswerID(id:Int){
+    func setAnswerID(_ id:Int){
         self.answer = Answer(id:id)
     }
     

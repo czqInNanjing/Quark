@@ -9,9 +9,9 @@
 import UIKit
 
 class AnswerTheQuestionViewController: UIViewController {
-    private var question_id=0
-    private var answer_content=""
-    private var answerAddedModel=AnswerAddedModel()
+    fileprivate var question_id=0
+    fileprivate var answer_content=""
+    fileprivate var answerAddedModel=AnswerAddedModel()
     
     @IBOutlet var textView:UITextView!
 
@@ -26,12 +26,12 @@ class AnswerTheQuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setQuestionId(id:Int){
+    func setQuestionId(_ id:Int){
         question_id=id
 //        print(question_id)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         answer_content=textView.text
         answerAddedModel.addAnswer(question_id, content: answer_content)
     }
@@ -39,7 +39,7 @@ class AnswerTheQuestionViewController: UIViewController {
     @IBAction func saveAnswer(){
         answer_content=textView.text
         answerAddedModel.addAnswer(question_id, content: answer_content)
-        self.navigationController?.popViewControllerAnimated(false)
+        self.navigationController?.popViewController(animated: false)
     }
     
 

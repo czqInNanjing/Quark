@@ -9,10 +9,10 @@
 import Foundation
 
 class FocusStateChangeModel{
-    private var question_id=0
-    private var isFocused=true
+    fileprivate var question_id=0
+    fileprivate var isFocused=true
     
-    func changeFocusState(question_id:Int,isFocused:Bool){
+    func changeFocusState(_ question_id:Int,isFocused:Bool){
         self.isFocused = isFocused
         self.question_id = question_id
         

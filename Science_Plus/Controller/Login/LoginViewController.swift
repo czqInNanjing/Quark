@@ -22,29 +22,29 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func testPan(sender: UIPanGestureRecognizer) {
+    @IBAction func testPan(_ sender: UIPanGestureRecognizer) {
         
         switch sender.state {
-        case .Began:
+        case .began:
             print("Start . . .")
-        case .Cancelled:
+        case .cancelled:
             print("cancel. . .")
-        case .Ended:
+        case .ended:
             print("ended")
-        case .Possible:
+        case .possible:
             print("possible")
-        case .Failed:
+        case .failed:
             print("fail")
-        case .Changed:
+        case .changed:
             print("change")
         }
     }
 
     
     
-    @IBAction func dealWithLogin(sender: UIButton) {
+    @IBAction func dealWithLogin(_ sender: UIButton) {
         
-        sender.enabled = false
+        sender.isEnabled = false
         print("login start")
         if let mail = self.mainField.text {
             if let password = self.passwordField.text{
@@ -57,13 +57,13 @@ class LoginViewController: UIViewController {
                     if token != ""{
                         HttpHandler.token = token
                         HttpHandler.userID = String(user_id)
-                        self?.performSegueWithIdentifier("loginSuccess", sender: nil)
+                        self?.performSegue(withIdentifier: "loginSuccess", sender: nil)
                         
                     }
                     if user_id != 0{
                         PersonalTableViewController.setUserId(user_id)
                     }
-                    self?.loginbutton.enabled = true
+                    self?.loginbutton.isEnabled = true
                 }
                 
                 
