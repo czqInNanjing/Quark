@@ -15,16 +15,28 @@ Quark is built with Swift, using MVC framework.
 
 ## Preview ##
 ### LOGO ###
-![Quark Logo](Document/pics/icon.png)
+<p align="center">
+  <img src="Document/pics/icon.png" alt="Drawing" style="width: 200px;"/>
+</p>
+
 ---
 ### REGISTER ###
-![Register](Document/pics/register.jpg)
+<p align="center">
+<img src="Document/pics/register.jpg" alt="Drawing" style="width: 400px;"/>
+</p>
+
 ---
 ### QUESTION LIST ###
-![Question List](Document/pics/questionList.jpg)
+<p align="center">
+<img src="Document/pics/questionList.jpg" alt="Drawing" style="width: 400px;"/>
+</p>
+
 ---
 ### QUESTION DETAIL ###
-![Question Detail](Document/pics/questionDetail.jpg)
+<p align="center">
+<img src="Document/pics/questionDetail.jpg" alt="Drawing" style="width: 400px;"/>
+</p>
+
 ---
 
 
