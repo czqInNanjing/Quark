@@ -2,17 +2,35 @@
 ---
 
 ## Introduction ##
-    Quark is a simple ios APP designed for spreading ideas. Just like TED says, ideas worth spreading. There is no doubt that everyone will somehow have some problems to 
+
+Quark is a simple iOS APP designed for spreading ideas. Just like TED says, ideas worth spreading. Quora is no doubt a wonderful platform for sharing knowledge. However, it covers a rather wide fields so that it is sometimes rather ardous to percolate the useful knowledge from those futile infomation.
+
+Quark is built with Swift, using MVC framework.
 
 
-----------
+## Features ##
+* Ask and answer
+* Get info that you interests
+* Follow other users and get their latest messages
+
+## Preview ##
+### LOGO ###
+![Quark Logo](Document/pics/icon.png)
+---
+### REGISTER ###
+![Register](Document/pics/register.jpg)
+---
+### QUESTION LIST ###
+![Question List](Document/pics/questionList.jpg)
+---
+### QUESTION DETAIL ###
+![Question Detail](Document/pics/questionDetail.jpg)
+---
 
 
-## 迭代三介绍 ##
-      AnyQuant 迭代三是在迭代二的基础上开发的，我们重新开发了Web端，这也是
-    我们小组第一次尝试开发Web端。
-      迭代三是基于J2EE的Spring + SpringMVC + Hibernate 框架搭建的，使用
-    MySQL作为数据库，感谢腾讯云提供的一元云服务器 ：）
 
 
-----------
+
+
+## License ##
+Sourcery is available under the MIT license. See [LICENSE](LICENSE) for more information.
